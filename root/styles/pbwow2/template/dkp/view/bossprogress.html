@@ -1,0 +1,116 @@
+<!--
+	Bossprogress prosilver view	0
+-->
+<div class="panel">
+    <div class="inner">
+        <span class="corners-top"><span></span></span>
+        <style type="text/css">
+            <!-- BEGIN zone -->
+            .zonecontainer{zone.ZONE_ID}
+            {
+                background:
+                    linear-gradient(to right, rgba(255, 255, 255, 0), #000000),
+                    url({zone.ZONE_BACKGROUNDIMG});
+                background-repeat: no-repeat, no-repeat;
+                background-position: left bottom, left bottom;
+                height: 110px;
+                min-height: 140px;
+                min-width:600px;
+                width:100%;
+                box-shadow: 2px 2px 2px #303030;
+                -moz-border-radius: 5px;
+                border-radius: 5px;
+            }
+            .zoneprogress{zone.ZONE_ID}
+            {
+                background: url({zone.ZONE_PROGRESSIMG});
+                background-repeat: no-repeat;
+                background-position: left bottom;
+                height: 100%;
+                overflow:hidden;
+            width: {zone.ZONECOMPLETE}%;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            }
+            <!-- END zone -->
+        </style>
+        <ul class="topiclist" style="padding: 4px">
+            <li class="header">
+                <dl>
+                    <dt style="padding: 0px 0px 2px; white-space: nowrap; margin-bottom: 0px; margin-top: 0px; display:inline;width:auto;text-align:center;">
+                    <div style="float: left; width:49%; white-space:nowrap; text-align: left;">
+                        <h4 class="bbdkpheader">{L_BOSSPROGRESS}</h4>
+                    </div>
+                    </dt>
+                </dl>
+            </li>
+        </ul>
+        <hr />
+        <img src="{GAMELOGO}" alt="{GAMENAME}" />
+        <!-- IF PAGINATION -->
+        <div class="pagination">
+            <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{S_ON_PAGE}</a> <span>{PAGINATION}</span>
+        </div>
+        <!-- ENDIF -->
+        <!-- BEGIN zone -->
+        <div class="zonecontainer{zone.ZONE_ID}">
+            <div class="zoneprogress{zone.ZONE_ID}">
+                <span></span>
+            </div>
+        </div>
+        <p><a href="{zone.ZONE_URL}">{zone.ZONE_NAME}</a> : {zone.ZONESTATS}</p>
+        <table  border="0" cellspacing="1" cellpadding="1" id="bossprog">
+            <tbody>
+            <!-- BEGIN boss -->
+            <!-- IF boss.S_ROW_COUNT is even -->
+
+            <!-- IF zone.boss.S_BOSS_KILLED == 1 -->
+            <tr class="row2">
+                <!-- ELSE -->
+            <tr class="row1">
+                <!-- ENDIF -->
+                <td style="text-align:center; width:28%;"> <a href="{zone.boss.BOSS_URL}"><img style="width: 70%; height: 70%"
+                                                                                               src="{zone.boss.BOSS_IMAGENAME}" alt="{zone.boss.BOSS_IMAGENAME}" /></a>
+                </td>
+                <td style="font-size: 13px; text-align:left; width:22%; white-space: nowrap;">
+                    <a style= "font-family: Verdana,sans-serif;  color: #FFD100; cursor: pointer;outline-style: none;outline-width: medium;" href="{zone.boss.BOSS_URL}">{zone.boss.BOSS_NAME}</a><br />
+                    <!-- IF zone.boss.S_BOSS_KILLED == 1 -->
+                    <span><img src="{T_IMAGES_PATH}bbdkp/gameworld/rp/1.png" alt="" />{zone.boss.BOSS_KILLDATE}</span>
+                    <!-- ELSE -->
+                    <img src="{T_IMAGES_PATH}bbdkp/gameworld/rp/0.png" alt="" />
+                    <!-- ENDIF -->
+                    <input type="hidden" name="boss[{zone.ZONE_ID}][{zone.boss.BOSS_ID}]">
+                </td>
+                <!-- IF boss.S_LAST_ROW -->
+                <td></td>
+                <td></td>
+            </tr>
+            <!-- ENDIF -->
+            <!-- ELSE -->
+            <td style="font-size: 13px; text-align:right; width:22%; white-space: nowrap;">
+                <a style= "font-family: Verdana,sans-serif;  color: #FFD100; cursor: pointer;outline-style: none;outline-width: medium;" href="{zone.boss.BOSS_URL}">{zone.boss.BOSS_NAME}</a><br />
+                <!-- IF zone.boss.S_BOSS_KILLED == 1 -->
+                <span><img src="{T_IMAGES_PATH}bbdkp/gameworld/rp/1.png" alt="" />{zone.boss.BOSS_KILLDATE}</span>
+                <!-- ELSE -->
+                <img src="{T_IMAGES_PATH}bbdkp/gameworld/rp/0.png" alt="" />
+                <!-- ENDIF -->
+                <input type="hidden" name="boss[{zone.ZONE_ID}][{zone.boss.BOSS_ID}]">
+            </td>
+            <td style="text-align:center; width:28%;"> <a href="{zone.boss.BOSS_URL}">
+                <img style="width: 70%; height: 70%" src="{zone.boss.BOSS_IMAGENAME}" alt="{zone.boss.BOSS_IMAGENAME}" /></a>
+            </td>
+            </tr>
+
+            <!-- ENDIF -->
+            <!-- END boss -->
+            </tbody>
+        </table>
+        <!-- END zone -->
+        <!-- IF PAGINATION -->
+        <div class="pagination">
+            <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{S_ON_PAGE}</a> <span>{PAGINATION}</span>
+        </div>
+        <!-- ENDIF -->
+        <span class="corners-bottom"><span></span></span>
+    </div>
+</div>

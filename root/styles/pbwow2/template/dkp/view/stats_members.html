@@ -1,72 +1,73 @@
 
 <div class="forabg" style="width:35%; float:left;">
-<div class="inner">
-<span class="corners-inner-top"><span></span></span>
+    <div class="inner">
+        <span class="corners-inner-top"><span></span></span>
 
-<!-- IF DKPPAGINATION -->
-<div class="pagination">
-		<a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{S_ON_PAGE}</a>
-		<span>{DKPPAGINATION}<br /><br /></span>
-</div>
-<!-- ENDIF -->
+        <!-- IF DKPPAGINATION -->
+        <div class="pagination">
+            <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{S_ON_PAGE}</a>
+            <span>{DKPPAGINATION}<br /><br /></span>
+        </div>
+        <!-- ENDIF -->
 
-<table class="table1" width="100%" border="0" cellspacing="0" cellpadding="0">
-<thead>
-<tr>
-    <th style=" width:20%;"><a href="{O_NAME}">{L_NAME}</a></th>
-    <!-- IF S_SHOWEPGP -->
-    <th style=" width:20%; text-align:center;" ><a href="{O_PR}">{L_PR}</a></th>
-    <!-- ELSE -->
-    <th style=" width:20%; text-align:center;" ><a href="{O_CURRENT}">{L_CURRENT}</a></th>
-	<!-- ENDIF -->
-    <th style=" width:20%; text-align:center;" ><a href="{O_RAIDCOUNT}">{L_RAIDCOUNT}</a></th>
-    <th colspan="2" style=" width:40%; text-align:center;" ><a href="{O_ITEMCOUNT}">{L_LOOTS}</a></th>
-</tr>
-</thead>
-<tfoot>
-<tr>
-<th align="left" style="color:white; font-weight:bold; width:40%;" colspan="3">{STATS_FOOTCOUNT}</th>
-<th align="left" style="color:white; font-weight:bold; width:20%;">{TOTAL_RAIDS}</th>
-<th align="left" style="color:white; font-weight:bold; width:40%;" colspan="2">{TOTAL_DROPS}</th>
-</tr>
-</tfoot>
-<tbody>
-<!-- BEGIN stats_row -->
-    <!-- IF stats_row.S_ROW_COUNT is odd -->
-    <tr class= "bg1">
-    <!-- ELSE -->
-    <tr class= "bg2">
-    <!-- ENDIF -->
-    <td><a style="color:{stats_row.COLORCODE}" href="{stats_row.U_VIEW_MEMBER}"><strong>{stats_row.NAME}</strong></a></td>
+        <table class="table1" width="100%" border="0" cellspacing="0" cellpadding="0">
+            <thead>
+            <tr>
+                <th style=" width:20%;"><a href="{O_NAME}">{L_NAME}</a></th>
+                <!-- IF S_SHOWEPGP -->
+                <th style=" width:20%; text-align:center;" ><a href="{O_PR}">{L_PR}</a></th>
+                <!-- ELSE -->
+                <th style=" width:20%; text-align:center;" ><a href="{O_CURRENT}">{L_CURRENT}</a></th>
+                <!-- ENDIF -->
+                <th style=" width:20%; text-align:center;" ><a href="{O_RAIDCOUNT}">{L_RAIDCOUNT}</a></th>
+                <th colspan="2" style=" width:40%; text-align:center;" ><a href="{O_ITEMCOUNT}">{L_LOOTS}</a></th>
+            </tr>
+            </thead>
+            <tfoot>
+            <tr>
+                <th align="left" style="color:white; font-weight:bold; width:40%;" colspan="3">{STATS_FOOTCOUNT}</th>
+                <th align="left" style="color:white; font-weight:bold; width:20%;">{TOTAL_RAIDS}</th>
+                <th align="left" style="color:white; font-weight:bold; width:40%;" colspan="2">{TOTAL_DROPS}</th>
+            </tr>
+            </tfoot>
+            <tbody>
+            <!-- BEGIN stats_row -->
+            <!-- IF stats_row.S_ROW_COUNT is odd -->
+            <tr class= "bg1">
+                <!-- ELSE -->
+            <tr class= "bg2">
+                <!-- ENDIF -->
+                <td><a style="color:{stats_row.COLORCODE}" href="{stats_row.U_VIEW_MEMBER}"><strong>{stats_row.NAME}</strong></a></td>
 
-    <!-- IF S_SHOWEPGP -->
-    <td style="font-size :8pt; text-align: center;"><strong>{stats_row.PR}</strong></td>
-    <!-- ELSE -->
-    <td style="font-size :8pt; text-align: center;"><span class="{stats_row.C_CURRENT}"><strong>{stats_row.CURRENT}</strong></span></td>
-    <!-- ENDIF -->
-    <td style="font-size :8pt; text-align: center;">{stats_row.ATTENDED_COUNT}</td>
-    <td style="font-size :8pt; text-align: center;">{stats_row.ITEM_COUNT}</td>
-	<td style="font-size :8pt; text-align: center;">{stats_row.MEMBER_DROP_PCT}</td>
+                <!-- IF S_SHOWEPGP -->
+                <td style="font-size :8pt; text-align: center;"><strong>{stats_row.PR}</strong></td>
+                <!-- ELSE -->
+                <td style="font-size :8pt; text-align: center;"><span class="{stats_row.C_CURRENT}"><strong>{stats_row.CURRENT}</strong></span></td>
+                <!-- ENDIF -->
+                <td style="font-size :8pt; text-align: center;">{stats_row.ATTENDED_COUNT}</td>
+                <td style="font-size :8pt; text-align: center;">{stats_row.ITEM_COUNT}</td>
+                <td style="font-size :8pt; text-align: center;">{stats_row.MEMBER_DROP_PCT}</td>
 
 
-  </tr>
-<!-- END stats_row -->
-</tbody>
-</table>
+            </tr>
+            <!-- END stats_row -->
+            </tbody>
+        </table>
 
-<!-- IF DKPPAGINATION -->
-<div class="pagination">
-		<a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{S_ON_PAGE}</a>
-		<span>{DKPPAGINATION}<br /><br /></span>
-</div>
-<!-- ENDIF -->
+        <!-- IF DKPPAGINATION -->
+        <div class="pagination">
+            <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{S_ON_PAGE}</a>
+            <span>{DKPPAGINATION}<br /><br /></span>
+        </div>
+        <!-- ENDIF -->
 
-<span class="corners-inner-bottom"><span></span></span>
-</div>
+        <span class="corners-inner-bottom"><span></span></span>
+    </div>
 </div>
 
 <div style="width:60%; float:left;">
 <div id="memberstats" class="graph"></div>
+
 <script type="text/javascript">
 //<![CDATA[
 
