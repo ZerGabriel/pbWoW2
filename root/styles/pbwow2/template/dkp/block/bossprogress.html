@@ -1,0 +1,83 @@
+<script type="text/javascript">
+jQuery.noConflict();
+jQuery(document).ready( function() 
+{
+	<!-- BEGIN zone -->
+	jQuery("#zone{zone.ZONE_ID}").tooltip({ position: "top center", relative: "true", effect: 'fade', opacity: 0.95});
+	<!-- IF S_SHOWPROGRESSBAR -->
+		jQuery("#progressbar_{zone.ZONE_ID}").progressBar(
+		{	showText : false,
+			width  : 100,
+			height : 10,
+			boxImage : '{T_IMAGES_PATH}bbdkp/progressbar/progressbar.gif',
+			barImage :
+			{
+				5:  '{T_IMAGES_PATH}bbdkp/progressbar/progressbg_black.gif',
+				20:  '{T_IMAGES_PATH}bbdkp/progressbar/progressbg_red.gif',
+				40:  '{T_IMAGES_PATH}bbdkp/progressbar/progressbg_orange.gif',
+				60:  '{T_IMAGES_PATH}bbdkp/progressbar/progressbg_yellow.gif',
+				100: '{T_IMAGES_PATH}bbdkp/progressbar/progressbg_green.gif'
+			}
+		}) 
+	<!-- ENDIF -->
+	<!-- END zone -->
+
+});
+</script>
+<div class="forabg">
+    <div class="inner">
+        <span class="corners-top"><span></span></span>
+        <ul class="topiclist" style="padding: 4px">
+            <li class="header">
+                <dl>
+                    <dt style="padding: 0px 0px 2px; white-space: nowrap; margin-bottom: 0px; margin-top: 0px;">
+                        {L_BOSSPROGRESS}
+                    </dt>
+                </dl>
+            </li>
+        </ul>
+        <ul class="topiclist forums" style="padding: 4px">
+            <li style="list-style:none" >
+                <table class="tablebg" cellspacing="1" width="100%">
+                    <colgroup span="2" >
+                        <col width="75%"></col>
+                        <col width="25%"></col>
+                    </colgroup>
+                    <!-- BEGIN zone -->
+                    <tr>
+                        <td align="left" class="{zone.CSSCLASS}">
+                            <div>
+                                <a id="zone{zone.ZONE_ID}" href="{zone.ZONE_URL}">{zone.ZONE_NAME}</a>
+                                <div class="bbtooltip">
+                                    <div class="bbinner">
+                                        <div class="t"></div>
+                                        <br />
+                                        <h4>{zone.ZONE_NAME}</h4>
+                                        <!-- BEGIN boss -->
+                                        <a class="bossprogress" href="{zone.boss.BOSS_URL}" >{zone.boss.BOSS_NAME}</a>&nbsp;
+                                        <img src="{T_IMAGES_PATH}bbdkp/gameworld/rp/{zone.boss.BOSS_KILLED}.png" alt="{zone.boss.BOSS_KILLED}" /><br />
+                                        <!-- END boss -->
+                                        <br />
+                                    </div>
+                                    <div class="b"><div></div></div>
+                                </div>
+                            </div>
+                        </td>
+                        <td align="center" class="{zone.CSSCLASS}"><span><strong>({zone.ZONEKILLS}/{zone.BOSSCOUNT})</strong></span></td>
+                    </tr>
+                    <!-- IF S_SHOWPROGRESSBAR -->
+                    <tr>
+                        <td align="left" colspan="2">
+                            <span id="progressbar_{zone.ZONE_ID}" class="progressbar">{zone.ZONECOMPLETE}</span>
+                        </td>
+                    </tr>
+                    <!-- ENDIF -->
+                    <!-- END zone -->
+                </table>
+            </li>
+        </ul>
+
+        <span class="corners-bottom"><span></span></span>
+    </div>
+</div>
+
