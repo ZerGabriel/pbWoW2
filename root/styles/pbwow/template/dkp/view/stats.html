@@ -1,0 +1,100 @@
+<!--[if lte IE 8]><script type="text/javascript" src="{T_TEMPLATE_PATH}/dkp/flot/excanvas.min.js"></script><![endif]-->
+<script src="{T_TEMPLATE_PATH}/dkp/flot/jquery.flot.js" type="text/javascript"></script>
+<script src="{T_TEMPLATE_PATH}/dkp/flot/jquery.flot.pie.min.js" type="text/javascript"></script>
+<!-- Credits : the Stats page uses Flot from http://code.google.com/p/flot/ -->
+
+<div class="panel">
+<div class="inner">
+<span class="corners-top"><span></span></span>
+
+<ul class="topiclist" style="padding: 4px">
+	<li class="header">
+		<dl>
+			<dt style="padding: 0px 0px 2px; white-space: nowrap; margin-bottom: 0px; margin-top: 0px; display:inline;width:auto;text-align:center;">
+				<div style="float: left; width:49%; white-space:nowrap; text-align: left;">
+					<h4 class="bbdkpheader">{L_MENU_STATS}</h4>
+				</div>
+			</dt>
+		</dl>
+	</li>
+</ul>
+
+<div class="navbar" style="clear:both;">
+<span class="corners-top"><span></span></span>
+	<form id="stats" method="post" action="{U_STATS}">
+		<div style="float: right; width:40%; white-space:nowrap; text-align: right;">
+			{L_POOL}:
+			<select id="pool" name="pool" class="input" onchange="javascript:form.submit();">
+			<!-- BEGIN pool_row -->
+			<option value="{pool_row.VALUE}" {pool_row.SELECTED}{pool_row.DISABLED}>{pool_row.OPTION}</option>
+			<!-- END pool_row -->
+			</select>
+		</div>
+	</form>
+<span class="corners-bottom"><span></span></span>
+</div>
+
+<hr />
+
+<!-- ************** Member statistics ************** -->
+<h3>{L_MEMBERS}</h3>
+
+<div class="panel bg2">
+	<div class="inner">
+	<span class="corners-top"><span></span></span>
+
+	<!-- IF .stats_row -->
+		<!-- INCLUDE dkp/view/stats_members.html -->
+	<!-- ELSE -->
+	<p class= "error">{L_NO_DATA}</p>
+	<!-- ENDIF -->
+
+	<span class="corners-bottom"><span></span></span>
+	</div>
+</div>
+
+<div style="clear:both;"></div>
+<hr />
+
+<!-- ************** Class statistics **************** -->
+
+<h3>{L_LOOTDIST_CLASS}</h3>
+
+<div class="panel bg2">
+	<div class="inner">
+	<span class="corners-top"><span></span></span>
+
+	<!-- IF .class_row -->
+				<!-- INCLUDE dkp/view/stats_classes.html -->
+	<!-- ELSE -->
+	<p class= "error">{L_NO_DATA}</p>
+	<!-- ENDIF -->
+
+	<span class="corners-bottom"><span></span></span>
+	</div>
+</div>
+
+<div style="clear:both;"></div>
+<hr />
+
+<!-- ************** Attendance statistics  ************** -->
+<h3>{L_RAID_ATTENDANCE_HISTORY}</h3>
+
+<div class="panel bg2">
+	<div class="inner">
+	<span class="corners-top"><span></span></span>
+
+	<!-- IF .attendance_row -->
+		<!-- INCLUDE dkp/view/stats_attendance.html -->
+	<!-- ELSE -->
+	<p class= "error">{L_NO_DATA}</p>
+	<!-- ENDIF -->
+
+	<span class="corners-bottom"><span></span></span>
+	</div>
+</div>
+
+
+<span class="corners-bottom"><span></span></span>
+</div>
+</div>

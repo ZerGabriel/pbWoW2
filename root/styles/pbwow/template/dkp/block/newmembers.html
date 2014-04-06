@@ -1,0 +1,22 @@
+<div class="wow-recent" id="newmembersblock">
+<h2 class="open">{L_LATESTMEMBERS}</h2>
+<div class="bbdkpblock">
+<table class="tablebg" cellspacing="1" width="100%">
+<!--<tr>
+	<th colspan="2">{L_LATEST_MEMBERS}</td>
+</tr>-->
+<tr>
+	<td class="row3" align="left" nowrap="nowrap"><span class="gensmall"><strong>{L_USERNAME}</strong></span></td>
+	<td class="row3" align="right" nowrap="nowrap"><span class="gensmall"><strong>{L_JOINED}</strong></span></td>
+</tr>
+<!-- BEGIN latest_members -->
+<!-- IF latest_members.S_ROW_COUNT is even --><tr class="row2"><!-- ELSE --><tr class="row1"><!-- ENDIF -->
+	<td class="gensmall" align="left" valign="middle"><img src="images/portal/member.gif" /> <strong><a href="{latest_members.U_USERNAME}"><span<!-- IF latest_members.USERNAME_COLOR -->{latest_members.USERNAME_COLOR}<!-- ENDIF -->>{latest_members.USERNAME}</span></a></strong><br /></td>
+	<td class="gensmall" align="right" nowrap="nowrap" valign="middle">{latest_members.JOINED}</td>
+</tr>
+<!-- END latest_members -->
+</table>
+
+</div>
+</div>
+

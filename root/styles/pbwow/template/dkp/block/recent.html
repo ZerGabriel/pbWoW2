@@ -1,0 +1,64 @@
+<a id="recent_topics"></a>
+<div class="wow-recent" id="recentblock">
+
+<div class="bbdkpblock">
+	<h2 class="open">{L_RECENT_TOPICS}</h2>
+	<ul class="topiclist forums" style="padding: 0.05cm">
+			<!-- IF NO_RECENT -->
+				<li style="list-style:none">{NO_RECENT}</li>
+			<!-- ELSE -->
+				<!-- BEGIN recent_topic_row -->
+				<li>
+			<dl class="icon" style="background-image: url({recent_topic_row.TOPIC_FOLDER_IMG_SRC}); background-repeat: no-repeat;">
+
+				<dt style="<!-- IF recent_topic_row.TOPIC_ICON_IMG -->background-image: url({T_ICONS_PATH}{recent_topic_row.TOPIC_ICON_IMG}); background-repeat: no-repeat;<!-- ENDIF -->"
+				<!-- IF recent_topic_row.TOPIC_PREVIEW_TEXT -->title="{recent_topic_row.TOPIC_PREVIEW_TEXT}" id="t{recent_topic_row.TOPIC_ID}"<!-- ELSE -->title="{recent_topic_row.TOPIC_FOLDER_IMG_ALT}"<!-- ENDIF -->>
+				<!-- IF recent_topic_row.S_UNREAD_TOPIC --><a href="{recent_topic_row.U_NEWEST_POST}">{NEWEST_POST_IMG}</a>
+				<!-- ENDIF -->
+
+				<a href="{recent_topic_row.U_TITLE}" class="topictitle"<!-- IF recent_topic_row.TOPIC_AUTHOR_COLOUR --> style="color: {recent_topic_row.TOPIC_AUTHOR_COLOUR}"<!-- ENDIF -->>{recent_topic_row.L_TITLE}</a>
+
+				<!-- IF U_VIEW_UNREAD_POST and not S_IS_BOT --> &bull; <a href="{U_VIEW_UNREAD_POST}">{L_VIEW_UNREAD_POST}</a> &bull; <!-- ENDIF -->
+				<!-- IF recent_topic_row.S_TOPIC_UNAPPROVED or recent_topic_row.S_POSTS_UNAPPROVED or recent_topic_row.S_TOPIC_REPORTED -->
+
+						<div class="extra-icons">
+							<!-- IF recent_topic_row.S_TOPIC_UNAPPROVED or recent_topic_row.S_POSTS_UNAPPROVED --><a href="{recent_topic_row.U_MCP_QUEUE}">{recent_topic_row.UNAPPROVED_IMG}</a> <!-- ENDIF -->
+							<!-- IF recent_topic_row.S_TOPIC_REPORTED --><a href="{recent_topic_row.U_MCP_REPORT}">{recent_topic_row.REPORTED_IMG}</a><!-- ENDIF -->
+						</div>
+						<!-- ENDIF -->
+
+						<!-- IF recent_topic_row.U_VIEW_FORUM and recent_topic_row.FORUM_NAME --><br />
+							<!-- IF recent_topic_row.ATTACH_ICON -->{recent_topic_row.ATTACH_ICON}<!-- ELSE --><!-- ENDIF -->
+							<!--
+							<!-- BEGIN forum_parents -->
+							<a class="forum" href="{recent_topic_row.forum_parents.U_VIEW_FORUM}">{recent_topic_row.forum_parents.FORUM_NAME}</a> &raquo;
+							<!-- END forum_parents -->
+							-->
+							<a class="forum" href="{recent_topic_row.U_VIEW_FORUM}">{recent_topic_row.FORUM_NAME}</a>
+						<!-- ELSE -->
+
+						<!-- ENDIF -->
+
+					</dt>
+					<dd class="topic-stats">{recent_topic_row.LAST_POST_TIME} <a href="{recent_topic_row.U_LAST_POST}" class="last-post-icon" title="{L_VIEW_LATEST_POST}">{L_VIEW_LATEST_POST}</a></dd>
+				</dl>
+				</li>
+				<!-- END recent_topic_row -->
+			<!-- ENDIF -->
+	</ul>
+</div>
+<!-- IF S_DISPLAY_SEARCH and not S_IS_BOT -->
+<div class="block">
+	<!-- IF S_LOAD_UNREADS or S_USER_LOGGED_IN -->
+	<p>
+		<!-- IF S_LOAD_UNREADS --><a href="{U_SEARCH_UNREAD}">{L_SEARCH_UNREAD}</a><!-- ENDIF -->
+		<!-- IF S_USER_LOGGED_IN --> &bull; <a href="{U_SEARCH_NEW}">{L_SEARCH_NEW}</a><!-- ENDIF -->
+	</p>
+	<!-- ENDIF -->
+	<p>
+		<a href="{U_SEARCH_UNANSWERED}">{L_SEARCH_UNANSWERED}</a>
+		&bull; <a href="{U_SEARCH_ACTIVE_TOPICS}">{L_SEARCH_ACTIVE_TOPICS}</a>
+	</p>
+</div>
+<!-- ENDIF -->
+</div>

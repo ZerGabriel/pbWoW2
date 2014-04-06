@@ -1,0 +1,167 @@
+<div class="forabg" style="width:55%; float:left;">
+<div class="inner">
+<span class="corners-inner-top"><span></span></span>
+
+<table id="choiceContainer" class="table1" width="90%" border="0" cellspacing="0" cellpadding="0">
+<thead>
+<tr>
+    <th colspan="4" style=" width:8%;"><a href="{U_STATS}&amp;o={O_MEMBER}">{L_NAME}</a></th>
+    <th colspan="3" style=" width:23%;"><a href="{U_STATS}&amp;o={O_LIF}">{L_ATTENDANCE_LIFETIME}</a></th>
+    <th colspan="3" style=" width:23%;"><a href="{U_STATS}&amp;o={O_90}">{RAIDS_X1_DAYS}</a></th>
+    <th colspan="3" style=" width:23%;"><a href="{U_STATS}&amp;o={O_60}">{RAIDS_X2_DAYS}</a></th>
+    <th colspan="3" style=" width:23%;"><a href="{U_STATS}&amp;o={O_30}">{RAIDS_X3_DAYS}</a></th>
+</tr>
+</thead>
+<tfoot>
+<tr>
+<th align="left" style="color:white; font-weight:bold;" colspan="15">{ATTEND_FOOTCOUNT}</th>
+</tr>
+</tfoot>
+<tbody>
+<!-- BEGIN attendance_row -->
+    <!-- IF attendance_row.S_ROW_COUNT is odd -->
+    <tr class= "bg1">
+    <!-- ELSE -->
+    <tr class= "bg2">
+    <!-- ENDIF -->
+    <td><a style="color:{attendance_row.COLORCODE}" href="{attendance_row.U_VIEW_MEMBER}"><strong>{attendance_row.NAME}</strong></a></td>
+    <td><input id="idmember{attendance_row.ID}" type="checkbox" checked="checked" name="member{attendance_row.ID}" /></td>
+
+    <td style="font-size :8pt; text-align: right;"><strong>{stats_row.FIRSTRAID}</strong></td>
+    <td style="font-size :8pt; text-align: right;"><strong>{stats_row.LASTRAID}</strong></td>
+
+    <td style="font-size :8pt; text-align: center;">{attendance_row.GRCTLIFE}</td>
+    <td style="font-size :8pt; text-align: center;">{attendance_row.IRCTLIFE}</td>
+	<td style="font-size :8pt; text-align: center;">{attendance_row.ATTLIFESTR}</td>
+
+    <td style="font-size :8pt; text-align: center;">{attendance_row.GRCT90}</td>
+    <td style="font-size :8pt; text-align: center;">{attendance_row.IRCT90}</td>
+	<td style="font-size :8pt; text-align: center;">{attendance_row.ATT90STR}</td>
+
+    <td style="font-size :8pt; text-align: center;">{attendance_row.GRCT60}</td>
+    <td style="font-size :8pt; text-align: center;">{attendance_row.IRCT60}</td>
+	<td style="font-size :8pt; text-align: center;">{attendance_row.ATT60STR}</td>
+
+    <td style="font-size :8pt; text-align: center;">{attendance_row.GRCT30}</td>
+    <td style="font-size :8pt; text-align: center;">{attendance_row.IRCT30}</td>
+	<td style="font-size :8pt; text-align: center;">{attendance_row.ATT30STR}</td>
+
+  </tr>
+<!-- END attendance_row -->
+</tbody>
+
+</table>
+
+<!-- IF ATTPAGINATION -->
+<div class="pagination">
+		<a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{S_ON_PAGE}</a>
+		<span>{ATTPAGINATION}<br /><br /></span>
+</div>
+<!-- ENDIF -->
+<span class="corners-inner-bottom"><span></span></span>
+</div>
+</div>
+
+<div class="panel" style="width:40%; float:left;">
+<div class="inner">
+<span class="corners-top"><span></span></span>
+
+<div id="legend3" style="width:30%; float:left"></div>
+<div id="attendanceplot" style="width:45%; float;left"  class="graph"></div>
+
+<script type="text/javascript">
+//<![CDATA[
+jQuery(function () {
+	var canvas_attendance = jQuery("#attendanceplot");
+	canvas_attendance.css("height", "600px");
+	canvas_attendance.css("width", "85%");
+	canvas_attendance.css("margin-left", "5%");
+	canvas_attendance.css("margin-right", "5%");
+	var attnames = [[1, "{L_ATTENDANCE_LIFETIME}"], [2,"{RAIDS_X1_DAYS}"], [3,"{RAIDS_X2_DAYS}"], [4,"{RAIDS_X3_DAYS}"]];
+
+	var coreraider = 60;
+	var raidsupport = 40;
+	var social = 20;
+
+	var coreraiderlbl = "Core Raider";
+	var raidsupportlbl = "Can Sign up but does not get priority";
+	var sociallbl = "Can not sign up anymore";
+
+    var markings = [
+        { color: '#EEEEEE', yaxis: { from: coreraider } },
+        { color: '#CCCCCC', yaxis: { from: social , to: coreraider } },
+        { color: '#AAAAAA', yaxis: { to: social } },
+    ];
+
+	var attoptions = {
+		xaxis: {
+			ticks: attnames, autoscaleMargin: 0.30,
+		} ,
+		yaxis: { min: 0 , max: 100},
+		legend: {
+			position: 'sw' ,
+			 backgroundOpacity: 0
+		},
+		grid: { markings: markings
+			},
+		lines: { show: true, fill: false },
+		points: { show: true } ,
+		grid: {
+    		hoverable: true
+		},
+
+	};
+	<!-- BEGIN attendance_row -->
+	var member{attendance_row.ID} = [[1,{attendance_row.ATTLIFE}],[2,{attendance_row.ATT90}],[3,{attendance_row.ATT60}],[4,{attendance_row.ATT30}]];<!-- END attendance_row -->
+
+
+	var datasets = {
+	<!-- BEGIN attendance_row -->
+	"member{attendance_row.ID}" :	{data: [[1,{attendance_row.ATTLIFE}],[2,{attendance_row.ATT90}],[3,{attendance_row.ATT60}],[4,{attendance_row.ATT30}]],
+		label: "{attendance_row.NAME}",
+		color: "{attendance_row.COLORCODE}"
+		}<!-- IF ! attendance_row.S_LAST_ROW -->,
+	<!-- ENDIF -->
+	 <!-- END attendance_row -->
+		};
+
+	var choiceContainer = jQuery("#choiceContainer");
+	choiceContainer.find("input").click(plotAccordingToChoices);
+	plotAccordingToChoices();
+
+	function plotAccordingToChoices() {
+	        var data = [];
+
+	        choiceContainer.find("input:checked").each(function () {
+	            var key = jQuery(this).attr("name");
+	            if (key && datasets[key])
+	                data.push(datasets[key]);
+	        });
+
+	        if (data.length > 0)
+			{
+	        	var plot = jQuery.plot(canvas_attendance, data, attoptions);
+
+	        	var o;
+
+			    o = plot.pointOffset({ x: 2, y: social - 5});
+			    canvas_attendance.append('<div style="position:absolute;left:' + (o.left + 4) + 'px;top:' + o.top + 'px;color:#666;font-size:smaller">' + sociallbl + '</div>');
+
+			    o = plot.pointOffset({ x: 2, y: raidsupport - 5});
+			    canvas_attendance.append('<div style="position:absolute;left:' + (o.left + 4) + 'px;top:' + o.top + 'px;color:#666;font-size:smaller">' + raidsupportlbl + '</div>');
+
+			    o = plot.pointOffset({ x: 2, y: coreraider + 10});
+			    canvas_attendance.append('<div style="position:absolute;left:' + (o.left + 4) + 'px;top:' + o.top + 'px;color:#666;font-size:smaller">' + coreraiderlbl + ' </div>');
+			}
+	 }
+
+	// add labels
+
+
+});
+//]]>
+</script>
+
+<span class="corners-bottom"><span></span></span>
+</div>
+</div>
