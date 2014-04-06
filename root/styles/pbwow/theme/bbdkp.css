@@ -38,10 +38,60 @@ a.dkpmenu,a.dkpmenu:link,a.dkpmenu:visited,a.dkpmenu:active {
 
 .portalmenu li {
 	text-decoration: none;
-	padding-bottom: 1px;
-	padding-top: 0px;
 }
 
+.portalblock h3
+{
+	text-align : left;
+	height : 30px;
+	line-height : 30px;
+	padding:0;
+	margin :0;
+	padding-left: 18px;
+	overflow : hidden;
+	font-weight:normal;
+	border:none;
+	font-size : 14px;
+	text-decoration: none;
+    font-family: Arial,Helvetica,Verdana,sans-serif;
+    font-variant:small-caps;
+    text-transform: none;
+}
+
+ul.portalmenu {
+	background-color: transparent;
+    background-image: none;
+    background-origin: padding-box;
+    background-position: 0 0;
+    background-repeat: repeat-x;
+    background-size: auto auto;
+    list-style-image: none;
+    list-style-position: outside;
+    list-style-type: none;
+    margin-bottom: 1px;
+    margin-left: 1px;
+    margin-right: 1px;
+    margin-top: 1px;
+    padding-bottom: 1px !important;
+    padding-left: 2px !important;
+    padding-right: 2px !important;
+    padding-top: 2px !important;
+    text-align: center;
+}
+
+ul.portalmenu li {
+    line-height: 14px;
+    list-style-type: none;
+    padding-left: 10px;
+    padding-bottom: 0px !important;
+    padding-top: 0px;
+    text-align: left;
+}
+
+ul.portalmenu li.portalblock {
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
 .portalmenu a {
 	background-image: url("{T_THEME_PATH}/images/dkp/menu.png");
 	background-position: 2% center;
@@ -77,120 +127,10 @@ a.dkpmenu,a.dkpmenu:link,a.dkpmenu:visited,a.dkpmenu:active {
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 0;
-	moz-box-shadow: inset 0 0 15px #666;
-	-webkit-box-shadow: inset 0 0 15px #666;
-	box-shadow: inset 0 0 15px #666;
+	moz-box-shadow: inset 0 0 15px #303030;
+	-webkit-box-shadow: inset 0 0 15px #303030;
+	box-shadow: inset 0 0 15px #303030;
 }
-
-/* Bossprogress block Colors
-----------------------------------*/
-.bpprogress00,.bpprogress00:link,.bpprogress00:visited,.bpprogress00:active
-	{
-	font-family:Arial,Helvetica,sans-serif;
-	font-size:11px;
-	line-height:150%;
-	text-decoration: none;
-	color: #FF0000;
-}
-
-.bpprogress00:link :hover {
-	font-family:Arial,Helvetica,sans-serif;
-	font-size:11px;
-	line-height:150%;
-		text-decoration: underline;
-	color: #FF0000;
-}
-
-.bpprogress25,.bpprogress25:link,.bpprogress25:visited,.bpprogress25:active
-	{
-	font-family:Arial,Helvetica,sans-serif;
-	font-size:11px;
-	line-height:150%;
-	text-decoration: none;
-	color: #FF0000;
-}
-
-.bpprogress25:link :hover {
-	font-family:Arial,Helvetica,sans-serif;
-	font-size:11px;
-	line-height:150%;
-	text-decoration: underline;
-	color: #FF0000;
-}
-
-.bpprogress50,.bpprogress50:link,.bpprogress50:visited,.bpprogress50:active
-	{
-	font-family:Arial,Helvetica,sans-serif;
-	font-size:11px;
-	line-height:150%;
-	text-decoration: none;
-	color: #FFCC00;
-}
-
-.bpprogress50:link :hover {
-	font-family:Arial,Helvetica,sans-serif;
-	font-size:11px;
-	line-height:150%;
-	text-decoration: underline;
-	color: #FFCC00;
-}
-
-.bpprogress75,.bpprogress75:link,.bpprogress75:visited,.bpprogress75:active
-	{
-	font-family:Arial,Helvetica,sans-serif;
-	font-size:11px;
-	line-height:150%;
-	text-decoration: none;
-	color: #88FFDD;
-}
-
-.bpprogress75:link :hover {
-	font-family:Arial,Helvetica,sans-serif;
-	font-size:11px;
-	line-height:150%;
-
-	text-decoration: underline;
-	color: #88FFDD;
-}
-
-.bpprogress99,.bpprogress99:link,.bpprogress99:visited,.bpprogress99:active
-	{
-	font-family:Arial,Helvetica,sans-serif;
-	font-size:11px;
-	line-height:150%;
-
-	text-decoration: none;
-	color: #00EE00;
-}
-
-.bpprogress99:link :hover {
-	font-family:Arial,Helvetica,sans-serif;
-	font-size:11px;
-	line-height:150%;
-
-	text-decoration: underline;
-	color: #00EE00;
-}
-
-.bpprogress100,.bpprogress100:link,.bpprogress100:visited,.bpprogress100:active
-	{
-	text-decoration: none;
-	color: #00EE00;
-}
-
-.bpprogress100:link :hover {
-	text-decoration: underline;
-	color: #00EE00;
-}
-
-/**** portal tooltip css ****/
-
-a.bossprogress,a.bossprogress:link,a.bossprogress:visited,a.bossprogress:active {
-	text-decoration: none;
-	 color: #FFD100; /* tooltip boss link color */
-	white-space: nowrap;
-}
-
 
 /**** portal tooltip css ****/
 /* http://www.webmonkey.com/2010/02/make_css_rounded_corners  */

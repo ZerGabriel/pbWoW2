@@ -1,0 +1,99 @@
+<!-- [+] CONFIRMATIONS -->
+<h4><img src="{T_IMAGESET_PATH}/planner/icon_signed_up.png" alt="{L_CONFIRMED}" />&nbsp;{L_CONFIRMED}</h4>
+<div class="panel bg2">
+    <div class="inner"><span class="corners-top"><span></span></span>
+        <div style="width:95%; margin-left:auto;margin-right:auto;text-align:left" >
+
+            <!-- BEGIN raidroles -->
+            <div id="raid_rolesignedup{raidroles.ROLE_ID}" style="width:160px; float:left; " >
+                <div id="raid_rolesignedup_head{raidroles.ROLE_ID}" class="rolesignupheader" style="background-color:{raidroles.ROLE_COLOR};" >
+                    <!-- IF raidroles.S_ROLE_ICON_EXISTS --><img src="{raidroles.ROLE_ICON}" alt="{raidroles.ROLE_NAME}" />&nbsp;<!-- ELSE --><!-- ENDIF -->
+                    <strong>{raidroles.ROLE_NAME}: {raidroles.ROLE_CONFIRMED}/{raidroles.ROLE_NEEDED}</strong>
+                </div>
+                <br />
+                <!-- BEGIN confirmations -->
+
+                <div id="raid_rolesignedup_body{raidroles.confirmations.SIGNUP_ID}" class="rolesignupbody" style="background-color:{raidroles.ROLE_COLOR};">
+                    <strong>{raidroles.confirmations.POSTER_URL}</strong><br />
+	<span><!-- IF raidroles.confirmations.S_RACE_IMAGE_EXISTS --><img src="{raidroles.confirmations.RACE_IMAGE}" alt="race_{raidroles.confirmations.CHARNAME}" />&nbsp;<!-- ELSE --><!-- ENDIF -->
+	<!-- IF raidroles.confirmations.S_CLASS_IMAGE_EXISTS --><img src="{raidroles.confirmations.CLASS_IMAGE}" alt="class_{raidroles.confirmations.CHARNAME}" /><!-- ELSE -->&nbsp;<!-- ENDIF -->
+	<strong><span style="color:{raidroles.confirmations.COLORCODE}"><a href="{raidroles.confirmations.U_MEMBERDKP}">{raidroles.confirmations.CHARNAME}</a></span></strong></span> <br />
+                    {L_DKP}: {raidroles.confirmations.DKP_CURRENT}, {L_ATTENDANCE}: {raidroles.confirmations.ATTENDANCEP1}<br />
+                    {raidroles.confirmations.POST_TIME} <br />
+                    <span>{raidroles.confirmations.DETAILS}</span> <br />
+                    <!-- IF raidroles.confirmations.S_EDIT_SIGNUP || raidroles.confirmations.S_DELETE_SIGNUP -->
+                    <br />
+                    <hr />
+                    <div style="text-align:right;"><!-- IF raidroles.confirmations.S_EDIT_SIGNUP -->
+                        <input type="image" id="editaction_{raidroles.confirmations.RAIDPLAN_ID}_{raidroles.confirmations.SIGNUP_ID}" src="{T_IMAGESET_PATH}/planner/icon_edit.png"  alt="{L_EDIT}"  /><!-- ENDIF -->
+                        <!-- IF raidroles.confirmations.S_DELETE_SIGNUP --><a href="{raidroles.confirmations.U_DELETE}"><img src="{T_IMAGESET_PATH}/planner/icon_cancel.png" alt="{L_NOTAVAILABLE}"/></a>
+                        <input type="hidden" name="keycheck" value="{raidroles.confirmations.DELETEKEY}" />
+                        <!-- ENDIF -->
+                    </div>
+                    <!-- ENDIF -->
+                </div>
+                <br />
+                <!-- END confirmations -->
+
+            </div>
+            <!-- END raidroles -->
+        </div>
+        <span class="corners-bottom"><span></span></span>
+    </div>
+</div>
+
+<!-- BEGIN raidroles -->
+<!-- BEGIN confirmations -->
+<!-- IF raidroles.confirmations.S_EDIT_SIGNUP || raidroles.confirmations.S_DELETE_SIGNUP -->
+<div id="prompt_{raidroles.confirmations.RAIDPLAN_ID}_{raidroles.confirmations.SIGNUP_ID}" class="overlaysignup">
+    <br />
+    <form id="editsignup_{raidroles.confirmations.RAIDPLAN_ID}_{raidroles.confirmations.SIGNUP_ID}"
+          method="post" action="{raidroles.confirmations.S_SIGNUP_EDIT_ACTION}">
+        <div>
+		<span><!-- IF raidroles.confirmations.S_RACE_IMAGE_EXISTS --><img src="{raidroles.confirmations.RACE_IMAGE}" alt="" />&nbsp;<!-- ELSE --><!-- ENDIF -->
+			<!-- IF raidroles.confirmations.S_CLASS_IMAGE_EXISTS --><img src="{raidroles.confirmations.CLASS_IMAGE}" alt="{raidroles.confirmations.CLASS}" /><!-- ELSE -->&nbsp;<!-- ENDIF -->
+			<strong><span style="color:{raidroles.confirmations.COLORCODE}">{raidroles.confirmations.CHARNAME}</span></strong>
+		</span><br />
+            <textarea class="commentedit" name="signup_detail_{raidroles.confirmations.RAIDPLAN_ID}_{raidroles.confirmations.SIGNUP_ID}" rows="4" cols="25">{raidroles.confirmations.EDITDETAILS}</textarea>
+            <br/><br />
+            <input type="submit" accesskey="s" name="signmeup{raidroles.confirmations.RAIDPLAN_ID}_{raidroles.confirmations.SIGNUP_ID}" value="{L_SUBMIT}" class="button1" />
+        </div>
+    </form>
+    <br />
+</div>
+<!-- ENDIF -->
+<!-- END confirmations -->
+<!-- END raidroles -->
+<script type="text/javascript">
+jQuery(document).ready(function() 
+{
+<!-- BEGIN raidroles -->
+<!-- BEGIN confirmations -->
+<!-- IF raidroles.confirmations.S_EDIT_SIGNUP || raidroles.confirmations.S_DELETE_SIGNUP -->
+
+	jQuery("#prompt_{raidroles.confirmations.RAIDPLAN_ID}_{raidroles.confirmations.SIGNUP_ID}").overlay({
+		 top: 260,
+ 		closeOnClick: false,
+ 		load: false
+	});
+	
+	jQuery("#editaction_{raidroles.confirmations.RAIDPLAN_ID}_{raidroles.confirmations.SIGNUP_ID}").click(function() {
+		jQuery("#prompt_{raidroles.confirmations.RAIDPLAN_ID}_{raidroles.confirmations.SIGNUP_ID}").overlay().load();
+	  });
+	  	
+	jQuery("#editsignup_{raidroles.confirmations.RAIDPLAN_ID}_{raidroles.confirmations.SIGNUP_ID}").submit(function(e)
+	{
+		var input = $("#signup_detail_{raidroles.confirmations.RAIDPLAN_ID}_{raidroles.confirmations.SIGNUP_ID}", this).val();
+		jQuery.post("{raidroles.confirmations.S_SIGNUP_EDIT_ACTION}".serialize());
+		triggers_{raidroles.confirmations.RAIDPLAN_ID}_{raidroles.confirmations.SIGNUP_ID}.eq(1).overlay().close();
+		return e.preventDefault();
+		
+	});
+	
+<!-- ENDIF -->
+<!-- END confirmations -->
+<!-- END raidroles -->
+});
+</script>
+
+<!-- [-] CONFIRMATIONS -->

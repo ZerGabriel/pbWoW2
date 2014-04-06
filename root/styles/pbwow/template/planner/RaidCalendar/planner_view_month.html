@@ -1,0 +1,218 @@
+<script type="text/javascript"> 
+/* jqt tooltips */
+jQuery.noConflict();
+jQuery(document).ready( function() 
+{
+<!-- BEGIN calendar_days -->
+<!-- BEGIN raidplans -->
+	jQuery("#raid_id{calendar_days.raidplans.RAID_ID}").tooltip(
+			{
+                position:'top center',
+                relative:true,
+                effect: 'slide',
+                onShow: function() {
+                  var $trigger = this.getTrigger();
+                  $trigger.fadeTo("slow", 0.55);
+                },
+                onHide: function() {this.getTrigger().fadeTo(1,1);}
+
+			});
+<!-- END raidplans -->
+<!-- END calendar_days -->
+
+} 
+);
+</script>
+
+
+<h2>{CALENDAR_HEADER}</h2>
+<div class="forumbg">
+  	<div class="inner">
+  	<span class="corners-inner-top"><span></span></span>
+
+  <table class="table1" cellspacing="1" cellpadding="0">
+ <thead>
+     <tr>
+      <th style="width: 14%; height: 24px; text-align: center"><h4>{D0}</h4></th>
+      <th style="width: 14%; height: 24px; text-align: center"><h4>{D1}</h4></th>
+      <th style="width: 14%; height: 24px; text-align: center"><h4>{D2}</h4></th>
+      <th style="width: 14%; height: 24px; text-align: center"><h4>{D3}</h4></th>
+      <th style="width: 14%; height: 24px; text-align: center"><h4>{D4}</h4></th>
+      <th style="width: 14%; height: 24px; text-align: center"><h4>{D5}</h4></th>
+      <th style="width: 14%; height: 24px; text-align: center"><h4>{D6}</h4></th>
+
+    </tr>
+    </thead>
+	<tfoot>
+	<tr>
+		<th class="footer" colspan=0 style="text-align: left; white-space: nowrap; color:white;" colspan="0">
+			<!-- IF ! .raidplans -->{L_NO_RAIDS_SCHEDULED}<!-- ELSE --><!-- ENDIF -->
+		</th>
+	</tr>
+	</tfoot>    
+    <tbody>
+    <!-- BEGIN calendar_days -->
+    <!-- IF calendar_days.START_WEEK --><tr style="height: 100px"><!-- ENDIF -->
+      <!-- IF calendar_days.DUMMY_DAY -->
+      	<td  valign="top" class="bg3 calMon">&nbsp;</td>
+      <!-- ELSE -->
+      	<td valign="top" class="
+	    <!-- IF calendar_days.DAY_CLASS eq 'highlight' -->bg2 calMon<!-- ELSE -->bg1 calMon<!-- ENDIF -->">
+		<table style="width: 100%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+			<td class="<!-- IF calendar_days.HEADER_CLASS eq 'highlight' -->bg4 calMonH<!-- ELSE -->bg3 calMonH<!-- ENDIF -->">
+			<ul class="raidplanner-icons" style="float: left;">
+			<li>
+			<a href="{calendar_days.DAY_VIEW_URL}"><strong>{calendar_days.NUMBER}</strong></a>
+			</li>
+			<!-- IF calendar_days.ADD_LINK  && calendar_days.ADD_RAID_ICON -->
+			<li class="planner-new-icon"><a href="{calendar_days.ADD_LINK}" title="{L_NEW_EVENT}"><span></span></a></li>
+			<!-- ENDIF -->
+
+			</ul>
+			</td>
+			</tr>
+		</table>
+		<br />
+		<!-- IF calendar_days.BIRTHDAYS -->{calendar_days.BIRTHDAYS}<!-- ENDIF -->
+		<!-- BEGIN raidplans -->
+		<!-- IF calendar_days.raidplans.S_FIRST_ROW --><!-- IF calendar_days.BIRTHDAYS --><hr class="hrCal" /><!-- ENDIF --><!-- ELSE --><hr class="hrCal"><!-- ENDIF -->
+		<a id="raid_id{calendar_days.raidplans.RAID_ID}" href="{calendar_days.raidplans.EVENT_URL}">
+			<img src="{calendar_days.raidplans.IMAGE}" alt="{calendar_days.raidplans.ETYPE_DISPLAY_NAME}" /> <br/>
+			<!-- IF S_DISPLAY_NAME -->
+			
+			<!-- IF calendar_days.raidplans.COLOR --><span><!-- ENDIF -->
+			<!-- IF calendar_days.raidplans.DISPLAY_BOLD --><strong><!-- ENDIF -->
+			
+			<!-- IF calendar_days.raidplans.ETYPE_DISPLAY_NAME -->{calendar_days.raidplans.ETYPE_DISPLAY_NAME}: <!-- ENDIF -->{calendar_days.raidplans.EVENT_SUBJECT}
+			<!-- IF calendar_days.raidplans.DISPLAY_BOLD --></strong><!-- ENDIF -->
+				<!-- IF calendar_days.raidplans.SHOW_TIME --><br /><span class="smCalText">
+					<!-- IF calendar_days.raidplans.ALL_DAY -->{L_ALL_DAY}
+					<!-- ELSE -->{L_FROM_TIME}: {calendar_days.raidplans.INVITE_TIME}
+					<br />{L_FROM_TIME}: {calendar_days.raidplans.START_TIME}
+					<br />{L_TO_TIME}: {calendar_days.raidplans.END_TIME}
+					<!-- ENDIF --></span>
+				<!-- ENDIF -->
+			<!-- IF calendar_days.raidplans.COLOR --></span><!-- ENDIF -->
+			
+			<!-- ENDIF -->
+			
+			
+	  		</a>
+		<div class="bbtooltip">
+			<div class="bbinner">
+			<div class="t"></div>
+		    	<div style="text-align: left">
+		    	<br />
+		    	<div style="float: left; width:30%;"><img src="{calendar_days.raidplans.IMAGE}" alt="{calendar_days.raidplans.ETYPE_DISPLAY_NAME}" /> <br/></div>
+		    	<div style="float: left; width:10%;">&nbsp;</div>
+		    	<div style="float: left; width:60%;">
+				<h4>{calendar_days.raidplans.EVENT_SUBJECT}</h4>
+				<!-- IF calendar_days.raidplans.ALL_DAY -->{L_ALL_DAY}
+				<!-- ELSE -->
+				<!-- IF calendar_days.raidplans.S_CANSIGNUP -->
+				{L_INVITE}: {calendar_days.raidplans.INVITE_TIME}  <br />
+				<!-- ENDIF -->
+				{L_FROM_TIME}: {calendar_days.raidplans.START_TIME} <br />
+				{L_TO_TIME}: {calendar_days.raidplans.END_TIME} <br />
+				{calendar_days.raidplans.TZ}
+     			<!-- ENDIF -->
+				<br />
+				</div>
+				<br />
+				<!-- IF calendar_days.raidplans.S_CANSIGNUP -->
+				<strong>{L_SIGNUPS}</strong>
+				<br />
+				{L_CONFIRMED}
+				{calendar_days.raidplans.CURR_CONFIRMED_COUNT}/{calendar_days.raidplans.RAID_TOTAL} ({calendar_days.raidplans.CURR_CONFIRMEDPCT})<br />
+				{L_AVAILABLE} : 
+				{calendar_days.raidplans.CURR_YES_COUNT}/{calendar_days.raidplans.RAID_TOTAL} ({calendar_days.raidplans.CURR_YESPCT})&nbsp;
+				{L_MAYBE} :
+				{calendar_days.raidplans.CURR_MAYBE_COUNT}/{calendar_days.raidplans.RAID_TOTAL} ({calendar_days.raidplans.CURR_MAYBEPCT})<br />
+				{L_NOTAVAILABLE} :
+				{calendar_days.raidplans.CURR_NO_COUNT}/{calendar_days.raidplans.RAID_TOTAL} ({calendar_days.raidplans.CURR_NOPCT})<br />
+				<!-- ELSE -->
+				<br />
+				<br />
+				<br />
+				<br />
+				<!-- ENDIF -->
+				<!-- IF calendar_days.raidplans.S_LOCKED -->
+				<p class="rp_locked">{L_LOCKED}</p>
+				<!-- ENDIF  -->
+				<!-- IF calendar_days.raidplans.S_SIGNED_UP -->
+				<p class="rp_signed_up">{L_SIGNED_UP}</p>
+				<!-- ENDIF  -->
+				<!-- IF calendar_days.raidplans.S_FROZEN -->
+				<p class="rp_frozen">{L_FROZEN}</p>
+				<!-- ENDIF  -->
+				<!-- IF calendar_days.raidplans.S_NOCHAR  && ! calendar_days.raidplans.S_ANON -->
+				<p class="rp_nochars">{L_NOCHAR}</p>
+				<!-- ENDIF  -->
+				<!-- IF calendar_days.raidplans.S_SIGNED_OFF -->
+				<p class="rp_signedoff">{L_SIGNED_OFF}</p>
+				<!-- ENDIF  -->
+				<!-- IF calendar_days.raidplans.S_CONFIRMED -->
+				<p class="rp_confirmed">{L_CONFIRMED}</p>
+				<!-- ENDIF  -->
+				<!-- IF calendar_days.raidplans.S_SIGNUPMAYBE -->
+				<p class="rp_maybe">{L_MAYBE}</p>
+				<!-- ENDIF  -->				
+				<!-- IF calendar_days.raidplans.S_CANSIGNUP && calendar_days.raidplans.S_LEGITUSER  && ! calendar_days.raidplans.S_LOCKED && ! calendar_days.raidplans.S_FROZEN && ! calendar_days.raidplans.S_NOCHAR  && ! calendar_days.raidplans.S_SIGNED_UP && ! calendar_days.raidplans.S_NOCHAR && ! calendar_days.raidplans.S_SIGNED_OFF  && ! calendar_days.raidplans.S_CONFIRMED  && ! calendar_days.raidplans.S_SIGNUPMAYBE -->
+ 				<br />
+				<form method="post" action="{calendar_days.raidplans.S_SIGNUP_MODE_ACTION}" name="signup_form{calendar_days.raidplans.RAID_ID}" id="signup_form{calendar_days.raidplans.RAID_ID}">
+				<fieldset>
+				<dl>
+				<dt>{L_RAIDCHARACTER}</dt>
+				<dd>
+				<select id="signupchar{calendar_days.raidplans.RAID_ID}" name="signupchar{calendar_days.raidplans.RAID_ID}">
+				<!-- BEGIN userchars -->
+				<option value='{calendar_days.raidplans.userchars.MEMBER_ID}'>{calendar_days.raidplans.userchars.MEMBER_NAME}</option><!-- END userchars -->
+				</select>
+				</dd>
+				
+				<dt>{L_CALENDAR_WILL_ATTEND}</dt>
+				<dd>
+				<select name='signup_val{calendar_days.raidplans.RAID_ID}' id='signup_val{calendar_days.raidplans.RAID_ID}'>
+				<option value='2'>{L_AVAILABLE}</option>
+				<option value='1'>{L_MAYBE}</option>
+				<option value='0'>{L_NOTAVAILABLE}</option>
+				</select>
+				</dd>
+				
+				<dt>{L_RAIDROLE}</dt>
+				<dd>
+				<select id="signuprole{calendar_days.raidplans.RAID_ID}" name="signuprole{calendar_days.raidplans.RAID_ID}">
+				<!-- BEGIN raidroles -->
+					<option value='{calendar_days.raidplans.raidroles.ROLE_ID}'>{calendar_days.raidplans.raidroles.ROLE_NAME}</option><!-- END raidroles -->
+				</select>
+				</dd>
+				
+				<dt>&nbsp;<br />
+				{L_COMMENTS}</dt>
+				<dd><textarea name="signup_detail{calendar_days.raidplans.RAID_ID}" id="signup_detail{calendar_days.raidplans.RAID_ID}" rows="4" cols="25">{calendar_days.raidplans.CURR_SIGNUP_DETAIL}</textarea></dd>
+				
+				<dt>&nbsp;</dt>
+				<dd><input type="hidden" name="hidden_signup_id{calendar_days.raidplans.RAID_ID}" id="hidden_signup_id{calendar_days.raidplans.RAID_ID}" value="{calendar_days.raidplans.CURR_SIGNUP_ID}" />
+					<input type="submit" name="signmeup{calendar_days.raidplans.RAID_ID}" value="{L_SUBMIT}" class="button1" /></dd>
+				</dl>
+				</fieldset>
+				</form>
+				<!-- ENDIF -->
+				</div>
+			</div>
+			<div class="b"><div></div></div> 
+		</div>
+	 	<!-- END raidplans -->
+		</td>
+		<!-- ENDIF -->
+    <!-- IF calendar_days.END_WEEK --></tr><!-- ENDIF -->
+
+    <!-- END calendar_days -->
+    </tbody>
+  </table>
+  
+  <span class="corners-inner-bottom"><span></span></span>
+  </div>
+  </div>
+  

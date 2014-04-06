@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="modx.prosilver.en.xsl"?>
+<!--NOTICE: Please open this file in your web browser. If presented with a security warning, you may safely tell it to allow the blocked content.-->
+<!--For security purposes, please check: http://www.phpbb.com/mods/ for the latest version of this MOD.\nAlthough MODs are checked before being allowed in the MODs Database there is no guarantee that there are no security problems within the MOD.\nNo support will be given for MODs not found within the MODs Database which can be found at http://www.phpbb.com/mods/-->
+<mod xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://www.phpbb.com/mods/xml/modx-1.2.6.xsd">
+	<header>
+		<meta name="generator" content="MODX file generated with PP MODX Creator by tumba25 (online version)"/>
+		<license><![CDATA[http://opensource.org/licenses/gpl-license.php GNU General Public License v2]]></license>
+		<title lang="en"><![CDATA[bbDKP - pbwow2 Integration]]></title>
+		<title lang="de"><![CDATA[bbDKP - pbwow2 Integration]]></title>
+		<title lang="fr"><![CDATA[bbDKP - pbwow2 Integration]]></title>
+		<description lang="en"><![CDATA[adds bbDKP, raidplanner, apply, bbtips, bossprogress to pbWoW style]]></description>
+		<description lang="fr"><![CDATA[ajoute bbDKP, raidplanner, apply, bbtips, bossprogress dans style pbWoW]]></description>
+		<description lang="de"><![CDATA[installiert bbDKP, raidplanner, apply, bbtips, bossprogress im pbWoW style]]></description>
+		<author-notes lang="en"><![CDATA[requires bbDKP 1.3.0]]></author-notes>
+		<author-notes lang="fr"><![CDATA[nécessite bbDKP 1.3.0]]></author-notes>
+		<author-notes lang="de"><![CDATA[benötigt bbDKP 1.3.0]]></author-notes>
+		<author-group>
+			<author>
+				<realname><![CDATA[Andreas]]></realname>
+				<username><![CDATA[Sajaki]]></username>
+				<homepage><![CDATA[http://www.bbdkp.com]]></homepage>
+				<email><![CDATA[sajaki9@gmail.com]]></email>
+			</author>
+		</author-group>
+		<mod-version>1.3.0</mod-version>
+		<installation>
+			<level>easy</level>
+			<time>60</time>
+			<target-version>3.0.12</target-version>
+		</installation>
+		<link-group>
+			<link type="parent" lang="en" href="../install.xml">Install instructions</link>
+			<link type="parent" lang="fr" href="../install.xml">Manuel d'installation</link>
+			<link type="parent" lang="de" href="../install.xml">Installations-Anleitung</link>
+    	</link-group>
+	</header>
+	<action-group>
+		<copy>
+			<file from="root/styles/pbwow2/*.*" to="styles/pbwow2/*.*"/>
+		</copy>
+		<open src="styles/pbwow2/template/overall_header.html">
+			<edit>
+				<find><![CDATA[</head>]]></find>
+				<action type="before-add"><![CDATA[<!-- INCLUDE dkp/dkpheader.html -->]]></action>
+			</edit>
+			<edit>
+				<find><![CDATA[		<div id="breadcrumb">
+			<ul class="linklist navlinks">]]></find>
+				<action type="after-add"><![CDATA[
+				<!-- IF U_PORTAL --><li class="nav-link icon-home"><a href="{U_PORTAL}">{L_PORTAL}</a></li><!-- ENDIF -->
+				<!-- IF U_DKP -->
+				<li class="nav-link icon-home">
+					<a href="{U_DKP}">{L_DKPPAGE}</a><!-- BEGIN dkpnavlinks --><li class="nav-link"><a href="{dkpnavlinks.U_DKPPAGE}">{dkpnavlinks.DKPPAGE}</a></li><!-- END dkpnavlinks -->
+				</li>
+				<!-- ENDIF -->
+				]]></action>
+			</edit>
+			<edit>
+				<find><![CDATA[					<!-- IF S_DISPLAY_SEARCH --><li><a href="{U_SEARCH}">{L_SEARCH_ADV}</a></li><!-- ENDIF -->
+				]]></find>
+				<action type="after-add"><![CDATA[
+					<!-- BEGIN dkpnavlinks --><li><a href="{dkpnavlinks.U_DKPPAGE}">{dkpnavlinks.DKPPAGE}</a></li><!-- END dkpnavlinks -->
+				]]></action>
+			</edit>
+
+		</open>
+
+		<open src="styles/pbwow2/template/overall_footer.html">
+			<edit>
+				<find><![CDATA[		<div class="copyright">{CREDIT_LINE}]]></find>
+				<action type="after-add"><![CDATA[
+			<script type="text/javascript">
+			function pop_aboutbbdkp()
+			{
+			    search = window.open('aboutbbdkp.php','search','resizable=no,toolbar=no,status=no,height=400,width=680,screenX=50,screenY=25,left=100,top=70');
+			    search.focus();
+			}
+			</script>
+			<br/><a class="bbdkpcredits" onclick="javascript:pop_aboutbbdkp();" style="cursor:pointer;" onmouseover="style.textDecoration='underline';" onmouseout="style.textDecoration='none';">{L_BBDKP}</a>
+				]]></action>
+		</edit>
+		</open>
+		<open src="styles/pbwow2/theme/stylesheet.css">
+			<edit>
+				<comment lang="en"><![CDATA[bbdkp css]]></comment>
+				<comment lang="fr"><![CDATA[bbdkp css]]></comment>
+				<comment lang="de"><![CDATA[bbdkp css]]></comment>
+				<find><![CDATA[@import url("colours.css");]]></find>
+				<action type="after-add"><![CDATA[@import url("bbdkp.css");
+@import url("raidplanner.css");
+@import url("apply.css");
+@import url("bbtips.css");
+@import url("bossprogress.css");
+]]></action>
+			</edit>
+		</open>
+</action-group>
+</mod>

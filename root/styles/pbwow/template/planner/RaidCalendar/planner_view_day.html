@@ -1,0 +1,194 @@
+<script type="text/javascript"> 
+/* jqt tooltips */
+<!-- IF EVENT_COUNT -->
+jQuery.noConflict();
+jQuery(document).ready( function() 
+{
+<!-- BEGIN time_slots -->
+<!-- BEGIN raidplans -->
+	jQuery("#raid_id{time_slots.raidplans.RAID_ID}").tooltip(
+			/* vertical up, horizontal right */
+			{ offset: [400, 0],  
+			  effect: 'slide',  
+			  onShow: function() {this.getTrigger().fadeTo("slow", 0.25);},
+			  onHide: function() {this.getTrigger().fadeTo(300,1);}
+			}).dynamic({
+					 bottom: 
+						 { direction: 'down', bounce: true } 
+				 		});
+<!-- END raidplans -->
+<!-- END time_slots -->
+}
+);
+<!-- ENDIF -->
+</script>
+<h2 class="daynum">{CALENDAR_HEADER}</h2>
+<div class="forumbg">
+<div class="inner">
+<span class="corners-inner-top"><span></span></span>
+
+<div style="position: relative;">
+
+<table class="table1" style="width: 100%; margin-left: auto; margin-right: auto;" cellspacing="0" cellpadding="0" border="0">
+	<thead>
+	    <th style="text-align: center; width:20%;"><h5>{L_HOUR}</h5></th>
+	    <th style="text-align: left; width:80%;"><h5>{L_EVENT}</h5></th>
+	</thead>
+	<tfoot>
+	<tr>
+		<th class="footer" colspan=0 style="text-align: left; white-space: nowrap; color:white;" colspan="0">
+			<!-- IF ! .raidplans -->{L_NO_RAIDS_SCHEDULED}<!-- ELSE --><!-- ENDIF -->
+		</th>
+	</tr>
+	</tfoot> 	
+	<tbody>
+     <!-- BEGIN all_day -->
+	    <tr>
+	      <td style="width: 100%; text-align: center" colspan="4" class="bg3">{all_day.BIRTHDAYS}</td>
+	    </tr>
+     <!-- END all_day -->
+	 <!-- BEGIN time_slots -->
+		<tr <!-- IF time_slots.S_ROW_COUNT is even -->class="bg1"<!-- ELSE -->class="bg2"<!-- ENDIF -->>
+			<td style="text-align: center" class="bg3">{time_slots.TIME} {time_slots.AM_PM}</td>
+			<td 
+			<!-- IF time_slots.S_MARKED -->class="bgraid"<!-- ENDIF -->> 
+			<!-- IF EVENT_COUNT -->
+				<!-- BEGIN raidplans -->
+				
+				<a id="raid_id{time_slots.raidplans.RAID_ID}" href="{time_slots.raidplans.EVENT_URL}">
+          			<img src="{time_slots.raidplans.IMAGE}" alt="{time_slots.raidplans.ETYPE_DISPLAY_NAME}" /> <br/>
+          			<!-- IF time_slots.raidplans.DISPLAY_BOLD --><strong><!-- ENDIF -->
+          			<!-- IF time_slots.raidplans.ETYPE_DISPLAY_NAME -->{time_slots.raidplans.ETYPE_DISPLAY_NAME}: <!-- ENDIF -->{time_slots.raidplans.EVENT_SUBJECT}
+          			<!-- IF time_slots.raidplans.DISPLAY_BOLD --></strong><!-- ENDIF --><br />
+        		</a>
+          		<div class="bbtooltip">
+			 	    <div class="bbinner">
+					    <div class="t"></div>
+					    	<div style="text-align: left">
+					    	<br />
+					    	<div style="float: left; width:30%;"><img src="{time_slots.raidplans.IMAGE}" alt="{time_slots.raidplans.ETYPE_DISPLAY_NAME}" /> <br/></div>
+							<div style="float: left; width:10%;">&nbsp;</div>
+							<div style="float: left; width:60%;"><h4>{time_slots.raidplans.EVENT_SUBJECT}</h4>
+							<!-- IF time_slots.raidplans.ALL_DAY -->{L_ALL_DAY}<!-- ELSE -->
+							<!-- IF time_slots.raidplans.S_CANSIGNUP -->{L_INVITE}: {time_slots.raidplans.INVITE_TIME} <br /><!-- ENDIF -->
+							{L_FROM_TIME}: {time_slots.raidplans.START_TIME}<br />
+							{L_TO_TIME}: {time_slots.raidplans.END_TIME}
+          					<!-- ENDIF -->
+          					<br />
+          					</div>
+          					<div style="clear: both"></div>
+							<br />
+							<!-- IF time_slots.raidplans.S_CANSIGNUP -->
+							<strong>{L_SIGNUPS}</strong>
+							<br />
+							{L_CONFIRMED}
+							{time_slots.raidplans.CURR_CONFIRMED_COUNT}/{time_slots.raidplans.RAID_TOTAL} ({time_slots.raidplans.CURR_CONFIRMEDPCT})<br />
+							{L_AVAILABLE} : 
+							{time_slots.raidplans.CURR_YES_COUNT}/{time_slots.raidplans.RAID_TOTAL} ({time_slots.raidplans.CURR_YESPCT})&nbsp;
+							{L_MAYBE} :
+							{time_slots.raidplans.CURR_MAYBE_COUNT}/{time_slots.raidplans.RAID_TOTAL} ({time_slots.raidplans.CURR_MAYBEPCT})<br />
+							{L_NOTAVAILABLE} :
+							{time_slots.raidplans.CURR_NO_COUNT}/{time_slots.raidplans.RAID_TOTAL} ({time_slots.raidplans.CURR_NOPCT})<br />
+							<br />
+							<!-- ENDIF -->
+							<!-- IF time_slots.raidplans.S_LOCKED -->
+       						<p class="rp_locked">{L_LOCKED}</p>
+       						<!-- ENDIF  -->
+							<!-- IF time_slots.raidplans.S_SIGNED_UP -->
+       						<p class="rp_signed_up">{L_SIGNED_UP}</p>
+       						<!-- ENDIF  -->
+       				 		<!-- IF time_slots.raidplans.S_FROZEN -->
+       						<p class="rp_frozen">{L_FROZEN}</p>
+       						<!-- ENDIF  -->
+       						<!-- IF time_slots.raidplans.S_NOCHAR && ! time_slots.raidplans.S_ANON -->
+       						<p class="rp_nochars">{L_NOCHAR}</p>
+       						<!-- ENDIF  -->
+        					<!-- IF time_slots.raidplans.S_SIGNED_OFF -->
+       						<p class="rp_signedoff">{L_SIGNED_OFF}</p>
+       						<!-- ENDIF  -->
+							<!-- IF time_slots.raidplans.S_CONFIRMED -->
+							<p class="rp_confirmed">{L_CONFIRMED}</p>
+							<!-- ENDIF  -->       	
+							<!-- IF time_slots.raidplans.S_SIGNUPMAYBE -->
+							<p class="rp_maybe">{L_MAYBE}</p>
+							<!-- ENDIF  -->
+							
+							<!-- IF time_slots.raidplans.S_CANSIGNUP && time_slots.raidplans.S_LEGITUSER && ! time_slots.raidplans.S_LOCKED && ! time_slots.raidplans.S_FROZEN && ! time_slots.raidplans.S_NOCHAR && ! time_slots.raidplans.S_SIGNED_UP && ! time_slots.raidplans.S_NOCHAR && ! time_slots.raidplans.S_SIGNED_OFF && ! time_slots.raidplans.S_CONFIRMED && ! time_slots.raidplans.S_SIGNUPMAYBE -->
+          					<hr />
+          					<form method="post" action="{time_slots.raidplans.S_SIGNUP_MODE_ACTION}" name="signup_form{time_slots.raidplans.RAID_ID}" id="signup_form{time_slots.raidplans.RAID_ID}">
+          						<fieldset>
+								<dl>
+									<dt>{L_RAIDCHARACTER}</dt>
+									<dd>
+									<select id="signupchar{time_slots.raidplans.RAID_ID}" name="signupchar{time_slots.raidplans.RAID_ID}">
+									<!-- BEGIN userchars -->
+										<option value='{time_slots.raidplans.userchars.MEMBER_ID}' {time_slots.raidplans.userchars.MEMBER_SELECTED}>{time_slots.raidplans.userchars.MEMBER_NAME}</option>
+									<!-- END userchars -->
+									</select>
+									</dd>
+									
+									<dt>{L_CALENDAR_WILL_ATTEND}</dt>
+									<dd>
+									<select name='signup_val{time_slots.raidplans.RAID_ID}' id='signup_val{time_slots.raidplans.RAID_ID}'>
+									<option value='2'>{L_AVAILABLE}</option>
+									<option value='1'>{L_MAYBE}</option>
+									<option value='0'>{L_NOTAVAILABLE}</option>
+									</select>
+									</dd>
+									
+									<dt>{L_RAIDROLE}</dt>
+									<dd>
+									<select id="signuprole{time_slots.raidplans.RAID_ID}" name="signuprole{time_slots.raidplans.RAID_ID}">
+									<!-- BEGIN raidroles -->
+										<option value='{time_slots.raidplans.raidroles.ROLE_ID}' {time_slots.raidplans.raidroles.ROLE_SELECTED}>{time_slots.raidplans.raidroles.ROLE_NAME}</option>
+									<!-- END raidroles -->
+									</select>
+									</dd>
+									
+								
+									<dt>&nbsp;<br />
+									{L_COMMENTS}</dt>
+									<dd><textarea name="signup_detail{time_slots.raidplans.RAID_ID}" id="signup_detail{time_slots.raidplans.RAID_ID}" rows="4" cols="25">{time_slots.raidplans.CURR_SIGNUP_DETAIL}</textarea></dd>
+									<dt>&nbsp;</dt>
+									<dd><input type="hidden" name="hidden_signup_id{time_slots.raidplans.RAID_ID}" id="hidden_signup_id{time_slots.raidplans.RAID_ID}" value="{time_slots.raidplans.CURR_SIGNUP_ID}" />
+										<input type="submit" name="signmeup{time_slots.raidplans.RAID_ID}" value="{L_SUBMIT}" class="button1" /></dd>
+								</dl>
+								</fieldset>
+								</form>
+          					<!-- ENDIF  -->
+          					 	
+  							</div>
+  							
+				    </div>
+		     		<div class="b">
+		     			<div></div>
+		     		</div> 
+		     	</div>
+ 				<span class="smCalText">
+       				<!-- IF time_slots.raidplans.SHOW_TIME -->
+         				<!-- IF time_slots.raidplans.ALL_DAY -->{L_ALL_DAY}
+         				<!-- ELSE -->
+          				<!-- IF time_slots.raidplans.S_CANSIGNUP -->{L_INVITE}: {time_slots.raidplans.INVITE_TIME} <br /><!-- ENDIF -->
+          					{L_FROM_TIME}: {time_slots.raidplans.START_TIME} <br />
+          					{L_TO_TIME}: {time_slots.raidplans.END_TIME} <br />
+          					{time_slots.raidplans.TZ} <br />
+         				<!-- ENDIF -->
+	          		<!-- ENDIF -->
+	          		{time_slots.raidplans.DATA}
+          		</span>
+          		
+          		
+				
+				<!-- END raidplans -->				
+			<!-- ENDIF -->
+			</td>
+		</tr><!-- END time_slots -->
+   
+	</tbody>
+	</table>
+</div>
+  	
+<span class="corners-inner-bottom"><span></span></span>
+</div>
+</div>
+

@@ -1,0 +1,66 @@
+<div class="forumbg forumbg-table">
+<div class="inner"><span class="corners-top"><span></span></span>
+<table class="table1" cellspacing="1" cellpadding="0">
+ <thead>
+    <tr>
+      <th style="width: 14%; height: 24px; text-align: center"><h4>{D0}</h4></th>
+      <th style="width: 14%; height: 24px; text-align: center"><h4>{D1}</h4></th>
+      <th style="width: 14%; height: 24px; text-align: center"><h4>{D2}</h4></th>
+      <th style="width: 14%; height: 24px; text-align: center"><h4>{D3}</h4></th>
+      <th style="width: 14%; height: 24px; text-align: center"><h4>{D4}</h4></th>
+      <th style="width: 14%; height: 24px; text-align: center"><h4>{D5}</h4></th>
+      <th style="width: 14%; height: 24px; text-align: center"><h4>{D6}</h4></th>
+    </tr>
+ </thead>
+ <tfoot>
+	<tr>
+		<th class="footer" colspan=0 style="text-align: left; white-space: nowrap; color:white;" colspan="0">
+			<!-- IF ! .raidplans -->{L_NO_RAIDS_SCHEDULED}<!-- ELSE --><!-- ENDIF -->
+		</th>
+	</tr>
+  </tfoot>  
+    <tbody>  
+    <!-- BEGIN calendar_days -->
+    <!-- IF calendar_days.START_WEEK --><tr style="height: 100px"><!-- ENDIF -->
+      <!-- IF calendar_days.DUMMY_DAY -->
+      	   <td  valign="top" class="bg3_calMon">&nbsp;</td><!-- ELSE -->
+      	   <td valign="top" class="<!-- IF calendar_days.DAY_CLASS eq 'highlight' -->bg2_calMon<!-- ELSE -->bg1_calMon<!-- ENDIF -->"><table style="width: 100%" cellpadding="0" cellspacing="0" border="0">
+          <tr><td class="<!-- IF calendar_days.HEADER_CLASS eq 'highlight' -->bg4_calMonH<!-- ELSE -->bg3_calMonH<!-- ENDIF -->"><!-- IF calendar_days.ADD_LINK --><a href="{calendar_days.ADD_LINK}">{calendar_days.NUMBER}</a><!-- ELSE -->{calendar_days.NUMBER}<!-- ENDIF --><br />
+          
+		  <ul class="raidplanner-icons" style="float: left;">
+		  <!-- IF calendar_days.ADD_LINK -->
+		  <li class="planner-new-icon"><a href="{calendar_days.ADD_LINK}" title="{L_NEW_EVENT}"><span></span></a></li>
+		  <!-- ENDIF -->
+		  <li class="planner-day-icon"><a href="{calendar_days.DAY_VIEW_URL}" title="{L_DAY}"><span></span></a></li>
+		  <li class="planner-week-icon"><a href="{calendar_days.WEEK_VIEW_URL}"  title="{L_WEEK}"><span></span></a></li>
+		  <li class="planner-month-icon"><a href="{calendar_days.MONTH_VIEW_URL}" title="{L_MONTH}"><span></span></a></li>
+		  </ul>          
+          
+          </td></tr></table><br />
+          <!-- IF calendar_days.BIRTHDAYS -->{calendar_days.BIRTHDAYS}<!-- ENDIF -->
+ 			<!-- BEGIN raidplans -->
+          		<!-- IF calendar_days.raidplans.S_FIRST_ROW --><!-- IF calendar_days.BIRTHDAYS --><hr class="hrCal"><!-- ENDIF --><!-- ELSE --><hr class="hrCal"><!-- ENDIF -->
+          		<a href="{calendar_days.raidplans.EVENT_URL}" title="<!-- IF calendar_days.raidplans.ETYPE_DISPLAY_NAME -->{calendar_days.raidplans.ETYPE_DISPLAY_NAME}: <!-- ENDIF -->{calendar_days.raidplans.FULL_SUBJECT}">
+          			<!-- IF calendar_days.raidplans.COLOR --><span style="color:#{calendar_days.raidplans.COLOR}"><!-- ENDIF -->
+          			<!-- IF calendar_days.raidplans.DISPLAY_BOLD --><strong><!-- ENDIF -->
+          			<!-- IF calendar_days.raidplans.S_EVENT_IMAGE_EXISTS --><img src="{calendar_days.raidplans.IMAGE}" alt="{calendar_days.raidplans.ETYPE_DISPLAY_NAME}" /><br/> <!-- ENDIF -->
+          			<!-- IF calendar_days.raidplans.ETYPE_DISPLAY_NAME -->{calendar_days.raidplans.ETYPE_DISPLAY_NAME}: <!-- ENDIF -->{calendar_days.raidplans.EVENT_SUBJECT}
+          			<!-- IF calendar_days.raidplans.DISPLAY_BOLD --></strong><!-- ENDIF -->
+          				<!-- IF calendar_days.raidplans.SHOW_TIME --><br /><span class="smCalText">
+          					<!-- IF calendar_days.raidplans.ALL_DAY -->{L_ALL_DAY}
+          					<!-- ELSE -->{L_FROM_TIME}: {calendar_days.raidplans.START_TIME}
+          					<br />{L_TO_TIME}: {calendar_days.raidplans.END_TIME}
+          					<!-- ENDIF --></span>
+          				<!-- ENDIF -->
+          			<!-- IF calendar_days.raidplans.COLOR --></span><!-- ENDIF -->
+          		</a>
+          	<!-- END raidplans -->
+      </td>
+      <!-- ENDIF -->
+    <!-- IF calendar_days.END_WEEK --></tr><!-- ENDIF -->
+
+    <!-- END calendar_days -->
+</tbody>
+  </table>
+  <span class="corners-bottom"><span></span></span></div>
+  </div>

@@ -1,0 +1,134 @@
+<!-- [+] raidplan view -->
+<div class="panel bg3">
+    <div class="inner">
+        <span class="corners-top"><span></span></span>
+        <div style="width:10%; float: left;">
+            <img src="{EVENT_IMAGE}" alt="{ETYPE_DISPLAY_NAME}" width="48" height="48" />
+        </div>
+        <div class="blockhead" style="width:50%; float: left;">
+            <h1 style="color:<!-- IF EVENT_COLOR -->{EVENT_COLOR}<!-- ELSE -->#dfc065<!-- ENDIF -->"><!-- IF ETYPE_DISPLAY_NAME -->{ETYPE_DISPLAY_NAME}<!-- ENDIF --></h1>
+        </div>
+
+        <div style="width:40%; float: right;">
+            <ul class="raidplanner-icons" style="float: right;">
+                <!-- IF U_ADDRAID -->
+                <li class="planner-new-button"><a href="{U_ADDRAID}" title="{L_NEW_RAID}"><span></span></a></li>
+                <!-- ENDIF -->
+                <!-- IF U_EDITRAID -->
+                <li class="planner-edit-button"><a href="{U_EDITRAID}" title="{L_EDIT_RAID}"><span></span></a></li>
+                <!-- ENDIF -->
+                <!-- IF U_PUSHRAID -->
+                <li class="planner-push-button"><a href="{U_PUSHRAID}" title="{L_PUSH_RAID}"><span></span></a></li>
+                <!-- ENDIF -->
+                <!-- IF U_DELETERAID -->
+                <li class="planner-delete-button"><a href="{U_DELETERAID}" title="{L_DELETE_RAID}"><span></span></a></li>
+                <!-- ENDIF -->
+            </ul>
+
+        </div>
+        <span class="corners-bottom"><span></span></span>
+    </div>
+</div>
+
+<div class="panel bg2">
+    <div class="inner">
+        <span class="corners-top"><span></span></span>
+
+        <!-- raid message -->
+        <div class="raidplanbody">
+            <div class="content">
+                <p>{SUBJECT}</p>
+
+                {MESSAGE}
+            </div>
+        </div>
+        <hr />
+        <div style="clear: both"></div>
+
+        <div style="width:45%; float: left;">
+            <fieldset class="rpfields">
+                <dl>
+                    <dt><strong>{L_EVENT_CREATED_BY}</strong></dt>
+                    <dd>{POSTER}</dd>
+                </dl>
+                <!-- IF S_CANSIGNUP -->
+                <dl>
+                    <dt><strong>{L_INVITE_TIME}</strong></dt>
+                    <dd>{INVITE_TIME}</dd>
+                </dl>
+                <!-- ENDIF -->
+                <dl>
+                    <dt><strong>{L_START_TIME}</strong></dt>
+                    <dd>{START_TIME}</dd>
+                </dl>
+                <dl>
+                    <dt><strong>{L_END_TIME}</strong></dt>
+                    <dd>{END_TIME}</dd>
+                </dl>
+                <em>{L_TIME_ZONE} {TZ}</em>
+                <!-- IF IS_RECURRING -->
+                <dl>
+                    <dt><strong>{L_OCCURS_EVERY}:</strong></dt>
+                    <dd>{RECURRING_TXT}</dd>
+                </dl>
+                <!-- ENDIF -->
+            </fieldset>
+        </div>
+        <!-- IF S_CANSIGNUP -->
+        <div style="width:48%; float: left;">
+
+            <fieldset class="rpfields">
+
+                <dl>
+                    <dt><strong>{L_INVITE_INFO}</strong></dt>
+                    <dd><strong>{INVITED}</strong></dd>
+                </dl>
+
+                <dl>
+                    <dt><strong>{L_RAIDSIZE}</strong></dt>
+                    <dd><strong>{TEAM_NAME}</strong></dd>
+                </dl>
+
+                <dl>
+                    <dt><strong>{L_CONFIRMED}</strong></dt>
+                    <dd>{CURR_CONFIRMED_COUNT}/{RAID_TOTAL} ({CURR_CONFIRMEDPCT})</dd>
+                </dl>
+
+                <dl>
+                    <dt><strong>{L_AVAILABLE}</strong></dt>
+                    <dd>{CURR_YES_COUNT}/{RAID_TOTAL} ({CURR_YESPCT})</dd>
+                </dl>
+                <dl>
+                    <dt><strong>{L_MAYBE}</strong></dt>
+                    <dd>{CURR_MAYBE_COUNT}/{RAID_TOTAL} ({CURR_MAYBEPCT})</dd>
+                </dl>
+                <dl>
+                    <dt><strong>{L_NOTAVAILABLE}</strong></dt>
+                    <dd>{CURR_NO_COUNT}/{RAID_TOTAL} ({CURR_NOPCT})</dd>
+                </dl>
+
+                <!-- IF IS_RECURRING -->
+                <dl>
+                    <dt><strong>{L_OCCURS_EVERY}:</strong></dt>
+                    <dd>{RECURRING_TXT}</dd>
+                </dl>
+                <!-- ENDIF -->
+            </fieldset>
+        </div>
+        <!-- ENDIF -->
+
+        <span class="corners-bottom"><span></span></span></div>
+</div>
+<!-- IF S_CANSIGNUP -->
+<br/>
+<!-- INCLUDE planner/raidplan/planner_view_raidplan_confirmed.html -->
+<br/>
+<!-- INCLUDE planner/raidplan/planner_view_raidplan_available.html -->
+<br/>
+<!-- INCLUDE planner/raidplan/planner_view_raidplan_unavailable.html -->
+<br/>
+<!-- INCLUDE planner/raidplan/planner_view_raidplan_signup.html -->
+<br/>
+<hr />
+<!-- ENDIF -->
+<!-- [-] raidplan view -->

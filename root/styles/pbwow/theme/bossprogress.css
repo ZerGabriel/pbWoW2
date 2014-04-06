@@ -1,0 +1,157 @@
+/*  bbdkp css bossprogress for pbWoW
+ @package bbDKP
+ @copyright 2014 bbdkp https://github.com/bbDKP
+ @license http://opensource.org/licenses/gpl-license.php GNU Public License
+*/
+
+/* Bossprogress block Colors 
+----------------------------------*/
+.bpprogress00,.bpprogress00:link,.bpprogress00:visited,.bpprogress00:active
+	{
+    font-family:Arial,Helvetica,sans-serif;
+	font-size:10px;
+    cursor: pointer;
+	line-height:150%;
+	text-decoration: none;
+	color: #FF0000;
+}
+
+.bpprogress00:link :hover {
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:10px;
+    cursor: pointer;
+	line-height:150%;
+	text-decoration: underline;
+	color: #FF0000;
+}
+
+.bpprogress25,.bpprogress25:link,.bpprogress25:visited,.bpprogress25:active
+	{
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:10px;
+	line-height:150%;
+    cursor: pointer;
+	text-decoration: none;
+	color: #FF0000;
+}
+
+.bpprogress25:link :hover {
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:10px;
+    cursor: pointer;
+	line-height:150%;
+	text-decoration: underline;
+	color: #FF0000;
+}
+
+.bpprogress50,.bpprogress50:link,.bpprogress50:visited,.bpprogress50:active
+	{
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:10px;
+    cursor: pointer;
+	line-height:150%;
+	text-decoration: none;
+	color: #FFCC00;
+}
+
+.bpprogress50:link :hover {
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:10px;
+    cursor: pointer;
+	line-height:150%;
+	text-decoration: underline;
+	color: #FFCC00;
+}
+
+.bpprogress75,.bpprogress75:link,.bpprogress75:visited,.bpprogress75:active
+	{
+	font-family:Arial,Helvetica,sans-serif;
+    font-size:10px;
+	line-height:150%;
+    cursor: pointer;
+	text-decoration: none;
+	color: #88FFDD;
+}
+
+.bpprogress75:link :hover {
+	font-family:Arial,Helvetica,sans-serif;
+    font-size:10px;
+	line-height:150%;
+    cursor: pointer;
+	text-decoration: underline;
+	color: #88FFDD;
+}
+
+.bpprogress99,.bpprogress99:link,.bpprogress99:visited,.bpprogress99:active
+	{
+	font-family:Arial,Helvetica,sans-serif;
+    font-size:10px;
+    cursor: pointer;
+	line-height:150%;
+	text-decoration: none;
+	color: #00EE00;
+}
+
+.bpprogress99:link :hover {
+	font-family:Arial,Helvetica,sans-serif;
+    font-size:10px;
+	line-height:150%;
+    cursor: pointer;
+	text-decoration: underline;
+	color: #00EE00;
+}
+
+.bpprogress100,.bpprogress100:link,.bpprogress100:visited,.bpprogress100:active
+	{
+	text-decoration: none;
+	color: #00EE00;
+    cursor: pointer;
+}
+
+.bpprogress100:link :hover {
+	text-decoration: underline;
+	color: #00EE00;
+    cursor: pointer;
+}
+
+/* Zone
+----------------------------------*/
+.progresspage dl {
+	margin: 0; 
+	padding: 0;     				
+}
+.progresspage dd { 
+	position: relative;
+	display: block;     			
+	float: left;     
+	width: 800px; 
+	height: 170px; 
+	margin: 0 0 0px; 
+	background: url("images/bossprogress/rp/g_colorbar2.jpg"); 
+}
+
+* .html dd { float: none; } 
+
+.progresspage dd div { 
+  	position: relative; 
+	background: url("images/bossprogress/rp/g_colorbar.jpg"); 
+	height: 170px; 
+	width: 100%; 
+	text-align:right; 
+}
+.progresspage dd div strong 
+{ 
+	position: absolute;
+	right: -5px; 
+	top: -2px; 
+	display: block; 
+	background: url("images/bossprogress/rp/g_marker.gif"); 
+	height: 24px; 
+	width: 9px; 
+	text-align: left;
+	text-indent: -9999px; 
+	overflow: hidden;
+}
+
+
+

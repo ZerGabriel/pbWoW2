@@ -1,0 +1,114 @@
+<!-- [+] AVAILABLE SIGNUPS -->
+<h4><img src="{T_IMAGESET_PATH}/planner/icon_queue.png" alt="{L_AVAILABLE}"/>&nbsp;{L_AVAILABLE}</h4>
+<div class="panel bg2">
+<div class="inner"><span class="corners-top"><span></span></span>
+<div style="width:95%; margin-left:auto;margin-right:auto;text-align:left" > 
+
+<!-- BEGIN raidroles -->
+<!-- IF raidroles.ROLE_DISPLAY -->
+<div id="raid_role{raidroles.ROLE_ID}" style="width:160px; float:left; " >
+
+<div id="raid_role_head{raidroles.ROLE_ID}" class="rolesignupheader" style="background-color:{raidroles.ROLE_COLOR};" >
+	<!-- IF raidroles.S_ROLE_ICON_EXISTS --><img src="{raidroles.ROLE_ICON}" alt="" />&nbsp;<!-- ELSE --><!-- ENDIF -->
+	<strong>{raidroles.ROLE_NAME}</strong>
+</div>
+<br />
+
+<!-- BEGIN signups -->
+<div id="signup{raidroles.signups.SIGNUP_ID}" class="rolesignupbody" style="background-color:{raidroles.ROLE_COLOR};">
+	<strong>{raidroles.signups.POSTER_URL}</strong><br />
+	<span><!-- IF raidroles.signups.S_RACE_IMAGE_EXISTS --><img src="{raidroles.signups.RACE_IMAGE}" alt="race_{raidroles.signups.CHARNAME}" />&nbsp;<!-- ELSE --><!-- ENDIF -->
+	<!-- IF raidroles.signups.S_CLASS_IMAGE_EXISTS --><img src="{raidroles.signups.CLASS_IMAGE}" alt="class_{raidroles.signups.CHARNAME}" /><!-- ELSE -->&nbsp;<!-- ENDIF -->
+	<strong><span style="color:{raidroles.signups.COLORCODE}"><a href="{raidroles.signups.U_MEMBERDKP}">{raidroles.signups.CHARNAME}</a></span></strong>
+	</span><br />
+	{L_DKP} : {raidroles.signups.DKP_CURRENT}, {L_ATTENDANCE} : {raidroles.signups.ATTENDANCEP1}<br />
+	{raidroles.signups.POST_TIME}<br />
+	<!-- IF S_SIGNUPMAYBE -->
+	<span><img src="{T_IMAGESET_PATH}/planner/danger.png" alt="{L_MAYBE}" /></a> {raidroles.signups.VALUE_TXT}</span><br />
+	<!-- ENDIF -->
+	<span>{raidroles.signups.DETAILS}</span><br /> 
+	
+	<!-- IF raidroles.signups.S_EDIT_SIGNUP || raidroles.signups.S_DELETE_SIGNUP || raidroles.signups.S_CANCONFIRM -->
+	<br />
+	<hr />
+	<div style="text-align:right; background-color:transparent;">
+		<!-- IF raidroles.signups.S_EDIT_SIGNUP -->
+		<input type="image" id="editaction_{raidroles.signups.RAIDPLAN_ID}_{raidroles.signups.SIGNUP_ID}" src="{T_IMAGESET_PATH}/planner/icon_edit.png"  alt="{L_EDIT}"  />
+		<!-- ENDIF -->
+		<!-- IF raidroles.signups.S_DELETE_SIGNUP -->
+			<a href="{raidroles.signups.U_DELETE}"><img src="{T_IMAGESET_PATH}/planner/icon_cancel.png" alt="{L_NOTAVAILABLE}" /></a>
+			<input type="hidden" name="keycheck" value="{raidroles.signups.DELETEKEY}" />
+		<!-- ENDIF -->
+		<!-- IF raidroles.signups.S_CANCONFIRM -->
+			<a href="{raidroles.signups.U_CONFIRM}"><img src="{T_IMAGESET_PATH}/planner/icon_signed_up.png" alt="{L_CONFIRMED}" /></a>
+		<!-- ENDIF -->
+	</div>
+	<!-- ENDIF -->
+</div>
+
+<br />
+<!-- END signups -->
+
+</div>
+<!-- ENDIF -->
+<!-- END raidroles -->
+</div>
+<span class="corners-bottom"><span></span></span>
+</div>
+</div>
+
+<!-- BEGIN raidroles -->
+<!-- BEGIN signups -->
+<!-- IF raidroles.signups.S_EDIT_SIGNUP || raidroles.signups.S_DELETE_SIGNUP || raidroles.signups.S_CANCONFIRM -->
+<div id="prompt_{raidroles.signups.RAIDPLAN_ID}_{raidroles.signups.SIGNUP_ID}" class="overlaysignup">
+		<form id="editsignup_{raidroles.signups.RAIDPLAN_ID}_{raidroles.signups.SIGNUP_ID}" 
+			  method="post" action="{raidroles.signups.S_SIGNUP_EDIT_ACTION}">
+			<div>
+			<span><!-- IF raidroles.signups.S_RACE_IMAGE_EXISTS --><img src="{raidroles.signups.RACE_IMAGE}" alt="" />&nbsp;<!-- ELSE --><!-- ENDIF -->
+				<!-- IF raidroles.signups.S_CLASS_IMAGE_EXISTS --><img src="{raidroles.signups.CLASS_IMAGE}" alt="{raidroles.signups.CLASS}" /><!-- ELSE -->&nbsp;<!-- ENDIF -->
+				<strong><span style="color:{raidroles.signups.COLORCODE}">{raidroles.signups.CHARNAME}</span></strong>
+			</span><br />
+			<textarea class="commentedit" name="signup_detail_{raidroles.signups.RAIDPLAN_ID}_{raidroles.signups.SIGNUP_ID}" rows="4" cols="25">{raidroles.signups.EDITDETAILS}</textarea>
+			<br/><br />
+			<input type="submit" accesskey="s" name="signmeup{raidroles.signups.RAIDPLAN_ID}_{raidroles.signups.SIGNUP_ID}" value="{L_SUBMIT}" class="button1" />
+			</div>
+		</form>
+		<br />
+</div>
+<!-- ENDIF -->
+<!-- END signups -->
+<!-- END raidroles -->
+
+<script type="text/javascript">
+jQuery(document).ready( function() 
+{
+<!-- BEGIN raidroles -->
+<!-- BEGIN signups -->
+<!-- IF raidroles.signups.S_EDIT_SIGNUP || raidroles.signups.S_DELETE_SIGNUP || raidroles.signups.S_CANCONFIRM -->
+
+	jQuery("#prompt_{raidroles.signups.RAIDPLAN_ID}_{raidroles.signups.SIGNUP_ID}").overlay({
+		top: 260,
+ 		closeOnClick: false,
+ 		load: false,
+        zIndex: 99999
+	});
+
+    jQuery("#editaction_{raidroles.signups.RAIDPLAN_ID}_{raidroles.signups.SIGNUP_ID}").click(function() {
+		jQuery("#prompt_{raidroles.signups.RAIDPLAN_ID}_{raidroles.signups.SIGNUP_ID}").overlay().load();
+	  });
+
+	jQuery("#editsignup_{raidroles.signups.RAIDPLAN_ID}_{raidroles.signups.SIGNUP_ID}").submit(function(e)
+	{
+		var input = $("#signup_detail_{raidroles.signups.RAIDPLAN_ID}_{raidroles.signups.SIGNUP_ID}", this).val();
+		jQuery.post("{raidroles.signups.S_SIGNUP_EDIT_ACTION}".serialize());
+		triggers_{raidroles.signups.RAIDPLAN_ID}_{raidroles.signups.SIGNUP_ID}.eq(1).overlay().close();
+		return e.preventDefault();
+	});
+
+<!-- ENDIF -->
+<!-- END signups -->
+<!-- END raidroles -->
+});
+</script>
+
+<!-- [-] AVAILABLE SIGNUPS -->

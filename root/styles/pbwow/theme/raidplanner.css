@@ -1,0 +1,570 @@
+/* -------------------------
+   raidplanner css
+  ------------------------- */
+
+.leather {
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	width: 100%;
+	height: 50px;
+	background-image: url("{T_IMAGESET_PATH}/planner/leather.png");
+	text-align: left;
+}
+
+
+div.calendar-control {
+	display:block;
+	width: 141px; /* breedte */
+	height: 52px;
+	padding-top:0px;
+	padding-bottom:0px;
+	padding-right:5px;
+	padding-left:0px;
+	background: url("{T_IMAGESET_PATH}/planner/calendar_control_empty.png");
+	background-position : top;
+	background-position: 0 -2px;
+	background-repeat : no-repeat;
+	margin-bottom: 0em;
+	margin-right: 2em;
+	float: left;
+}
+
+	div.calendar-control:hover {
+		background-position: 0 -57px;
+	}
+	
+	div.calendar-control:active {
+		background-position: 0 -57px;
+	}
+
+	div.calendar-control ul { 
+		padding-left : 10px;
+		padding-top : 5px;
+		float: left;
+		list-style-image: none;
+		list-style-position: outside;
+    	list-style-type: none;
+	}
+	
+	div.calendar-control ul li { 
+	    margin-bottom: 0;
+	    margin-left: 4px;
+	    margin-right: 2px;
+	    margin-top: 0;
+		float: left;
+		width: 100%;
+		height: 100%;
+	}
+
+	div.calendar-control ul li.cday { 
+		background: url("{T_IMAGESET_PATH}/planner/calendar_view_day-icon.png");
+		text-align: left;
+		background-size: auto auto;
+		background-repeat: no-repeat;
+		width: 32px;
+	  	height: 32px;
+	}
+
+	div.calendar-control ul li.cweek {  
+		background: url("{T_IMAGESET_PATH}/planner/calendar_view_week-icon.png");
+		text-align: left;
+		background-size: auto auto;
+		background-repeat: no-repeat;
+		width: 32px;
+	  	height: 32px;
+}
+
+	div.calendar-control ul li.cmonth {  
+		background: url("{T_IMAGESET_PATH}/planner/calendar_view_month-icon.png");
+		text-align: left;
+		background-size: auto auto;
+		background-repeat: no-repeat;
+		width: 32px;
+	  	height: 32px;
+}
+
+	div.calendar-control a {
+	    background-repeat: no-repeat;
+	    background-size: auto auto;
+ 		background-position:0 0;
+  		display:block;		
+	    height: 100%;
+	    width: 100%;
+	}
+		div.calendar-control a i {
+		visibility: hidden;
+	}
+
+
+div.calendar-control-right {
+	display:block;
+	width: 305px; /* breedte */
+	height: 50px;
+	padding-top:5px;
+	padding-bottom:0px;
+	padding-right:5px;
+	padding-left:0px;
+	background: url("{T_IMAGESET_PATH}/planner/calendar_control_empty_right.png");
+	background-position : top;
+	background-position: 0 -3px;
+	background-repeat : no-repeat;
+	margin-bottom: 0em;
+	float: right;
+}
+
+	div.calendar-control-right:hover {
+		background-position: 0 -57px;
+	}
+	
+	div.calendar-control-right:active {
+		background-position: 0 -57px;
+	}
+	 
+	div.calendar-control-right ul { 
+		padding-left : 10px;
+		padding-top : 5px;
+		float: left;
+		list-style-image: none;
+		list-style-position: outside;
+    	list-style-type: none;
+	}
+	
+	div.calendar-control-right ul li {
+	    margin-bottom: 0;
+	    margin-left: 4px;
+	    margin-right: 2px;
+	    margin-top: 0;
+		text-align: left;
+		float: left;
+		width: 100%;
+		height: 100%;
+	}
+	
+	div.calendar-control-right ul li a {
+		width: 100%;
+		height: 100%;
+	    background-repeat: no-repeat;
+	    background-size: auto auto;
+ 		background-position:0 0;
+  		display:block;		
+	}
+	
+	div.calendar-control-right ul li.next-icon {
+		background: url("{T_IMAGESET_PATH}/planner/ArrowRight.png");
+		width: 16px;
+		height: 16px;
+		text-align: left;
+		background-size: auto auto;
+		background-repeat: no-repeat;
+}
+	
+	div.calendar-control-right ul li.datenavigation {
+		width: 230px;
+		height: 32px;
+		text-align: left;
+		background-size: auto auto;
+		background-repeat: no-repeat;
+}
+
+	div.calendar-control-right ul li.prev-icon {
+		background: url("{T_IMAGESET_PATH}/planner/ArrowLeft.png");
+		width: 16px;
+		height: 16px;
+		text-align: left;
+		background-size: auto auto;
+		background-repeat: no-repeat;
+		margin-left: 0px;
+		
+	}
+
+
+ul.raidplanner-icons {
+	padding-top: 10px;
+	list-style: none;
+}
+
+/* Rollover state */
+ul.raidplanner-icons li {
+	float: left;
+	margin: 0 2px 3px 0;
+	background-position: 0 100%;
+}
+
+/* Rolloff state */
+ul.raidplanner-icons li a {
+	display: block;
+	width: 100%;
+	height: 100%;
+	background-position: 0 0;
+	opacity: 1;
+    transition: opacity 0.25s ease;
+    -webkit-transition: opacity 0.25s ease;
+    -moz-transition: opacity 0.25s ease;
+    -o-transition: opacity 0.25s ease;
+    -ms-transition: opacity 0.25s ease;
+}
+
+/* Hide <a> text and hide off-state image when rolling over (prevents flicker in IE) */
+ul.raidplanner-icons li span { 
+    display: none; 
+}
+
+ul.raidplanner-icons li a:hover { 
+    opacity: 0.10;
+}
+	
+ul.raidplanner-icons li.planner-new-icon {
+	background: url("{T_IMAGESET_PATH}/planner/date_add.png") no-repeat;
+	width: 16px;
+	height: 16px;
+	text-align: left;
+}
+
+ul.raidplanner-icons li.planner-new-button {
+	background: url("{T_IMAGESET_PATH}/planner/button_new.png") no-repeat;
+	width: 60px;
+	height: 35px;
+	text-align: left;
+}
+
+ul.raidplanner-icons li.planner-edit-button {
+	background: url("{T_IMAGESET_PATH}/planner/button_edit.png") no-repeat;
+	width: 60px;
+	height: 35px;
+	text-align: left;
+}
+
+ul.raidplanner-icons li.planner-push-button {
+	background: url("{T_IMAGESET_PATH}/planner/button_push.png") no-repeat;
+	width: 60px;
+	height: 35px;
+	text-align: left;
+}
+
+ul.raidplanner-icons li.planner-delete-button {
+	background: url("{T_IMAGESET_PATH}/planner/button_delete.png") no-repeat;
+	width: 30px;
+	height: 35px;
+	text-align: left;
+}
+
+ul.raidplanner-icons li.planner-day-icon {
+	background: url("{T_IMAGESET_PATH}/planner/calendar_view_day.png") no-repeat;
+	width: 16px;
+	height: 16px;
+	text-align: left;
+}
+
+ul.raidplanner-icons li.planner-week-icon {
+	background: url("{T_IMAGESET_PATH}/planner/calendar_view_week.png") no-repeat;
+	width: 16px;
+	height: 16px;
+	text-align: left;
+}
+
+ul.raidplanner-icons li.planner-month-icon {
+	background: url("{T_IMAGESET_PATH}/planner/calendar_view_month.png") no-repeat;
+	width: 16px;
+	height: 16px;
+	text-align: left;
+}
+
+.bgraid {
+	background-color: #CCCCCC;
+	
+}
+ul.raidplanner-icons li.planner-delete-icon {
+	width: 20px;
+	height: 20px;
+    margin-bottom: 0;
+    margin-left: 1px;
+    margin-right: 1px;
+    margin-top: 0;
+    float: left;
+    background-position: 0 0;
+}
+
+ul.raidplanner-icons li.planner-delete-icon a:hover {
+    background-repeat: repeat;
+    background-position: 0 100%;
+    background-size: auto auto;
+	
+}
+
+.raidplanner_bg {
+    clear: both;
+    margin-bottom: 5px;
+    padding: 0 5px;
+}
+
+/* uses border-top-color = .bg3 background-color (the line between events in the month display) */
+hr.hrCal {
+	border-top-color: #cadceb;
+}
+
+/* tooltip text color for raid signup status */
+.rp_signed_up
+{
+	color: #00EE55;	
+}
+
+.rp_nochars
+{
+	color: #FF8822;	
+}
+
+.rp_frozen
+{
+	color: #00CCFF;	
+}
+
+.rp_locked
+{
+	color: #FF3388;	
+}
+
+.rp_signedoff
+{
+	color: #FF3388;	
+}
+
+.rp_confirmed
+{
+	color: #00EE55;	
+	font-weight: bolder;
+}
+
+.rp_maybe
+{
+	color: #EEFF00;	
+}
+
+
+/* The from and to times take up a lot of space in the calendar display. Use this to shrink them */
+
+.smCalText {
+	font-size: 85%
+}
+
+/* Raidplan */
+.raidplanbody {
+    clear: both;
+    color: #333333;
+    line-height: 1.48em;
+    padding: 0;
+}
+
+.raidplanbody .content {
+    font-size: 1.3em;
+}
+
+.blockhead h1 {
+	margin-right: 0px;
+	margin-top: 0px;
+}
+
+
+.rolesignupheader {
+	border:1px solid #666;
+    border:1px solid rgba(82, 82, 82, 0.698);
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border-radius: 5px;
+	padding-top: 2px;
+    padding-right: 2px;
+    padding-bottom: 2px;
+    padding-left: 2px;
+    margin: 1%;
+    
+	border-top: medium;
+	border-top-color: #12A3EB;
+	border-bottom:0px solid;
+	font-weight: bold;
+	text-transform:uppercase;
+}
+
+.rolesignupheader:hover {
+    opacity:0.75; // css standard
+}
+
+    
+.rolesignupbody {
+    border:1px solid #666;
+    border:1px solid rgba(82, 82, 82, 0.698);
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    border-radius: 4px;   	
+	-moz-box-shadow: 5px 5px 5px #303030;
+	-webkit-box-shadow: 5px 5px 5px #303030;
+	box-shadow: 5px 5px 5px #303030;
+
+	margin: 1%;
+    padding-top: 2px;
+    padding-right: 2px;
+    padding-bottom: 2px;
+    padding-left: 2px;
+}
+
+
+.rolesignupbody:hover {
+    opacity:0.75; // css standard
+
+}
+
+.roleunavailable {
+    border:1px solid #666;
+    border:1px solid rgba(82, 82, 82, 0.698);
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+	border-radius: 4px;
+    -moz-box-shadow: 5px 5px 5px #303030;
+    -webkit-box-shadow: 5px 5px 5px #303030;
+    box-shadow: 5px 5px 5px #303030;
+    
+	background-color:#FFFFFF;
+	width:160px; 
+	float:left; 
+	margin: 1%;
+    padding-top: 2px;
+    padding-right: 2px;
+    padding-bottom: 2px;
+    padding-left: 2px;
+}
+
+.roleunavailable:hover {
+    opacity:0.75; // css standard
+
+}
+
+.overlaysignup
+{
+    display:none;
+    width:300px;
+    border:10px solid #666;
+    border:10px solid rgba(82, 82, 82, 0.698);
+    -moz-border-radius:8px;
+    -webkit-border-radius:8px;
+    border-radius: 8px; 
+    padding:5px;
+    background-color:#000;
+    color:#fff;
+    font-family:"lucida grande",tahoma,verdana,arial,sans-serif
+}
+ 
+.commentedit
+{
+	width: 290px;
+}
+/* Calendar view */
+
+/* display days in calendar day/month/week view) */
+table.table1 tbody tr.daynames {
+    background-color: #BFC1CF;
+    font-weight: bold;
+}
+
+table.table1 tbody td.bg1.calMon {
+	padding-top: 2px;
+	padding-bottom: 5px;
+	padding-left: 4px;
+	padding-right: 4px;
+}
+.calMonH ul li {
+	font-family :sans-serif;
+	font-size: 14px;
+}
+
+
+/* today and highlighted day */
+table.table1 tbody td.bg2.calMon {
+	padding-top: 2px;
+	padding-bottom: 5px;
+	padding-left: 4px;
+	padding-right: 4px;
+}
+
+/* hover over highlighted day */
+td.bg2.calMon a:hover {
+	text-decoration: none;
+}
+
+td.bg1.calMon a:hover {
+	text-decoration: none;
+}
+
+/* filler headers */
+table tbody td.bg3.calMonH {
+	font-size: 85%
+}
+
+td.bg3.calMonH a:hover {
+	text-decoration: none;
+}
+
+/* filler day */
+table.table1 tbody td.bg3.calMon {
+	padding-top: 2px;
+	padding-bottom: 5px;
+	padding-left: 4px;
+	padding-right: 4px;
+}
+
+td.bg3.calMon a:hover {
+	text-decoration: none;
+}
+
+/* highlight header */
+table tbody td.bg4.calMonH {
+	font-size: 85%
+}
+
+td.bg4.calMonH a:hover {
+	text-decoration: none;
+}
+
+
+/**************** day css ******************/
+h1.daynum  {
+	font-size: 36px;
+	font-family: Century Gothic,Arial Narrow,Trebuchet MS,Andale Mono, sans serif;
+	font-stretch: narrower;
+	font-weight: lighter;
+	margin: 5px;
+	padding: -10px;
+	color: #880066;
+}
+
+table.table1 tbody td.bg1_calDay {
+	background-color: #ECF3F7;
+	border-top-color: #12A3EB;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 3px;
+	padding-right: 3px;
+}
+
+
+table.table1 tbody td.bg1_calDay:hover {
+	background-color: #cadceb;
+	border-top-color: #12A3EB;
+}
+
+td.bg1_calDay a:hover {
+	text-decoration: none;
+}
+
+
+table.table1 tbody td.bg3_calDay {
+	background-color: #cadceb;
+	border-top-color: #12A3EB;
+}
+
+td.bg3_calDay a:hover {
+	text-decoration: none;
+}
+
+
+/* raid view pane: less space in datalist */
+fieldset.rpfields dl {
+	padding: 0.5px 0;
+}

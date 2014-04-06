@@ -1,0 +1,33 @@
+<script type="text/javascript" src="{T_SUPER_TEMPLATE_PATH}/planner/RaidCalendar/clock.js"></script>
+<script type="text/javascript"> 
+jQuery.noConflict();
+jQuery(window).load( function() 
+{
+	 new jClock('{T_TEMPLATE_PATH}/planner/RaidCalendar/clock.png', jQuery('#clockCanvas').get(0));
+} 
+);
+</script>
+<div class="panel">
+<div class="inner">
+<span class="corners-top"><span></span></span>
+
+<ul class="topiclist" style="padding: 4px">
+    <li class="header">
+        <dl>
+            <dt style="padding: 0px 0px 2px; white-space: nowrap; margin-bottom: 0px; margin-top: 0px;">
+            <h4>{L_CLOCK}</h4>
+            </dt>
+        </dl>
+    </li>
+</ul>
+
+<div style="float: left; margin: auto;">
+<canvas id="clockCanvas" height="130" width="130">
+<p>{L_ERROR_NOCANVAS}</p>
+</canvas>
+</div>
+<hr />
+<div style="float: left;">{CURRENT_TIME} {TZ}</div>
+<span class="corners-bottom"><span></span></span>
+</div>
+</div>

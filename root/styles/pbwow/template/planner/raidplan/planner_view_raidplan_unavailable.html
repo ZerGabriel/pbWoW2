@@ -1,0 +1,107 @@
+<!-- [+] UNAVAILABLE SIGNUPS -->
+<h4><img src="{T_IMAGESET_PATH}/planner/icon_cancel.png" alt="{L_NOTAVAILABLE}"/>&nbsp;{L_NOTAVAILABLE}</h4>
+<div class="panel bg2" >
+<div class="inner">
+<span class="corners-top"><span></span></span>
+<div style="width:95%; margin-left:auto;margin-right:auto;text-align:left" > 
+
+<!-- BEGIN unavailable -->
+
+<div id="unavailable{unavailable.SIGNUP_ID}" class="roleunavailable">
+	<strong>{unavailable.POSTER_URL}</strong><br />
+	<span><!-- IF unavailable.S_RACE_IMAGE_EXISTS --><img src="{unavailable.RACE_IMAGE}" alt="race_{unavailable.CHARNAME}"/>&nbsp;<!-- ELSE --><!-- ENDIF -->
+	<!-- IF unavailable.S_CLASS_IMAGE_EXISTS --><img src="{unavailable.CLASS_IMAGE}" alt="class_{unavailable.CHARNAME}" /><!-- ELSE -->&nbsp;<!-- ENDIF -->
+	<strong><span style="color:{unavailable.COLORCODE}"><a href="{unavailable.U_MEMBERDKP}">{unavailable.CHARNAME}</a></span></strong></span> <br />
+	{L_DKP}: {unavailable.DKP_CURRENT}, {L_ATTENDANCE}: {unavailable.ATTENDANCEP1}<br />
+	{unavailable.POST_TIME}<br />
+	<span>{unavailable.DETAILS}</span>
+	<!-- IF unavailable.S_REQUEUE_SIGNUP -->
+	<br />
+	<hr />
+	<div style="text-align:right;">
+		<input type="image" id="requeue{unavailable.RAIDPLAN_ID}_{unavailable.SIGNUP_ID}" src="{T_IMAGESET_PATH}/planner/icon_queue.png"  alt="{L_AVAILABLE}"  />
+	</div>
+	<!-- ENDIF -->
+</div>
+<!-- END unavailable -->
+
+</div>
+<span class="corners-bottom"><span></span></span>
+</div>
+</div>
+<!-- BEGIN unavailable -->
+<!-- IF unavailable.S_REQUEUE_SIGNUP -->
+<div id="prompt_{unavailable.RAIDPLAN_ID}_{unavailable.SIGNUP_ID}" class="overlaysignup">
+	<br />
+	<form id="requeuesignup_{unavailable.RAIDPLAN_ID}_{unavailable.SIGNUP_ID}" 
+		  method="post" action="{unavailable.S_REQUEUE_ACTION}">
+		<fieldset>
+			<dl>
+			<dt>
+			<span><!-- IF unavailable.S_RACE_IMAGE_EXISTS --><img src="{unavailable.RACE_IMAGE}" alt="" />&nbsp;<!-- ELSE --><!-- ENDIF -->
+				<!-- IF unavailableS_CLASS_IMAGE_EXISTS --><img src="{unavailable.CLASS_IMAGE}" alt="{unavailable.CLASS}" /><!-- ELSE -->&nbsp;<!-- ENDIF -->
+				<strong><span style="color:{unavailable.COLORCODE}">{unavailable.CHARNAME}</span></strong>
+			</span>
+			</dt>
+			<dd>&nbsp;
+			</dd>
+			<dt>&nbsp;</dt><dd>&nbsp;</dd>
+			<dt>&nbsp;<strong>{L_CALENDAR_WILL_ATTEND}</strong></dt>
+			<dd>
+				<select name='signup_val_{unavailable.RAIDPLAN_ID}_{unavailable.SIGNUP_ID}' id='signup_val_{unavailable.RAIDPLAN_ID}_{unavailable.SIGNUP_ID}'>
+					<option value='2'>{L_AVAILABLE}</option>
+					<option value='1'>{L_MAYBE}</option>
+				</select>
+			</dd>
+			<dt>&nbsp;<strong>{L_RAIDROLE}</strong></dt>
+				<dd>
+				<select id="signuprole_{unavailable.RAIDPLAN_ID}_{unavailable.SIGNUP_ID}" name="signuprole_{unavailable.RAIDPLAN_ID}_{unavailable.SIGNUP_ID}">
+				<!-- BEGIN raidroles -->
+					<option value='{unavailable.raidroles.ROLE_ID}'>{unavailable.raidroles.ROLE_NAME}</option><!-- END raidroles -->
+				</select>
+			</dd>
+			<dt>&nbsp;<br />
+			&nbsp;<strong>{L_COMMENTS}</strong></dt>
+			<dd>			
+				<textarea class="commentedit" name="signup_detail_{unavailable.RAIDPLAN_ID}_{unavailable.SIGNUP_ID}" rows="4" cols="25">{unavailable.EDITDETAILS}</textarea>
+			</dd>
+			<dt>&nbsp;</dt>
+			<dd>
+				<input type="submit" accesskey="s" name="signmeup{unavailable.RAIDPLAN_ID}_{unavailable.SIGNUP_ID}" value="{L_SUBMIT}" class="button1" />
+			</dd>
+			</dl>
+		</fieldset>
+	</form>
+</div>
+<!-- ENDIF -->
+<!-- END unavailable -->
+
+<script type="text/javascript">
+jQuery(document).ready( function() 
+<!-- BEGIN unavailable --><!-- IF unavailable.S_REQUEUE_SIGNUP -->
+	{
+	jQuery("#prompt_{unavailable.RAIDPLAN_ID}_{unavailable.SIGNUP_ID}").overlay({
+		 top: 260,
+
+ 		closeOnClick: true,
+ 		load: false
+	});
+
+
+	jQuery("#requeue{unavailable.RAIDPLAN_ID}_{unavailable.SIGNUP_ID}").click(function() {
+		jQuery("#prompt_{unavailable.RAIDPLAN_ID}_{unavailable.SIGNUP_ID}").overlay().load();
+	});
+	
+	jQuery("#editsignup_{unavailable.RAIDPLAN_ID}_{unavailable.SIGNUP_ID}").submit(function(e)
+	{
+		var input = $("#signup_detail_{unavailable.RAIDPLAN_ID}_{unavailable.SIGNUP_ID}", this).val();
+		jQuery.post("{unavailable.S_REQUEUE_ACTION}".serialize());
+		triggers_{unavailable.RAIDPLAN_ID}_{unavailable.SIGNUP_ID}.eq(1).overlay().close();
+		return e.preventDefault();
+	});
+<!-- ENDIF --><!-- END unavailable -->
+});
+</script>
+
+
+<!-- [-] UNAVAILABLE SIGNUPS -->

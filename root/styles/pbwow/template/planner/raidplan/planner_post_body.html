@@ -1,0 +1,20 @@
+<div id="postingbox">
+	<!-- INCLUDE planner/raidplan/planner_post_body_editor.html -->
+</div>
+
+<fieldset class="submit-buttons">
+	<input type="hidden" name="hidden_raidplanid" value="{RAIDPLAN_ID}" />
+	<input type="hidden" name="hiddenCalD" value="{FRAME_CALD}" />
+	<input type="hidden" name="hiddenCalM" value="{FRAME_CALM}" />
+	<input type="hidden" name="hiddenCalY" value="{FRAME_CALY}" />
+	
+	<!-- IF S_EDIT && S_DELETE_ALLOWED -->
+	<input type="submit" accesskey="d" tabindex="7" name="delete" id="delete" value="{L_DELETE}" class="button1" />&nbsp;
+	<!-- ENDIF -->
+	
+	<!-- IF S_EDIT && S_DELETE_ALLOWED -->
+	<input type="submit" accesskey="s" tabindex="6" name="updateraid" value="{L_UPDATE}" class="button1" />&nbsp;
+	<!-- ELSE -->
+	<input type="submit" accesskey="s" tabindex="6" name="addraid" value="{L_SUBMIT}" class="button1" />&nbsp;
+	<!-- ENDIF -->
+</fieldset>
