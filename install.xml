@@ -42,7 +42,8 @@
 		<open src="styles/pbwow2/template/overall_header.html">
 			<edit>
 				<find><![CDATA[</head>]]></find>
-				<action type="before-add"><![CDATA[<!-- INCLUDE dkp/dkpheader.html -->]]></action>
+				<action type="before-add"><![CDATA[<!-- INCLUDE dkp/dkpheader.html -->
+<!-- INCLUDE bbtips/bbtips_header.html -->]]></action>
 			</edit>
 			<edit>
 				<find><![CDATA[		<div id="breadcrumb">
@@ -50,6 +51,7 @@
 				<action type="after-add"><![CDATA[
 				<!-- IF U_PORTAL --><li class="nav-link icon-home"><a href="{U_PORTAL}">{L_PORTAL}</a></li><!-- ENDIF -->
 				<!-- IF U_DKP -->
+				<li class="nav-link icon-home"><a href="{U_APPLY}">{L_APPLY}</a></li>				
 				<li class="nav-link icon-home">
 					<a href="{U_DKP}">{L_DKPPAGE}</a><!-- BEGIN dkpnavlinks --><li class="nav-link"><a href="{dkpnavlinks.U_DKPPAGE}">{dkpnavlinks.DKPPAGE}</a></li><!-- END dkpnavlinks -->
 				</li>
