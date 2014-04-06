@@ -46,7 +46,6 @@
 <!-- IF S_DISPLAY_VIEWITEM -->
 	<!-- INCLUDE dkp/view/viewitem.html -->
 <!-- ENDIF -->
-
 <!-- IF S_DISPLAY_ROSTERGRID -->
 	<!-- INCLUDE dkp/view/rostergrid.html -->
 <!-- ENDIF -->
@@ -59,15 +58,27 @@
 <!-- ENDIF -->
 
 <!-- [+] Bossprogress -->
+<!-- IF S_BPSHOW -->
+	<!-- IF S_STYLE == 0 -->
+		<!-- INCLUDE dkp/view/bossprogress.html -->
+	<!-- ELSEIF S_STYLE == 1 -->
+		<!-- INCLUDE dkp/view/bossprogress1.html -->
+	<!-- ELSEIF S_STYLE == 2 -->
+		<!-- INCLUDE dkp/view/bossprogress2.html -->
+	<!-- ENDIF -->
+<!-- ENDIF -->
 
 <!-- [-] Bossprogress -->
 
 <!-- [+] Raidplanner -->
+<!-- IF S_PLANNER_RAIDFRAME -->
+	<!-- INCLUDE planner/planner_raidframe.html -->
+<!-- ENDIF -->
 
 <!-- [-] Raidplanner -->
 
 <!-- [+] Apply -->
-
+<!-- should we embed apply ? -->
 <!-- [-] Apply -->
 
 </div>

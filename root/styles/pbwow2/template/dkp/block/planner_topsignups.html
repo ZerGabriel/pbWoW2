@@ -1,51 +1,17 @@
-<div class="forabg">
-    <div class="inner">
-        <span class="corners-top"><span></span></span>
-        <ul class="topiclist" style="padding: 4px">
-            <li class="header">
-                <dl>
-                    <dt style="padding: 0px 0px 2px; white-space: nowrap; margin-bottom: 0px; margin-top: 0px;">
-                        <img width="16px" height="14px" alt="" src="{T_THEME_PATH}/images/icon_subscribe.gif" />&nbsp;{L_UPCOMING_RAIDS}
-                    </dt>
-                </dl>
-            </li>
-        </ul>
-        <ul class="topiclist forums"  style="padding: 4px">
-            <li style="list-style:none" >
+<ul style="padding: 4px">
+    <li style="list-style:none" >
+        <!-- BEGIN topsignups -->
+        <div style="clear: left;">
+            <div style="float: left; margin: 0 5px; 0 0;"><!-- IF topsignups.S_RACE_IMAGE_EXISTS --><img src="{topsignups.RACE_IMAGE}" alt="" />&nbsp;<!-- ELSE --><!-- ENDIF -->
+                <!-- IF topsignups.S_CLASS_IMAGE_EXISTS --><img src="{topsignups.CLASS_IMAGE}" alt="{topsignups.CLASS}" /><!-- ELSE -->&nbsp;<!-- ENDIF -->
+            </div>
+            <div style="float: left;">
+                <strong><span style="color:{topsignups.COLORCODE}">{topsignups.CHARNAME} : {topsignups.COUNTSIGNUPS} </span></strong>
+            </div>
+        </div>
 
+        <!-- END topsignups -->
+        <div style="clear: both;"></div>
+    </li>
+</ul>
 
-                <!-- IF .upcoming -->
-
-                <!-- BEGIN upcoming -->
-                <div style= "float: left; cursor:pointer;" onclick="location.href='{upcoming.EVENT_URL}'" title="{upcoming.EVENTNAME}">
-                    <div style="float: left; margin: 0 5px; 0 0;">
-                        <img src="{upcoming.IMAGE}" alt="{upcoming.EVENTNAME}" width="32px" height="32px"/>
-                    </div>
-                    <div style="float: left;">
-                        <strong style="color:red;"><!-- IF upcoming.ALL_DAY -->{L_ALL_DAY} {upcoming.START_TIME}<!-- ELSE -->{upcoming.START_TIME}<!-- ENDIF --></strong><br/>
-		                <span>
-			               <!-- IF upcoming.EVENTNAME -->{upcoming.EVENTNAME}<!-- ENDIF -->
-		                </span>
-                    </div>
-
-                </div>
-
-                <!-- END upcoming -->
-                <div style="clear: both;"></div>
-                <!-- ELSE -->
-                <br /><p class="error">{L_NO_RAIDS_SCHEDULED}</p><p><br /></p>
-                <!-- ENDIF -->
-
-
-            </li>
-
-        </ul>
-
-        <span class="corners-bottom"><span></span></span>
-    </div>
-</div>
-
-<div>
-
-
-</div>

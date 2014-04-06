@@ -24,18 +24,11 @@ jQuery(document).ready( function()
 
 });
 </script>
-<div class="forabg">
-    <div class="inner">
-        <span class="corners-top"><span></span></span>
-        <ul class="topiclist" style="padding: 4px">
-            <li class="header">
-                <dl>
-                    <dt style="padding: 0px 0px 2px; white-space: nowrap; margin-bottom: 0px; margin-top: 0px;">
-                        {L_BOSSPROGRESS}
-                    </dt>
-                </dl>
-            </li>
-        </ul>
+
+<div class="wow-recent" id="lastlootblock">
+    <h2 class="open">{L_BOSSPROGRESS}</h2>
+    <div class="bbdkpblock">
+        <div style="width: 90%; clear: both; moz-box-shadow: inset 0 0 30px #000f; -webkit-box-shadow: inset 0 0 30px #000f; box-shadow: inset 0 0 30px #000f; margin:auto;">
         <ul class="topiclist forums" style="padding: 4px">
             <li style="list-style:none" >
                 <table class="tablebg" cellspacing="1" width="100%">
@@ -46,7 +39,6 @@ jQuery(document).ready( function()
                     <!-- BEGIN zone -->
                     <tr>
                         <td align="left" class="{zone.CSSCLASS}">
-                            <div>
                                 <a id="zone{zone.ZONE_ID}" href="{zone.ZONE_URL}">{zone.ZONE_NAME}</a>
                                 <div class="bbtooltip">
                                     <div class="bbinner">
@@ -61,7 +53,7 @@ jQuery(document).ready( function()
                                     </div>
                                     <div class="b"><div></div></div>
                                 </div>
-                            </div>
+
                         </td>
                         <td align="center" class="{zone.CSSCLASS}"><span><strong>({zone.ZONEKILLS}/{zone.BOSSCOUNT})</strong></span></td>
                     </tr>
@@ -76,8 +68,7 @@ jQuery(document).ready( function()
                 </table>
             </li>
         </ul>
-
-        <span class="corners-bottom"><span></span></span>
+        </div>
     </div>
 </div>
 

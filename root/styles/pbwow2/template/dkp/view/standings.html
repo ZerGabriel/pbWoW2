@@ -1,6 +1,7 @@
 <div class="panel">
     <div class="inner">
         <span class="corners-top"><span></span></span>
+
         <ul class="topiclist" style="padding: 4px">
             <li class="header">
                 <dl>
@@ -12,6 +13,7 @@
                 </dl>
             </li>
         </ul>
+
         <div class="navbar" style="clear:both;">
             <span class="corners-top"><span></span></span>
             <form method="post" action="{F_MEMBERS}">
@@ -34,6 +36,7 @@
             <span class="corners-bottom"><span></span></span>
         </div>
         <hr />
+
         <!-- IF ! .members_row -->
         <p class= "error">{L_NO_DATA}</p>
         <!-- ENDIF -->
@@ -51,6 +54,7 @@
                     <span>{DKPPAGINATION}<br /><br /></span>
                 </div>
                 <!-- ENDIF -->
+
                 <table class="table1 bbdkp" width="100%" border="0" cellspacing="0" cellpadding="0">
                     <thead>
                     <tr>
@@ -73,11 +77,13 @@
                         <th style="text-align: center; width:3%;"><a href="{O_CLASS}">#</a></th>
                     </tr>
                     </thead>
+
                     <tfoot>
                     <tr>
                         <th style="text-align: left; white-space: nowrap; color:white;" colspan="0">{FOOTCOUNT}</th>
                     </tr>
                     </tfoot>
+
                     <tbody>
                     <!-- BEGIN members_row -->
                     <!-- IF members_row.S_ROW_COUNT is even -->
@@ -102,6 +108,7 @@
                         <td style="text-align: right;">{members_row.LASTRAID}</td>
                         <td style="text-align: right;">{members_row.RAIDS_P1_DAYS}%</td>
                         <td><input type="checkbox" name="compare_ids[]" value="{members_row.ID}" /></td>
+
                     </tr>
                     <!-- END members_row -->
                     </tbody>
@@ -113,9 +120,11 @@
                     <span>{DKPPAGINATION}<br /><br /></span>
                 </div>
                 <!-- ENDIF -->
+
                 <span class="corners-bottom"><span></span></span>
             </div>
         </div>
+
         <table width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr>
                 <td style="text-align: center;">
@@ -123,7 +132,11 @@
                 </td>
             </tr>
         </table>
+
+
         <!-- ENDIF -->
+        </form>
+
         <span class="corners-bottom"><span></span></span>
     </div>
 </div>

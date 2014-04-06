@@ -1,84 +1,87 @@
+
 <br />
+
 <h3>{L_LOOTDIST_CLASS}</h3>
+
 <div class="panel">
-    <div class="inner">
-        <span class="corners-top"><span></span></span>
-        <div class="forabg" style="width:50%; float:left;">
-            <div class="inner">
-                <span class="corners-inner-top"><span></span></span>
-                <table class="table1" width="100%" border="0" cellspacing="1" cellpadding="0">
-                    <thead>
-                    <tr>
-                        <th style="color:white; font-size :9pt; text-align: left;">{L_CLASS}</th>
-                        <th colspan="2" style="color:white; font-size :9pt; text-align: center;"># {L_MEMBERS}</th>
+<div class="inner">
+<span class="corners-top"><span></span></span>
 
-                        <th style="color:white; font-size :9pt; text-align: center;"># {L_LOOTS}</th>
-                        <th style="color:white; font-size :9pt; text-align: center; text-align: center;">% {L_LOOTS}</th>
-                        <th style="color:white; font-size :9pt; text-align: center;"></th>
 
-                    </tr>
-                    </thead>
-                    <tfoot>
+<div class="forabg" style="width:50%; float:left;">
+<div class="inner">
 
-                    <tr>
-                        <th style="color:white; font-size :9pt; text-align: left;"></th>
-                        <th colspan="2" style="color:white; font-size :9pt; text-align: center;">{TOTAL_MEMBERS}</th>
+<span class="corners-inner-top"><span></span></span>
+<table class="table1" width="100%" border="0" cellspacing="1" cellpadding="0">
+<thead>
+<tr>
+<th style="color:white; font-size :9pt; text-align: left;">{L_CLASS}</th>
+<th colspan="2" style="color:white; font-size :9pt; text-align: center;"># {L_MEMBERS}</th>
 
-                        <th style="color:white; font-size :9pt; text-align: center;">{TOTAL_DROPS}</th>
-                        <th style="color:white; font-size :9pt; text-align: center; text-align: center;"></th>
-                        <th style="color:white; font-size :9pt; text-align: center;">{CLASSPCTCUMUL}</th>
+<th style="color:white; font-size :9pt; text-align: center;"># {L_LOOTS}</th>
+<th style="color:white; font-size :9pt; text-align: center; text-align: center;">% {L_LOOTS}</th>
+<th style="color:white; font-size :9pt; text-align: center;"></th>
 
-                    </tr>
-                    </tfoot>
-                    <tbody>
-                    <!-- BEGIN class_row -->
-                    <!-- IF class_row.S_ROW_COUNT is even -->
-                    <tr class="bg1">
-                        <!-- ELSE -->
-                    <tr class="bg2">
-                        <!-- ENDIF -->
-                        <td style="width:20%; white-space: nowrap;"><!-- IF class_row.S_CLASS_IMAGE_EXISTS --><img src="{class_row.CLASS_IMAGE}" alt="abc" /><!-- ELSE -->&nbsp;<!-- ENDIF -->
-                            &nbsp;<a style="white-space: nowrap; color:{class_row.COLORCODE}" href="{class_row.U_LIST_MEMBERS}"><strong>{class_row.CLASS_NAME}</strong></a> </td>
-                        <td style="width:7.5%; text-align:center;">{class_row.CLASS_COUNT}</td>
-                        <td style="width:7.5%; text-align:center;">{class_row.CLASS_PCT}</td>
-                        <td style="width:7.5%; text-align:center;">{class_row.LOOT_COUNT}</td>
-                        <td style="width:7.5%; text-align:center;">{class_row.CLASS_DROP_PCT_STR}</td>
-                        <td style="width:7.5%; text-align:center;"><span class= "{class_row.C_LOOT_FACTOR}">{class_row.LOOTOVERRUN}</span></td>
-                    </tr>
+</tr>
+</thead>
+<tfoot>
 
-                    <!-- END class_row -->
-                    </tbody>
-                </table>
+<tr>
+<th style="color:white; font-size :9pt; text-align: left;"></th>
+<th colspan="2" style="color:white; font-size :9pt; text-align: center;">{TOTAL_MEMBERS}</th>
 
-                <span class="corners-inner-bottom"><span></span></span>
-            </div>
-        </div>
+<th style="color:white; font-size :9pt; text-align: center;">{TOTAL_DROPS}</th>
+<th style="color:white; font-size :9pt; text-align: center; text-align: center;"></th>
+<th style="color:white; font-size :9pt; text-align: center;">{CLASSPCTCUMUL}</th>
 
-        <div class="panel" style="width:45%; float:left;">
-            <div class="inner">
-                <span class="corners-inner-top"><span></span></span>
+</tr>
+</tfoot>
+<tbody>
+<!-- BEGIN class_row -->
+   <!-- IF class_row.S_ROW_COUNT is even -->
+   <tr class="bg1">
+   <!-- ELSE -->
+   <tr class="bg2">
+   <!-- ENDIF -->
+	  <td style="width:20%; white-space: nowrap;"><!-- IF class_row.S_CLASS_IMAGE_EXISTS --><img src="{class_row.CLASS_IMAGE}" alt="abc" /><!-- ELSE -->&nbsp;<!-- ENDIF -->
+	  &nbsp;<a style="white-space: nowrap; color:{class_row.COLORCODE}" href="{class_row.U_LIST_MEMBERS}"><strong>{class_row.CLASS_NAME}</strong></a> </td>
+	  <td style="width:7.5%; text-align:center;">{class_row.CLASS_COUNT}</td>
+	  <td style="width:7.5%; text-align:center;">{class_row.CLASS_PCT}</td>
+	  <td style="width:7.5%; text-align:center;">{class_row.LOOT_COUNT}</td>
+	  <td style="width:7.5%; text-align:center;">{class_row.CLASS_DROP_PCT_STR}</td>
+	  <td style="width:7.5%; text-align:center;"><span class= "{class_row.C_LOOT_FACTOR}">{class_row.LOOTOVERRUN}</span></td>
+  </tr>
 
-                <div>
-                    <div class="inner">
-                        <span class="corners-top"><span></span></span>
-                        <h4>% {L_MEMBERS}</h4>
-                        <div id="classdropgraphs" class="graph"></div>
-                        <span class="corners-inner-bottom"><span></span></span>
-                    </div>
-                </div>
+<!-- END class_row -->
+</tbody>
+</table>
 
-                <div>
-                    <div class="inner">
-                        <span class="corners-top"><span></span></span>
-                        <h4>% {L_LOOTS}</h4>
-                        <div id="classdropgraphs2" class="graph"></div>
-                        <span class="corners-inner-bottom"><span></span></span>
-                    </div>
-                </div>
+<span class="corners-inner-bottom"><span></span></span>
+</div>
+</div>
 
-                <span class="corners--inner-bottom"><span></span></span>
-            </div>
-        </div>
+<div class="panel" style="width:45%; float:left;">
+<div class="inner">
+<span class="corners-inner-top"><span></span></span>
+
+<div>
+<div class="inner">
+<span class="corners-top"><span></span></span>
+<h4>% {L_MEMBERS}</h4>
+<div id="classdropgraphs" class="graph"></div>
+<span class="corners-inner-bottom"><span></span></span>
+</div>
+</div>
+
+<div>
+<div class="inner">
+<span class="corners-top"><span></span></span>
+<h4>% {L_LOOTS}</h4>
+<div id="classdropgraphs2" class="graph"></div>
+<span class="corners-inner-bottom"><span></span></span>
+</div>
+</div>
+
 <script type="text/javascript">
 //<![CDATA[
 jQuery(function () {
@@ -160,3 +163,8 @@ jQuery(function () {
 });
 //]]>
 </script>
+
+
+<span class="corners--inner-bottom"><span></span></span>
+</div>
+</div>

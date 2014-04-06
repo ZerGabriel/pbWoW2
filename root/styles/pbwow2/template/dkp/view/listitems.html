@@ -1,88 +1,118 @@
+<ul class="topiclist">
+    <li class="header">
 
-<div class="panel">
-    <div class="inner">
-        <span class="corners-top"><span></span></span>
-
-        <ul class="topiclist" style="padding: 4px">
-            <li class="header">
-                <dl>
-                    <dt style="padding: 0px 0px 2px; white-space: nowrap; margin-bottom: 0px; margin-top: 0px; display:inline;width:auto;text-align:center;">
-                    <div style="float: left; width:49%; white-space:nowrap; text-align: left;">
-                        <h4 class="bbdkpheader">{L_EVENTS}</h4>
-                    </div>
-                    </dt>
-                </dl>
-            </li>
-        </ul>
-
+        <div style="float: left; width:49%; white-space:nowrap;">
+            <!-- IF S_HISTORY -->
+            <h2 style="white-space:nowrap;">{L_MENU_ITEMHIST}</h2>
+            <!-- ELSE -->
+            <h2 style="white-space:nowrap;">{L_MENU_ITEMVAL}</h2>
+            <!-- ENDIF -->
+        </div>
+        <form method="post" action="{F_LISTITEM}">
+            <div style="float: right; width:40%; white-space:nowrap; text-align: right;">
+                <p>{L_POOL}:
+                    <select id="pool" name="pool" class="input" onchange="javascript:form.submit();">
+                        <!-- BEGIN pool_row -->
+                        <option value="{pool_row.VALUE}" {pool_row.SELECTED}{pool_row.DISABLED}>{pool_row.OPTION}</option>
+                        <!-- END pool_row -->
+                    </select>
+                </p>
+            </div>
+        </form>
         <hr />
 
-
-        <!-- IF ! .dkpsys_row -->
-        <div class="panel">
+        <div class="forumbg forumbg-table">
             <div class="inner">
                 <span class="corners-top"><span></span></span>
-
-                <p class= "error">{L_NO_DATA}</p>
-                <span class="corners-bottom"><span></span></span>
-            </div>
-        </div>
-        <!-- ENDIF -->
-
-        <!-- BEGIN dkpsys_row -->
-
-        <h4>{dkpsys_row.NAME}</h4>
-        <div class="forumbg forumbg-table" style= "width:90%" >
-            <div class="inner">
-                <span class="corners-top"><span></span></span>
-                <table class="table1" width="90%" border="0" cellspacing="0" cellpadding="0">
+                <!-- IF ITEM_PAGINATION -->
+                <div class="pagination">
+                    <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{S_ON_PAGE}</a>
+                    <span>{ITEM_PAGINATION}<br /><br /></span>
+                </div>
+                <!-- ENDIF -->
+                <table class="table1" width="100%" cellspacing="0">
                     <thead>
-                    <tr>
-                        <th style="text-align:left; width:10%">{L_EVENT_IMAGE}</th>
-                        <th style="width:30%; white-space:nowrap; text-align:left;"></th>
-                        <th style="width:10%; white-space:nowrap; text-align:left;">{L_RAIDCOUNT}</th>
-                        <th style="width:10%; white-space:nowrap; text-align:left;">{L_OLDEST}</th>
-                        <th style="width:10%; white-space:nowrap; text-align:left;">{L_NEWEST}</th>
-                        <th style="width:10%; white-space:nowrap; text-align:left;">{L_VALUE}</th>
+                    <tr style="color:white;">
+                        <th style="text-align:left; width:3%"><img src="adm/images/glyphs/view.gif" width="16" height="16" alt="View" /></th>
+                        <th style="text-align:left; width:5%" ><a href="{O_DATE}">{L_DATE}</a></th>
+                        <!-- IF S_HISTORY -->
+                        <th style="text-align:left; width:7%; white-space: nowrap;" >{L_CLASS}</th>
+                        <th style="text-align:left; width:15%"><a href="{O_BUYER}&amp;">{L_NAME}</a></th>
+                        <th style="text-align:left; width:25%"><a href="{O_ITEMNAME}">{L_ITEM}</a></th>
+                        <th style="text-align:left; width:10%">{L_RAID}</th>
+                        <!-- ELSE -->
+                        <th style="text-align:left; width:7%" colspan="2"></th>
+                        <th style="text-align:left; width:20%"><a href="{O_ITEMNAME}">{L_ITEM}</a></th>
+                        <th style="text-align:left; width:15%">{L_RAID}</th>
+                        <!-- ENDIF -->
+                        <th style="text-align:right; width:7%; white-space: nowrap;">{L_ITEMVALUE}</th>
+                        <!-- IF S_SHOWDECAY -->
+                        <th style="text-align:right; width:7%; white-space: nowrap;">{L_ITEMDECAY}</th>
+                        <!-- ENDIF -->
+                        <th style="text-align:right; width:7%; white-space: nowrap;"><a href="{O_ITEMTOTAL}">{L_ITEMTOTAL}</a></th>
                     </tr>
                     </thead>
                     <tfoot>
-                    <tr>
-                        <th style="text-align: left; white-space: nowrap; color:white;" colspan="0">{dkpsys_row.EVENTCOUNT}</th>
+                    <tr  style="color:white;">
+                        <!-- IF S_HISTORY -->
+                        <th  style="text-align:left; white-space: nowrap; width:35%" colspan="4">
+                            {LISTITEMS_FOOTCOUNT}
+                        </th>
+                        <!-- ELSE -->
+                        <th  style="text-align:left; white-space: nowrap; width:35%" colspan="4">
+                            {LISTITEMS_FOOTCOUNT}
+                        </th>
+                        <!-- ENDIF -->
+                        <th style="text-align:right; width:30%" colspan="2"> </th>
+                        <th style="text-align:right; width:10%">{TOTAL_ITEMVALUE}</th>
+
+
+                        <!-- IF S_SHOWDECAY -->
+                        <th style="text-align:right; width:10%">{TOTAL_ITEMDECAY}</th>
+                        <!-- ENDIF -->
+
+                        <th style="text-align:right; width:15%">{TOTAL_ITEMTOTAL}</th>
                     </tr>
                     </tfoot>
+                    <tbody>
+                    <!-- BEGIN items_row -->
+                    <tr <!-- IF items_row.S_ROW_COUNT is even -->class="bg1"<!-- ELSE -->class="bg2"<!-- ENDIF -->>
+                    <td style="text-align:left; width:3%;"><a href="{items_row.U_VIEW_ITEM}"></a><img src="adm/images/glyphs/view.gif" width="16" height="16" alt="View" /></td>
+                    <td style="text-align:left; width:5%;"><a href="{raids_row.U_VIEW_RAID}">{items_row.DATE}</a></td>
 
-                    <!-- BEGIN events_row -->
-                    <!-- IF dkpsys_row.events_row.S_ROW_COUNT is even -->
-                    <tr class="row bg1">
-                        <!-- ELSE -->
-                    <tr class="row bg2">
-                        <!-- ENDIF -->
-                        <td><!-- IF dkpsys_row.events_row.S_EVENT_IMAGE_EXISTS --><img width="32" height="32" src="{dkpsys_row.events_row.IMAGEPATH}" alt="{dkpsys_row.events_row.NAME}" /><!-- ENDIF --></td>
-                        <td><img src="{ROOT_PATH}/images/bbdkp/icons/view.gif" width="16" height="16" alt="View" />
-                            <a style="color:{dkpsys_row.events_row.EVENTCOLOR}" href="{dkpsys_row.events_row.U_VIEW_EVENT}"> <strong>{dkpsys_row.events_row.NAME}</strong></a></td>
-                        <td>{dkpsys_row.events_row.RAIDCOUNT}</td>
-                        <td>{dkpsys_row.events_row.OLDEST}</td>
-                        <td>{dkpsys_row.events_row.NEWEST}</td>
-                        <td>{dkpsys_row.events_row.VALUE}</td>
+                    <!-- IF S_HISTORY -->
+                    <td  style="text-align:left; white-space: nowrap; width:7%">
+                        <!-- IF items_row.S_RACE_IMAGE_EXISTS --><img src="{items_row.RACE_IMAGE}" alt="" />&nbsp;<!-- ELSE -->&nbsp;<!-- ENDIF -->
+                        <!-- IF items_row.S_CLASS_IMAGE_EXISTS --><img src="{items_row.CLASS_IMAGE}" alt="{items_row.CLASS}" /><!-- ELSE -->&nbsp;<!-- ENDIF --></td>
+                    <td style="text-align:left; width:15%"><strong><a style="color:{items_row.CLASSCOLOR}" href="{items_row.U_VIEW_BUYER}">{items_row.BUYER}</a></strong></td>
+
+                    <td style="text-align:left; width:25%"><a href="{items_row.U_VIEW_ITEM}">{items_row.ITEMNAME}</a></td>
+                    <td style="text-align:left; width:15%"><a href="{items_row.U_VIEW_RAID}">{items_row.RAID}</a></td>
+
+                    <!-- ELSE -->
+                    <td style="text-align:left;  width:7%" colspan="2"></td>
+                    <td style="text-align:left; width:20%"><strong><a href="{items_row.U_VIEW_ITEM}">{items_row.ITEMNAME}</a></strong></td>
+                    <td style="text-align:left; width:30%"><a href="{items_row.U_VIEW_RAID}">{items_row.RAID}</a></td>
+                    <!-- ENDIF -->
+
+                    <td style="text-align:right; width:7%"><span class="negative">{items_row.ITEMVALUE}</span></td>
+
+                    <!-- IF S_SHOWDECAY -->
+                    <td style="text-align:right; width:7%"><span class="positive" >{items_row.DECAYVALUE}</span></td>
+                    <!-- ENDIF -->
+
+                    <td style="text-align:right; width:7%"><strong><span class="negative" >{items_row.TOTAL}</span></strong></td>
                     </tr>
-                    <!-- END events_row -->
+                    <!-- END items_row -->
+                    </tbody>
+
                 </table>
+                <!-- IF ITEM_PAGINATION -->
+                <div class="pagination">
+                    <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{S_ON_PAGE}</a>
+                    <span>{ITEM_PAGINATION}<br /><br /></span>
+                </div>
+                <!-- ENDIF -->
                 <span class="corners-bottom"><span></span></span>
             </div>
         </div>
-
-        <!-- IF EVENT_PAGINATION -->
-        <div class="pagination">
-            <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{dkpsys_row.S_ON_PAGE}</a><span>{dkpsys_row.EVENT_PAGINATION}<br /></span>
-        </div>
-        <!-- ENDIF -->
-        <br />
-        <!-- END dkpsys_row -->
-
-        <span class="corners-bottom"><span></span></span>
-    </div>
-</div>
-
-
-
