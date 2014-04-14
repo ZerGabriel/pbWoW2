@@ -7,7 +7,7 @@ by bbDKP.com
 
 ## Version 
 
-v1.0.0
+v0.0.1
 
 style files included
 *	bbDKP 1.3.0 
