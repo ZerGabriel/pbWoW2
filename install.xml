@@ -23,13 +23,14 @@
 				<email><![CDATA[sajaki9@gmail.com]]></email>
 			</author>
 		</author-group>
-		<mod-version>1.3.0</mod-version>
+		<mod-version>0.0.1</mod-version>
 		<installation>
 			<level>easy</level>
 			<time>60</time>
 			<target-version>3.0.12</target-version>
 		</installation>
 		<link-group>
+			<link type="dependency" href="https://www.bbdkp.com/downloads.php" lang="en">bbDKP 1.3.0</link>		
 			<link type="parent" lang="en" href="../install.xml">Install instructions</link>
 			<link type="parent" lang="fr" href="../install.xml">Manuel d'installation</link>
 			<link type="parent" lang="de" href="../install.xml">Installations-Anleitung</link>
