@@ -1,11 +1,10 @@
 <script type="text/javascript">
-jQuery.noConflict();
-jQuery(document).ready( function() 
+$(document).ready( function() 
 {
 	<!-- BEGIN zone -->
-	jQuery("#zone{zone.ZONE_ID}").tooltip({ position: "top center", relative: "true", effect: 'fade', opacity: 0.95});
+	$j("#zone{zone.ZONE_ID}").tooltip({ position: "top center", relative: "true", effect: 'fade', opacity: 0.95});
 	<!-- IF S_SHOWPROGRESSBAR -->
-		jQuery("#progressbar_{zone.ZONE_ID}").progressBar(
+		$j("#progressbar_{zone.ZONE_ID}").progressBar(
 		{	showText : false,
 			width  : 100,
 			height : 10,
@@ -21,7 +20,6 @@ jQuery(document).ready( function()
 		}) 
 	<!-- ENDIF -->
 	<!-- END zone -->
-
 });
 </script>
 
