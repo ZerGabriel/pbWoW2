@@ -1,15 +1,7 @@
 <!-- INCLUDE overall_header.html -->
 
-<div  style="float: left; width:630px;">
-    <!-- IF S_DISPLAY_WELCOME -->
-    <!-- INCLUDE dkp/block/welcomeblock.html -->
-    <!-- ENDIF -->
+<div class="index-right">
 
-    <!-- INCLUDE dkp/block/news.html -->
-
-</div>
-
-<div class="index-right" style="float: right; width: 300px;">
     <!-- IF S_DISPLAY_RT -->
     <!-- INCLUDE dkp/block/recent.html -->
     <!-- ENDIF -->
@@ -57,8 +49,19 @@
 
 </div>
 
+<div class="index-left">
+	 <div class="wow-index">
+	 	<div style="margin:0 10px 10px;">
+ 	   	   <!-- IF S_DISPLAY_WELCOME -->
+ 	   	   <!-- INCLUDE dkp/block/welcomeblock.html -->
+ 		   <!-- ENDIF -->
 
-<div style="clear:both;"></div>
+ 		   <!-- INCLUDE dkp/block/news.html -->
+		</div>
+	</div>
+</div>
+
+
 
 <!-- INCLUDE dkp/block/whoisonlineblock.html -->
 
