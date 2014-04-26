@@ -1,7 +1,10 @@
 bbDKP-pbWoW2
 -----------------
+This mod adds bbdkp template files on top of the pbWoW2 style. 
+
 by bbDKP.com  
-@authors Sajaki
+@authors Sajaki, Paybas
+
 
 *adds bbDKP, raidplanner, apply, bbtips, bossprogress to pbWoW2 style*
 
@@ -18,27 +21,34 @@ style files included
 
 ## Requires
 
-*	phpBB 3.0.12 or higher
-*	bbDKP 1.3.0
-*	pbWoW2
+*	phpBB 3.0.12
+*	pbWoW 2.0.9
+*	pbWoW daughter styles (optional)
+*	Prosilver style must be active but not default
+*	bbDKP 1.3.0.1 (requires >= php 5.3.3)
+*	Raidplanner 0.10.0 (plugin) (optional, recommended)
+*	Apply 1.5.1 (plugin) (optional, recommended)
+*	Gameworld 1.1.1 (plugin) (optional, recommended)
+*	bbTips 1.0.4 Wowhead Toolips Mod (optional, recommended)
 
 
 ## Installation
 
-*	upload the contents of the upload folder
-*	go to the administration control panel and click the styles tab
-*	click the install link for Pandaria
-*	once the style is installed you can set it as default or not.
-*	(optional) Put the /contrib/favicon.ico file at the root of your site
-
-1. uncompress the zip file
-2. Upload it to your webserver, into /store/mods/
-3. Launch automod, click in "bbDKP-pbWoW2", and click the "Install" link. this will copy the files, and perform the necessary edits.
+* unzip and upload pbwow2-bbdkp13 into /store mods
+* go to the Autmod tab and install
+* For pbWoW daughter styles you need to open theme/stylesheet.css and add this below :
+	```
+	@import url("../../pbwow2/theme/bbdkp.css");
+	@import url("../../pbwow2/theme/raidplanner.css");
+	@import url("../../pbwow2/theme/apply.css");
+	@import url("../../pbwow2/theme/bbtips.css");
+	@import url("../../pbwow2/theme/bossprogress.css");
+	```
+* clear the templates and caches
  
-
 ## Changelog
 
--	1.0.0 first version
+-	0.0.1 development
 
 ## License
 
