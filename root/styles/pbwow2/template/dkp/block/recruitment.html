@@ -29,10 +29,9 @@
 
                 <!-- BEGIN rec -->
                 <script type="text/javascript">
-                    jQuery.noConflict();
-                    jQuery(document).ready( function()
-                            {
-                                jQuery("a.tool{guild.rec.CLASSID}").tooltip({
+                   $(document).ready(function() 
+                    	if (typeof jQuery != 'undefined') {
+                                $("a.tool{guild.rec.CLASSID}").tooltip({
                                     position:'top center',
                                     relative:true,
                                     effect: 'fade',
