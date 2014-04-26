@@ -82,7 +82,7 @@ ul.portalmenu {
 ul.portalmenu li {
     line-height: 14px;
     list-style-type: none;
-    padding-left: 10px;
+    padding-left: 2px;
     padding-bottom: 0px !important;
     padding-top: 0px;
     text-align: left;
@@ -93,7 +93,7 @@ ul.portalmenu li.portalblock {
     padding-top: 0px;
 }
 .portalmenu a {
-	background-image: url("{T_THEME_PATH}/images/dkp/menu.png");
+	background-image: url("{T_IMAGESET_PATH}/dkp/list.png");
 	background-position: 2% center;
 	background-repeat: no-repeat;
 	font-size: 105%;
@@ -314,10 +314,10 @@ span.corners-inner-bottom span {
 }
 
 span.corners-inner-top, span.corners-inner-bottom {
-	background-image: url('{T_THEME_PATH}/images/corners_left.png');
+	background-image: url('{T_IMAGESET_PATH}/corners_left.png');
 }
 span.corners-inner-top span, span.corners-inner-bottom span {
-	background-image: url('{T_THEME_PATH}/images/corners_right.png');
+	background-image: url('{T_IMAGESET_PATH}/corners_right.png');
 }
 
 /** flot statistics **/
