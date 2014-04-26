@@ -12,9 +12,8 @@
 		<description lang="en"><![CDATA[adds bbDKP, raidplanner, apply, bbtips, bossprogress to pbWoW style]]></description>
 		<description lang="fr"><![CDATA[ajoute bbDKP, raidplanner, apply, bbtips, bossprogress dans style pbWoW]]></description>
 		<description lang="de"><![CDATA[installiert bbDKP, raidplanner, apply, bbtips, bossprogress im pbWoW style]]></description>
-		<author-notes lang="en"><![CDATA[requires bbDKP 1.3.0]]></author-notes>
-		<author-notes lang="fr"><![CDATA[nécessite bbDKP 1.3.0]]></author-notes>
-		<author-notes lang="de"><![CDATA[benötigt bbDKP 1.3.0]]></author-notes>
+		<author-notes lang="en"><![CDATA[bbdkp 1.3]]></author-notes>
+
 		<author-group>
 			<author>
 				<realname><![CDATA[Andreas]]></realname>
@@ -31,9 +30,6 @@
 		</installation>
 		<link-group>
 			<link type="dependency" href="https://www.bbdkp.com/downloads.php" lang="en">bbDKP 1.3.0</link>		
-			<link type="parent" lang="en" href="../install.xml">Install instructions</link>
-			<link type="parent" lang="fr" href="../install.xml">Manuel d'installation</link>
-			<link type="parent" lang="de" href="../install.xml">Installations-Anleitung</link>
     	</link-group>
 	</header>
 	<action-group>
