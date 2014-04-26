@@ -7,14 +7,14 @@ by bbDKP.com
 
 ## Version 
 
-v0.0.1
+v0.0.1 - under development!
 
 style files included
-*	bbDKP 1.3.0 
+*	bbDKP 1.3.0.1
 *	Raidplanner 0.10.0
-*	bbTips 1.1
-*	Apply 1.5.0
-*	Gameworld 1.1
+*	bbTips 1.0.4
+*	Apply 1.5.1
+*	Gameworld 1.1.1
 
 ## Requires
 
