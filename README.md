@@ -1,4 +1,4 @@
-bbDKP-pbWoW2
+pbWoW2-bbDKP130
 -----------------
 This mod adds bbdkp template files on top of the pbWoW2 style. 
 
