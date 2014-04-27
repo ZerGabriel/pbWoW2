@@ -232,43 +232,6 @@ ul.portalmenu li.portalblock {
 	min-height:100px !important;
 	max-height:100px !important;
 }
-/* bossprogress.php css */
-
-.progresspage dl {
-	margin: 0;
-	padding: 0;
-}
-.progresspage dd {
-	position: relative;
-	display: block;
-	float: left;
-	width: 800px;
-	height: 120px;
-	margin: 0 0 0px;
-	background: url("images/bossprogress/rp/g_colorbar2.jpg");
-}
-* .html dd { float: none; }
-
-.progresspage dd div {
-  	position: relative;
-	background: url("images/bossprogress/rp/g_colorbar.jpg");
-	height: 120px;
-	width: 100%;
-	text-align:right;
-}
-.progresspage dd div strong
-{
-	position: absolute;
-	right: -5px;
-	top: -2px;
-	display: block;
-	background: url("images/bossprogress/rp/g_marker.gif");
-	height: 24px;
-	width: 9px;
-	text-align: left;
-	text-indent: -9999px;
-	overflow: hidden;
-}
 
 .positive {
 	color: #00BB55;
