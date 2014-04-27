@@ -1,5 +1,6 @@
 <ul style="padding: 4px">
     <li style="list-style:none" >
+
         <!-- IF .upcoming -->
         <!-- BEGIN upcoming -->
         <div style= "float: left; cursor:pointer;" onclick="location.href='{upcoming.EVENT_URL}'" title="{upcoming.EVENTNAME}">
@@ -18,5 +19,23 @@
         <!-- ELSE -->
         <span class="error">{L_NO_RAIDS_SCHEDULED}</span>
         <!-- ENDIF -->
+        <br />
+        <script type="text/javascript" src="{T_SUPER_TEMPLATE_PATH}/planner/RaidCalendar/clock.js"></script>
+        <script type="text/javascript"> 
+        $(document).ready(function() 
+        {
+             new jClock('{T_SUPER_TEMPLATE_PATH}/planner/RaidCalendar/clock.png', jQuery('#clockCanvas').get(0));
+        } 
+        );
+        </script>
+        <div style="padding: 0% 10%;">
+        <canvas id="clockCanvas" height="130" width="130">
+        <p>{L_ERROR_NOCANVAS}</p>
+        </canvas>
+        <p>{CURRENT_TIME} {TZ}</p>
+        </div>
+      
+
+
     </li>
 </ul>
