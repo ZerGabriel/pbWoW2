@@ -140,8 +140,8 @@ ul.portalmenu li.portalblock {
 	position:relative;
 	margin:0px auto;
 	font-size: 10px;
-	min-width:100px;
-	max-width:200px;
+	min-width:200px;
+	max-width:250px;
 	color:#FFFFDD;
 	z-index:1;
 	margin-left:1px; /* default, width of left corner */
