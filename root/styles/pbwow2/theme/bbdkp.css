@@ -82,7 +82,7 @@ ul.portalmenu {
 ul.portalmenu li {
     line-height: 14px;
     list-style-type: none;
-    padding-left: 10px;
+    padding-left: 2px;
     padding-bottom: 0px !important;
     padding-top: 0px;
     text-align: left;
@@ -93,7 +93,7 @@ ul.portalmenu li.portalblock {
     padding-top: 0px;
 }
 .portalmenu a {
-	background-image: url("{T_THEME_PATH}/images/dkp/menu.png");
+	background-image: url("{T_IMAGESET_PATH}/dkp/list.png");
 	background-position: 2% center;
 	background-repeat: no-repeat;
 	font-size: 105%;
@@ -140,8 +140,8 @@ ul.portalmenu li.portalblock {
 	position:relative;
 	margin:0px auto;
 	font-size: 10px;
-	min-width:100px;
-	max-width:200px;
+	min-width:200px;
+	max-width:250px;
 	color:#FFFFDD;
 	z-index:1;
 	margin-left:1px; /* default, width of left corner */
@@ -232,43 +232,6 @@ ul.portalmenu li.portalblock {
 	min-height:100px !important;
 	max-height:100px !important;
 }
-/* bossprogress.php css */
-
-.progresspage dl {
-	margin: 0;
-	padding: 0;
-}
-.progresspage dd {
-	position: relative;
-	display: block;
-	float: left;
-	width: 800px;
-	height: 120px;
-	margin: 0 0 0px;
-	background: url("images/bossprogress/rp/g_colorbar2.jpg");
-}
-* .html dd { float: none; }
-
-.progresspage dd div {
-  	position: relative;
-	background: url("images/bossprogress/rp/g_colorbar.jpg");
-	height: 120px;
-	width: 100%;
-	text-align:right;
-}
-.progresspage dd div strong
-{
-	position: absolute;
-	right: -5px;
-	top: -2px;
-	display: block;
-	background: url("images/bossprogress/rp/g_marker.gif");
-	height: 24px;
-	width: 9px;
-	text-align: left;
-	text-indent: -9999px;
-	overflow: hidden;
-}
 
 .positive {
 	color: #00BB55;
@@ -314,10 +277,10 @@ span.corners-inner-bottom span {
 }
 
 span.corners-inner-top, span.corners-inner-bottom {
-	background-image: url('{T_THEME_PATH}/images/corners_left.png');
+	background-image: url('{T_IMAGESET_PATH}/corners_left.png');
 }
 span.corners-inner-top span, span.corners-inner-bottom span {
-	background-image: url('{T_THEME_PATH}/images/corners_right.png');
+	background-image: url('{T_IMAGESET_PATH}/corners_right.png');
 }
 
 /** flot statistics **/

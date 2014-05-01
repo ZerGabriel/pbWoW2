@@ -29,28 +29,27 @@
 
                 <!-- BEGIN rec -->
                 <script type="text/javascript">
-                    jQuery.noConflict();
-                    jQuery(document).ready( function()
-                            {
-                                jQuery("a.tool{guild.rec.CLASSID}").tooltip({
-                                    position:'top center',
-                                    relative:true,
-                                    effect: 'fade',
-                                    onShow: function() {
-                                        var $trigger = this.getTrigger();
-                                        this.getTip().css({
-                                            'margin-top' : $trigger.css('margin-top'),
-                                            'margin-left' : $trigger.css('margin-left')
-                                        });
-                                        $trigger.fadeTo("slow", 0.55);
-                                    },
-                                    onHide: function() {this.getTrigger().fadeTo(1,1);}
-                                }).dynamic(
-                                        {
-                                            bottom:
-                                            { direction: 'up', bounce: true }
-                                        });
-                            }
+                   $(document).ready(function() 
+                        {
+                            $("a.tool{guild.rec.CLASSID}").tooltip({
+                                position:'top center',
+                                relative:true,
+                                effect: 'fade',
+                                onShow: function() {
+                                    var $trigger = this.getTrigger();
+                                    this.getTip().css({
+                                        'margin-top' : $trigger.css('margin-top'),
+                                        'margin-left' : $trigger.css('margin-left')
+                                    });
+                                    $trigger.fadeTo("slow", 0.55);
+                                },
+                                onHide: function() {this.getTrigger().fadeTo(1,1);}
+                            }).dynamic(
+                                    {
+                                        bottom:
+                                        { direction: 'up', bounce: true }
+                                    });
+                        }
                     );
                 </script>
 

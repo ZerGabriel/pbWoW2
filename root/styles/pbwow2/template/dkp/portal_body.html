@@ -1,15 +1,7 @@
 <!-- INCLUDE overall_header.html -->
 
-<div  style="float: left; width:630px;">
-    <!-- IF S_DISPLAY_WELCOME -->
-    <!-- INCLUDE dkp/block/welcomeblock.html -->
-    <!-- ENDIF -->
+<div class="index-right">
 
-    <!-- INCLUDE dkp/block/news.html -->
-
-</div>
-
-<div class="index-right" style="float: right; width: 300px;">
     <!-- IF S_DISPLAY_RT -->
     <!-- INCLUDE dkp/block/recent.html -->
     <!-- ENDIF -->
@@ -25,26 +17,15 @@
     <!-- IF S_BPSHOW -->
     <!-- INCLUDE dkp/block/bossprogress.html -->
     <!-- ENDIF -->
-
+    
     <!-- IF S_PLANNER_UPCOMING -->
-    <div class="wow-recent" id="raidblock1">
-        <h2 class="open"><img width="16px" height="14px" alt="" src="{T_IMAGESET_PATH}/planner/icon_queue.png" />&nbsp;{L_UPCOMING_RAIDS}</h2>
-        <div class="bbdkpblock">
-            <div style="width: 90%; clear: both; moz-box-shadow: inset 0 0 30px #000f; -webkit-box-shadow: inset 0 0 30px #000f; box-shadow: inset 0 0 30px #000f; margin:auto;">
-                <!-- INCLUDE dkp/block/planner_upcoming.html -->
-            </div>
-        </div>
-    </div>
+        <!-- INCLUDE dkp/block/planner_upcoming.html -->
     <!-- ENDIF -->
     <!-- IF S_PLANNER_TOPSIGNUPS -->
-    <div class="wow-recent" id="raidblock2">
-        <h2 class="open"><img width="16px" height="14px" alt="" src="{T_IMAGESET_PATH}/planner/icon_signed_up.png" />&nbsp;{L_TOPSIGNUPS}</h2>
-        <div class="bbdkpblock">
-            <div style="width: 90%; clear: both; moz-box-shadow: inset 0 0 30px #000f; -webkit-box-shadow: inset 0 0 30px #000f; box-shadow: inset 0 0 30px #000f; margin:auto;">
-                <!-- INCLUDE dkp/block/planner_topsignups.html -->
-            </div>
-        </div>
-    </div>
+        <!-- INCLUDE dkp/block/planner_topsignups.html -->
+    <!-- ENDIF -->
+    <!-- IF S_PLANNER_UPCOMING -->
+        <!-- INCLUDE dkp/block/teamspeak_right.html -->
     <!-- ENDIF -->
 
     <!-- IF S_DISPLAY_MAINMENU -->
@@ -57,6 +38,22 @@
 
 </div>
 
+<div class="index-left">
+	 <div class="wow-index">
+	 	<div style="margin:0px 0px 2px;">
+ 	   	   <!-- IF S_DISPLAY_WELCOME -->
+ 	   	   <!-- INCLUDE dkp/block/welcomeblock.html -->
+ 		   <!-- ENDIF -->
+
+ 		   <!-- INCLUDE dkp/block/news.html -->
+
+           <!-- IF S_PLANNER_UPCOMING -->
+            <!-- INCLUDE dkp/block/teamspeak.html -->
+           <!-- ENDIF -->
+
+		</div>
+	</div>
+</div>
 
 <div style="clear:both;"></div>
 

@@ -29,7 +29,6 @@
 <hr />
 
 
-<!--  non epgp classic dkp overview  -->
 <div style="width:50%" class="panel">
 <div class="inner"><span class="corners-top"><span></span></span>
 {POOLISSET}
@@ -165,7 +164,7 @@
 <table class="table1" cellspacing="1">
   <thead>
    <tr>
-    <th style="text-align:left; width:10%;">{L_DATE}</th>
+    <th style="text-align:left; width:8%;">{L_DATE}</th>
     <th style="text-align:left; width:25%;">{L_NAME}</th>
     <th style="text-align:left; width:25%;" >{L_NOTE}</th>
    <th class="name" style="text-align:right;">{L_RAIDVALUE}</th>
@@ -215,6 +214,67 @@
 <!-- ENDIF -->
 
 
+<!-- ******* Adjustments *************** -->
+<br/>
+<h3>{L_ADJUSTMENT_HISTORY}</h3>
+
+<!-- IF .adjustments_row -->
+
+<div class="forumbg forumbg-table">
+    <div class="inner">
+        <span class="corners-top"><span></span></span>
+        <!-- IF ADJUSTMENTS_PAGINATION -->
+        <div class="pagination">
+            <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{S_ON_PAGE}</a>
+            <span>{ADJUSTMENTS_PAGINATION}<br /><br /></span>
+        </div>
+        <!-- ENDIF -->
+        <table class="table1" cellspacing="1">
+            <thead>
+            <tr>
+                <th style="text-align:left; width:8%;">{L_DATE}</th>
+                <th style="text-align:left; width:45%;" >{L_NOTE}</th>
+                <th class="name" style="text-align:right;">{L_ADJUSTMENT}</th>
+                <!-- IF S_SHOWDECAY --> <th class="name" style="text-align:right;">{L_DECAY}</th><!-- ENDIF -->
+                <th class="name" style="text-align:right;">{L_NETADJUSTMENT}</th>
+                <th style="text-align:right;">{L_CURRENT}</th>
+            </tr>
+            </thead>
+            <tfoot>
+            <tr>
+                <th colspan=4; style="text-align: left; white-space: nowrap; color:white;">{L_TOTAL_ADJUSTMENTS}: {LISTADJ_FOOTCOUNT}</th>
+            </tr>
+            </tfoot>
+            <tbody>
+            <!-- BEGIN adjustments_row -->
+            <tr class="bg1">
+                <td style="width:10%;">{adjustments_row.DATE}</td>
+                <td style="text-align:left; width:45%;" >{adjustments_row.REASON}</td>
+                <td style="text-align:right;" ><span class="{adjustments_row.COLOR}">{adjustments_row.ADJUSTMENT}</span></td>
+                <td style="text-align:right;" ><span class="{adjustments_row.COLOR}">{adjustments_row.ADJ_DECAY}</span></td>
+                <td style="text-align:right;" ><span class="{adjustments_row.COLOR}">{adjustments_row.CURRENT_ADJ}</span></td>
+                <td style="text-align:right;" ><span class="{adjustments_row.COLORCURRENT}">{adjustments_row.CURRENT_ADJ}</span></td>
+            </tr>
+            <!-- END adjustments_row -->
+            </tbody>
+        </table>
+
+        <!-- IF ADJUSTMENTS_PAGINATION -->
+        <div class="pagination">
+            <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{S_ON_PAGE}</a>
+            <span>{ADJUSTMENTS_PAGINATION}<br /><br /></span>
+        </div>
+        <!-- ENDIF -->
+
+        <span class="corners-bottom"><span></span></span>
+    </div>
+</div>
+<!-- ELSE -->
+<p class= "error">{L_NO_ADJUSTMENTS}</p>
+
+
+<!-- ENDIF -->
+
 <br/>
 <h3>{L_ITEM_PURCHASE_HISTORY}</h3>
 <!-- IF .items_row -->
@@ -234,11 +294,11 @@
    <tr>
     <th style="text-align:left; width:8%">{L_DATE}</th>
     <th style="text-align:left; width:25%">{L_RAID}</th>
-    <th style="text-align:left; width:35%">{L_NAME}</th>
-    <th style="text-align:right; width:10%">{L_SPENT}</th>
-    <th style="text-align:right; width:10%">{L_DECAY}</th>
-    <th style="text-align:right; width:10%">{L_SPENTNET}</th>
-    <th style="text-align:right; width:10%">{L_CURRENT}</th>
+    <th style="text-align:left; width:25%">{L_NAME}</th>
+    <th style="text-align:right; ">{L_SPENT}</th>
+    <th style="text-align:right; ">{L_DECAY}</th>
+    <th style="text-align:right; ">{L_NETSPENT}</th>
+    <th style="text-align:right; ">{L_CURRENT}</th>
     </tr>
 </thead>
 <tfoot>

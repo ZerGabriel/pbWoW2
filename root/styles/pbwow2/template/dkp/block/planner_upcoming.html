@@ -1,5 +1,11 @@
+<div class="wow-recent" id="raidblock1">
+    <h2 class="open"><img width="16px" height="14px" alt="" src="{T_IMAGESET_PATH}/planner/icon_queue.png" />&nbsp;{L_UPCOMING_RAIDS}</h2>
+    <div class="bbdkpblock">
+        <div style="width: 90%; clear: both; moz-box-shadow: inset 0 0 30px #000f; -webkit-box-shadow: inset 0 0 30px #000f; box-shadow: inset 0 0 30px #000f; margin:auto;">
+
 <ul style="padding: 4px">
     <li style="list-style:none" >
+        <div class="bbdkpblock">
         <!-- IF .upcoming -->
         <!-- BEGIN upcoming -->
         <div style= "float: left; cursor:pointer;" onclick="location.href='{upcoming.EVENT_URL}'" title="{upcoming.EVENTNAME}">
@@ -8,9 +14,9 @@
             </div>
             <div style="float: left;">
                 <strong style="color:red;"><!-- IF upcoming.ALL_DAY -->{L_ALL_DAY} {upcoming.START_TIME}<!-- ELSE -->{upcoming.START_TIME}<!-- ENDIF --></strong><br/>
-		                <span>
-			               <!-- IF upcoming.EVENTNAME -->{upcoming.EVENTNAME}<!-- ENDIF -->
-		                </span>
+                        <span>
+                           <!-- IF upcoming.EVENTNAME -->{upcoming.EVENTNAME}<!-- ENDIF -->
+                        </span>
             </div>
         </div>
         <!-- END upcoming -->
@@ -18,5 +24,30 @@
         <!-- ELSE -->
         <span class="error">{L_NO_RAIDS_SCHEDULED}</span>
         <!-- ENDIF -->
+        <br />
+        </div>
+        <div class="bbdkpblock">
+        <script type="text/javascript" src="{T_SUPER_TEMPLATE_PATH}/planner/RaidCalendar/clock.js"></script>
+        <script type="text/javascript"> 
+        $(document).ready(function() 
+        {
+             new jClock('{T_SUPER_TEMPLATE_PATH}/planner/RaidCalendar/clock.png', jQuery('#clockCanvas').get(0));
+        } 
+        );
+        </script>
+        <div style="padding: 0% 10%;">
+        <canvas id="clockCanvas" height="130" width="130">
+        <p>{L_ERROR_NOCANVAS}</p>
+        </canvas>
+        <p>{CURRENT_TIME} {TZ}</p>
+        </div>
+
+        </div>
+
+
+
     </li>
 </ul>
+        </div>
+    </div>
+</div>
