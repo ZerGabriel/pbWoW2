@@ -1,17 +1,25 @@
-<ul style="padding: 4px">
-    <li style="list-style:none" >
-        <!-- BEGIN topsignups -->
-        <div style="clear: left;">
-            <div style="float: left; margin: 0 5px; 0 0;"><!-- IF topsignups.S_RACE_IMAGE_EXISTS --><img src="{topsignups.RACE_IMAGE}" alt="" />&nbsp;<!-- ELSE --><!-- ENDIF -->
-                <!-- IF topsignups.S_CLASS_IMAGE_EXISTS --><img src="{topsignups.CLASS_IMAGE}" alt="{topsignups.CLASS}" /><!-- ELSE -->&nbsp;<!-- ENDIF -->
-            </div>
-            <div style="float: left;">
-                <strong><span style="color:{topsignups.COLORCODE}">{topsignups.CHARNAME} : {topsignups.COUNTSIGNUPS} </span></strong>
-            </div>
+<!-- IF .topsignups -->
+<div class="wow-recent" id="raidblock2">
+    <h2 class="open"><img width="16px" height="14px" alt="" src="{T_IMAGESET_PATH}/planner/icon_signed_up.png" />&nbsp;{L_TOPSIGNUPS}</h2>
+    <div class="bbdkpblock">
+        <div style="width: 90%; clear: both; moz-box-shadow: inset 0 0 30px #000f; -webkit-box-shadow: inset 0 0 30px #000f; box-shadow: inset 0 0 30px #000f; margin:auto;">
+            <ul style="padding: 4px">
+                <li style="list-style:none" >
+                    <!-- BEGIN topsignups -->
+                    <div style="clear: left;">
+                        <div style="float: left; margin: 0 5px; 0 0;"><!-- IF topsignups.S_RACE_IMAGE_EXISTS --><img src="{topsignups.RACE_IMAGE}" alt="" />&nbsp;<!-- ELSE --><!-- ENDIF -->
+                            <!-- IF topsignups.S_CLASS_IMAGE_EXISTS --><img src="{topsignups.CLASS_IMAGE}" alt="{topsignups.CLASS}" /><!-- ELSE -->&nbsp;<!-- ENDIF -->
+                        </div>
+                        <div style="float: left;">
+                            <strong><span style="color:{topsignups.COLORCODE}">{topsignups.CHARNAME} : {topsignups.COUNTSIGNUPS} </span></strong>
+                        </div>
+                    </div>
+
+                    <!-- END topsignups -->
+
+                </li>
+            </ul>
         </div>
-
-        <!-- END topsignups -->
-        <div style="clear: both;"></div>
-    </li>
-</ul>
-
+    </div>
+</div>
+<!-- ENDIF -->

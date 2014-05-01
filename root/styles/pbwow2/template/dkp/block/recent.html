@@ -14,12 +14,9 @@
 				<!-- IF recent_topic_row.TOPIC_PREVIEW_TEXT -->title="{recent_topic_row.TOPIC_PREVIEW_TEXT}" id="t{recent_topic_row.TOPIC_ID}"<!-- ELSE -->title="{recent_topic_row.TOPIC_FOLDER_IMG_ALT}"<!-- ENDIF -->>
 				<!-- IF recent_topic_row.S_UNREAD_TOPIC --><a href="{recent_topic_row.U_NEWEST_POST}">{NEWEST_POST_IMG}</a>
 				<!-- ENDIF -->
-
 				<a href="{recent_topic_row.U_TITLE}" class="topictitle"<!-- IF recent_topic_row.TOPIC_AUTHOR_COLOUR --> style="color: {recent_topic_row.TOPIC_AUTHOR_COLOUR}"<!-- ENDIF -->>{recent_topic_row.L_TITLE}</a>
-
 				<!-- IF U_VIEW_UNREAD_POST and not S_IS_BOT --> &bull; <a href="{U_VIEW_UNREAD_POST}">{L_VIEW_UNREAD_POST}</a> &bull; <!-- ENDIF -->
 				<!-- IF recent_topic_row.S_TOPIC_UNAPPROVED or recent_topic_row.S_POSTS_UNAPPROVED or recent_topic_row.S_TOPIC_REPORTED -->
-
 						<div class="extra-icons">
 							<!-- IF recent_topic_row.S_TOPIC_UNAPPROVED or recent_topic_row.S_POSTS_UNAPPROVED --><a href="{recent_topic_row.U_MCP_QUEUE}">{recent_topic_row.UNAPPROVED_IMG}</a> <!-- ENDIF -->
 							<!-- IF recent_topic_row.S_TOPIC_REPORTED --><a href="{recent_topic_row.U_MCP_REPORT}">{recent_topic_row.REPORTED_IMG}</a><!-- ENDIF -->
