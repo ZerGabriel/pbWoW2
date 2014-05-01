@@ -5,15 +5,14 @@ This mod adds bbdkp template files on top of the pbWoW2 style.
 by bbDKP.com  
 @authors Sajaki, Paybas
 
-
 *adds bbDKP, raidplanner, apply, bbtips, bossprogress to pbWoW2 style*
 
 ## Version 
 
-v0.0.1 - under development!
+v0.1.0
 
 style files included
-*	bbDKP 1.3.0.1
+*	bbDKP 1.3.0.2
 *	Raidplanner 0.10.0
 *	bbTips 1.0.4
 *	Apply 1.5.1
@@ -25,30 +24,34 @@ style files included
 *	pbWoW 2.0.9
 *	pbWoW daughter styles (optional)
 *	Prosilver style must be active but not default
-*	bbDKP 1.3.0.1 (requires >= php 5.3.3)
+*	bbDKP 1.3.0.2 (requires >= php 5.3.3)
 *	Raidplanner 0.10.0 (plugin) (optional, recommended)
 *	Apply 1.5.1 (plugin) (optional, recommended)
 *	Gameworld 1.1.1 (plugin) (optional, recommended)
 *	bbTips 1.0.4 Wowhead Toolips Mod (optional, recommended)
-
 
 ## Installation
 
 * unzip and upload pbwow2-bbdkp13 into /store mods
 * go to the Autmod tab and install
 * For pbWoW daughter styles you need to open theme/stylesheet.css and add this below :
+ 
 	```
 	@import url("../../pbwow2/theme/bbdkp.css");
 	@import url("../../pbwow2/theme/raidplanner.css");
 	@import url("../../pbwow2/theme/apply.css");
 	@import url("../../pbwow2/theme/bbtips.css");
 	@import url("../../pbwow2/theme/bossprogress.css");
-	```
+	```	
 * clear the templates and caches
  
 ## Changelog
 
--	0.0.1 development
+-	0.1.0 01-05-2014
+	-	[beta] first usable version 
+
+-	0.0.1 
+	-	[dev] development version
 
 ## License
 
