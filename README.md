@@ -9,13 +9,13 @@ by bbDKP.com
 
 ## Version 
 
-v0.1.0
+v0.2
 
 style files included
-*	bbDKP 1.3.0.2
+*	bbDKP 1.3.0.3
 *	Raidplanner 0.10.0
 *	bbTips 1.0.4
-*	Apply 1.5.1
+*	Apply 1.5.3
 *	Gameworld 1.1.1
 
 ## Requires
@@ -24,9 +24,9 @@ style files included
 *	pbWoW 2.0.9
 *	pbWoW daughter styles (optional)
 *	Prosilver style must be active but not default
-*	bbDKP 1.3.0.2 (requires >= php 5.3.3)
+*	bbDKP 1.3.0.3 (requires >= php 5.3.3)
 *	Raidplanner 0.10.0 (plugin) (optional, recommended)
-*	Apply 1.5.1 (plugin) (optional, recommended)
+*	Apply 1.5.2 (plugin) (optional, recommended)
 *	Gameworld 1.1.1 (plugin) (optional, recommended)
 *	bbTips 1.0.4 Wowhead Toolips Mod (optional, recommended)
 
@@ -47,7 +47,10 @@ style files included
  
 ## Changelog
 
--	0.1.0 01-05-2014
+-	0.2 17-05-2014
+	-	Updated to Apply 1.5.3 / bbdkp 1.3.0.3
+	
+-	0.1 01-05-2014
 	-	[beta] first usable version 
 
 -	0.0.1 
