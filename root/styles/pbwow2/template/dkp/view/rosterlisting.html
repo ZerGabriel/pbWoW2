@@ -14,24 +14,33 @@
 </li>
 </ul>
 
-<div class="navbar" style="clear:both;">
-<span class="corners-top"><span></span></span>
-	<form method="post" action="{F_MEMBERS}">
-	<select name="filter" class="input" onchange="javascript:form.submit();">
-	<!-- BEGIN filter_row -->
-	<option value="{filter_row.VALUE}"{filter_row.SELECTED}{filter_row.DISABLED}>{filter_row.OPTION}</option>
-	<!-- END filter_row -->
-	</select>
-	<select name="rosterlayout" id="rosterlayout" class="input" onchange="javascript:form.submit();">
-	<!-- BEGIN rosterlayout_row -->
-			 <option value="{rosterlayout_row.VALUE}"{rosterlayout_row.SELECTED}>{rosterlayout_row.OPTION}</option>
-	<!-- END rosterlayout_row -->
-	</select>
-	<input type="hidden" name="hidden_show" value="{SHOWALL}" />
-	</form>
-<span class="corners-bottom"><span></span></span>
-</div>
 
+    <div class="navbar" style="clear:both;">
+        <span class="corners-top"><span></span></span>
+        <form method="post" action="{F_MEMBERS}">
+            <div style="white-space:nowrap; text-align: right;">
+                <div style="text-align:right; white-space:nowrap; width:100%" >
+                    <select name="rosterlayout" id="rosterlayout" class="input" onchange="javascript:form.submit();">
+                        <!-- BEGIN rosterlayout_row -->
+                        <option value="{rosterlayout_row.VALUE}"{rosterlayout_row.SELECTED}>{rosterlayout_row.OPTION}</option>
+                        <!-- END rosterlayout_row -->
+                    </select>
+                    <select name="filter" class="input" onchange="javascript:form.submit();">
+                        <!-- BEGIN filter_row -->
+                        <option value="{filter_row.VALUE}"{filter_row.SELECTED}{filter_row.DISABLED}>{filter_row.OPTION}</option>
+                        <!-- END filter_row -->
+                    </select>
+                    <input type="hidden" name="hidden_show" value="{SHOWALL}" />
+
+
+                    <label>&nbsp;&nbsp;{L_NAME}:</label>
+                    <input type="text" name="member_name" id="member_name" size="20" maxlength="30" value="{MEMBER_NAME}" class="input" />
+                    <input type="submit" name="submit_options" value="{L_FILTER}" class="button1" />
+                </div>
+            </div>
+        </form>
+        <span class="corners-bottom"><span></span></span>
+    </div>
 <hr />
 
 <!--

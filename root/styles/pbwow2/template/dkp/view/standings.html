@@ -17,8 +17,9 @@
         <div class="navbar" style="clear:both;">
             <span class="corners-top"><span></span></span>
             <form method="post" action="{F_MEMBERS}">
-                <div style="float: right; width:49%; white-space:nowrap; text-align: right;">
-                    <div style="text-align:right; white-space:nowrap;" >{L_POOL}:
+                <div style="white-space:nowrap; text-align: right;">
+                    <div style="text-align:right; white-space:nowrap; width:100%" >
+                        {L_POOL}:
                         <select name="pool" class="input" onchange="javascript:form.submit();">
                             <!-- BEGIN pool_row -->
                             <option value="{pool_row.VALUE}"{pool_row.SELECTED}{pool_row.DISABLED}>{pool_row.OPTION}</option>
@@ -30,6 +31,11 @@
                             <!-- END filter_row -->
                         </select>
                         <input type="hidden" name="hidden_show" value="{SHOWALL}" />
+
+                        <label>&nbsp;&nbsp;{L_NAME}:</label>
+                        <input type="text" name="member_name" id="member_name" size="20" maxlength="30" value="{MEMBER_NAME}" class="input" />
+                        <input type="submit" name="submit_options" value="{L_FILTER}" class="button1" />
+
                     </div>
                 </div>
             </form>
@@ -53,6 +59,7 @@
                     <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{S_ON_PAGE}</a>
                     <span>{DKPPAGINATION}<br /><br /></span>
                 </div>
+                <br />
                 <!-- ENDIF -->
 
                 <table class="table1 bbdkp" width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -74,7 +81,6 @@
                         <!-- ENDIF -->
                         <th style="text-align: right; width:10%;"><a href="{O_LASTRAID}">{L_LASTRAID}</a></th>
                         <th style="text-align: right; width:10%;"><a href="{O_RAIDS_P1_DAYS}">{RAIDS_P1_DAYS}</a></th>
-                        <th style="text-align: center; width:3%;"><a href="{O_CLASS}">#</a></th>
                     </tr>
                     </thead>
 
@@ -106,8 +112,7 @@
                         <td style="text-align: right;"><span class="{members_row.DKPCOLOUR2}"><strong>{members_row.CURRENT}</strong></span></td>
                         <!-- ENDIF -->
                         <td style="text-align: right;">{members_row.LASTRAID}</td>
-                        <td style="text-align: right;">{members_row.RAIDS_P1_DAYS}%</td>
-                        <td><input type="checkbox" name="compare_ids[]" value="{members_row.ID}" /></td>
+                        <td style="text-align: right;">{members_row.RAIDS_P1_DAYS}%&nbsp;</td>
 
                     </tr>
                     <!-- END members_row -->
