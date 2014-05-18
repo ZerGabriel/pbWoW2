@@ -2,7 +2,7 @@
 
 <!--
 apply plugin for bbDKP
- @version 1.5
+ @version 1.5.2
 -->
 
 <!-- DEFINE $TYPE_INPUTBOX = 'Inputbox' -->
@@ -253,105 +253,6 @@ apply plugin for bbDKP
 	    return true;
 	}
 
-	/*  make a XMLHTTP Request object */
-	function GetXmlHttpObject()
-	{
-		var xmlhttp=false;
-
-		try
-		{
-			//  IE7+, Firefox, Chrome, Opera, Safari
-			xmlhttp=new XMLHttpRequest();
-		}
-		catch(e)
-		{	// activex code for IE6, IE5
-			try
-			{
-				xmlhttp= new ActiveXObject("Microsoft.XMLHTTP");
-			}
-			catch(e)
-			{
-				try
-				{
-					xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
-				}
-				catch(e1)
-				{
-					xmlhttp=false;
-				}
-			}
-		}
-		return xmlhttp;
-	}
-
-	/* ajax function to find class and race array based on game */
-	function GetClassRace(game_id)
-	{
-	   var xmlhttp = GetXmlHttpObject();
-	   if (xmlhttp == null)
-	   {
-		   alert("{LA_ALERT_OLDBROWSER}");
-		   return;
-	   }
-	    var strURL="{T_TEMPLATE_PATH}/dkp/findclassrace.php?game_id="+game_id;
-	    xmlhttp.onreadystatechange=classracestateChanged;
-	    xmlhttp.open("GET", strURL, true);
-	    // send to server
-	    xmlhttp.send(null);
-	}
-
-	/* called from GetClassRace when state changed */
-	function classracestateChanged()
-	{
-		if (xmlhttp.readyState==4) //request complete
-		{
-			if (xmlhttp.status == 200)
-			{
-				//receive xml
-				var xmlDoc=xmlhttp.responseXML;
-				var racelist = xmlDoc.getElementsByTagName('racelist')[0];
-				var classlist = xmlDoc.getElementsByTagName("classlist")[0];
-
-				var species = racelist.getElementsByTagName("race");
-				var classes = classlist.getElementsByTagName("class");
-
-				//now modify html : first remove old select options
-				var rsel = document.getElementById('candidate_race_id');
-				rsel.options.length = 0;
-
-
-				for (var i = 0; i < species.length; i++)
-				{
-					var spec = species[i];
-					var raceid = spec.getElementsByTagName("race_id")[0].firstChild.nodeValue;
-					var racename = spec.getElementsByTagName("race_name")[0].firstChild.nodeValue;
-				    // add the options
-				    rsel.options[i] = new Option(racename,raceid, true, false);
-				}
-
-				var csel = document.getElementById('candidate_class_id');
-				csel.options.length = 0;
-
-
-				for (var j = 0; j < classes.length; j++)
-				{
-
-					var cla = classes[j];
-					var classid = cla.getElementsByTagName("class_id")[0].firstChild.nodeValue;
-					var classname = cla.getElementsByTagName("class_name")[0].firstChild.nodeValue;
-				    // add the options
-				    csel.options[j] = new Option(classname,classid, true, false);
-				}
-
-
-
-			}
-			else
-			{
-	   	   		alert("{LA_ALERT_AJAX}:\n" + xmlhttp.statusText);
-		 	}
-		}
-	}
 
 // ]]>
 </script>
@@ -395,7 +296,7 @@ apply plugin for bbDKP
 <!-- ELSE -->
 <dl>
 <!-- IF apptemplate.TYPE == $TYPE_GAMERACECLASS -->
-	<dt><strong>{L_GAME}</strong></dt>
+	<dt><strong>{L_RACE}/{L_CLASS}</strong></dt>
 <!-- ELSEIF apptemplate.TYPE == $TYPE_CHARNAME -->
 	<dt><strong>{L_APPLY_ACP_CHARNAME}</strong></dt>
 <!-- ELSEIF apptemplate.TYPE == $TYPE_REGIONREALM -->
@@ -491,11 +392,6 @@ apply plugin for bbDKP
 			<input type="checkbox" name="{apptemplate.DOMNAME}[]" tabindex="{apptemplate.TABINDEX}" value="{apptemplate.checkboxoptions.KEY}"/>&nbsp;{apptemplate.checkboxoptions.VALUE}&nbsp;&nbsp;<!-- END checkboxoptions -->
 	<!-- ELSEIF apptemplate.TYPE == $TYPE_GAMERACECLASS -->
 
-			<select name="game_id" class="input" onchange="return GetClassRace(this.value)">
-	        <!-- BEGIN game_row -->
-			<option value="{apptemplate.game_row.VALUE}"{apptemplate.game_row.SELECTED}>{apptemplate.game_row.OPTION}</option>
-	        <!-- END game_row -->
-			</select>
 	      <label for="candidate_race_id">{L_RACE}:</label>
 			<select id="candidate_race_id" name="candidate_race_id" class="input">
 			<!-- BEGIN race_row -->
@@ -570,6 +466,7 @@ apply plugin for bbDKP
 			<!-- ENDIF -->
 			<br />
 			<fieldset class="submit-buttons">
+            <input type="hidden" name="game_id_hidden" value="{GAME_ID}" />
 			<input type="hidden" name="apptemplate_id_hidden" value="{TEMPLATE_ID}" />
 			<input type="submit" accesskey="s" name="post" value="{L_SUBMIT}" class="button1 default-submit-action" />&nbsp;
 			<input type="reset" name="reset" value="{L_RESET}" class="button1" />

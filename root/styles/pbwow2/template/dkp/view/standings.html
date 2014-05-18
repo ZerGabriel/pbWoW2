@@ -17,8 +17,9 @@
         <div class="navbar" style="clear:both;">
             <span class="corners-top"><span></span></span>
             <form method="post" action="{F_MEMBERS}">
-                <div style="float: right; width:49%; white-space:nowrap; text-align: right;">
-                    <div style="text-align:right; white-space:nowrap;" >{L_POOL}:
+                <div style="white-space:nowrap; text-align: right;">
+                    <div style="text-align:right; white-space:nowrap; width:100%" >
+                        {L_POOL}:
                         <select name="pool" class="input" onchange="javascript:form.submit();">
                             <!-- BEGIN pool_row -->
                             <option value="{pool_row.VALUE}"{pool_row.SELECTED}{pool_row.DISABLED}>{pool_row.OPTION}</option>
@@ -30,6 +31,11 @@
                             <!-- END filter_row -->
                         </select>
                         <input type="hidden" name="hidden_show" value="{SHOWALL}" />
+
+                        <label>&nbsp;&nbsp;{L_NAME}:</label>
+                        <input type="text" name="member_name" id="member_name" size="20" maxlength="30" value="{MEMBER_NAME}" class="input" />
+                        <input type="submit" name="submit_options" value="{L_FILTER}" class="button1" />
+
                     </div>
                 </div>
             </form>
@@ -53,6 +59,7 @@
                     <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{S_ON_PAGE}</a>
                     <span>{DKPPAGINATION}<br /><br /></span>
                 </div>
+                <br />
                 <!-- ENDIF -->
 
                 <table class="table1 bbdkp" width="100%" border="0" cellspacing="0" cellpadding="0">
