@@ -104,7 +104,7 @@ function update_group_id_state()
   				var otitle = document.createElement('dt');
   				
   				var img1 = document.createElement('img');
-  				img1.setAttribute("src", "./images/raidrole_images/" + role_icon + ".png"); 
+  				img1.setAttribute("src", "./images/bbdkp/raidrole_images/" + role_icon + ".png");
   				img1.setAttribute("alt", "image");
   				otitle.appendChild(img1);
   				
