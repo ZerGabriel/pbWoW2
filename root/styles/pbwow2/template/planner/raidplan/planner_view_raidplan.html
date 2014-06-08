@@ -1,4 +1,5 @@
 <!-- [+] raidplan view -->
+<br/>
 <div class="panel bg3">
     <div class="inner">
         <span class="corners-top"><span></span></span>
@@ -8,24 +9,37 @@
         <div class="blockhead" style="width:50%; float: left;">
             <h1 style="color:<!-- IF EVENT_COLOR -->{EVENT_COLOR}<!-- ELSE -->#dfc065<!-- ENDIF -->"><!-- IF ETYPE_DISPLAY_NAME -->{ETYPE_DISPLAY_NAME}<!-- ENDIF --></h1>
         </div>
+        <form id="raidplanactions" method="post" action="{S_POST_ACTION}">
+            <div style="width:40%; float: right;">
+                <ul class="raidplanner-icons" style="float: right;">
+                    <!-- IF U_ADDRAID -->
+                    <li>
+                        <button type="submit" style="border:none; background-color: transparent; cursor:pointer; padding:0px 6px;"
+                                name="addraidplan" id="addraidplan"  alt="{L_ADD_RAID}" ><img src="{T_IMAGESET_PATH}/planner/button_add.png" width="24" height="24" ></button>
+                    </li>
+                    <!-- ENDIF -->
+                    <!-- IF U_EDITRAID -->
+                    <li>
+                        <button type="submit" style="border:none; background-color: transparent; cursor:pointer; padding:0px 6px;"
+                                name="editraidplan" id="editraidplan" alt="{L_EDIT_RAID}" ><img src="{T_IMAGESET_PATH}/planner/button_edit.png" width="24" height="24" ></button>
+                    </li>
+                    <!-- ENDIF -->
+                    <!-- IF U_PUSHRAID -->
+                    <li>
+                        <button type="submit" style="border:none; background-color: transparent; cursor:pointer; padding:0px 6px;"
+                                name="pushraidplan" id="pushraidplan" alt="{L_PUSH_RAID}" ><img src="{T_IMAGESET_PATH}/planner/button_push.png"  width="24" height="24" ></button>
+                    </li>
+                    <!-- ENDIF -->
+                    <!-- IF U_DELETERAID -->
+                    <li>
+                        <button type="submit" style="border:none; background-color: transparent; cursor:not-allowed; padding:0px 6px;"
+                                name="deleteraidplan" id="deleteraidplan" alt="{L_DELETE_RAID}" ><img src="{T_IMAGESET_PATH}/planner/button_delete.png" width="24" height="24" ></button>
+                    </li>
+                    <!-- ENDIF -->
+                </ul>
 
-        <div style="width:40%; float: right;">
-            <ul class="raidplanner-icons" style="float: right;">
-                <!-- IF U_ADDRAID -->
-                <li class="planner-new-button"><a href="{U_ADDRAID}" title="{L_NEW_RAID}"><span></span></a></li>
-                <!-- ENDIF -->
-                <!-- IF U_EDITRAID -->
-                <li class="planner-edit-button"><a href="{U_EDITRAID}" title="{L_EDIT_RAID}"><span></span></a></li>
-                <!-- ENDIF -->
-                <!-- IF U_PUSHRAID -->
-                <li class="planner-push-button"><a href="{U_PUSHRAID}" title="{L_PUSH_RAID}"><span></span></a></li>
-                <!-- ENDIF -->
-                <!-- IF U_DELETERAID -->
-                <li class="planner-delete-button"><a href="{U_DELETERAID}" title="{L_DELETE_RAID}"><span></span></a></li>
-                <!-- ENDIF -->
-            </ul>
-
-        </div>
+            </div>
+        </form>
         <span class="corners-bottom"><span></span></span>
     </div>
 </div>
@@ -42,10 +56,8 @@
                 {MESSAGE}
             </div>
         </div>
-        <hr />
-        <div style="clear: both"></div>
 
-        <div style="width:45%; float: left;">
+        <div class="raidplanbody">
             <fieldset class="rpfields">
                 <dl>
                     <dt><strong>{L_EVENT_CREATED_BY}</strong></dt>
@@ -74,8 +86,9 @@
                 <!-- ENDIF -->
             </fieldset>
         </div>
+
         <!-- IF S_CANSIGNUP -->
-        <div style="width:48%; float: left;">
+        <div class="raidplanbody">
 
             <fieldset class="rpfields">
 
@@ -120,6 +133,7 @@
         <span class="corners-bottom"><span></span></span></div>
 </div>
 <!-- IF S_CANSIGNUP -->
+
 <br/>
 <!-- INCLUDE planner/raidplan/planner_view_raidplan_confirmed.html -->
 <br/>
@@ -127,8 +141,8 @@
 <br/>
 <!-- INCLUDE planner/raidplan/planner_view_raidplan_unavailable.html -->
 <br/>
+
 <!-- INCLUDE planner/raidplan/planner_view_raidplan_signup.html -->
 <br/>
-<hr />
 <!-- ENDIF -->
 <!-- [-] raidplan view -->

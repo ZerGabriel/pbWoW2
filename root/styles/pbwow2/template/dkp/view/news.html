@@ -204,7 +204,9 @@
 </div>
 <!-- ENDIF -->
 <!-- BEGIN news_row -->
-<div id="p{news_row.ID}" class="panel <!-- IF news_row.S_ROW_COUNT is odd -->bg1<!-- ELSE -->bg2<!-- ENDIF -->">
+<div id="p{news_row.ID}" class="post <!-- IF news_row.S_ROW_COUNT is odd -->bg1<!-- ELSE -->bg2<!-- ENDIF -->">
+<div class="inner">
+<span class="corners-top"><span></span></span>
 
 <div class="postbody" style="width: 100%">
      <!-- IF news_row.U_DELETE or news_row.U_EDIT -->
@@ -226,8 +228,8 @@
 	<p class="author">{L_POST_BY_AUTHOR} {news_row.AUTHOR} <strong></strong> &raquo; {news_row.DATE}, {news_row.TIME}</p>
 	<div class="content">{news_row.MESSAGE}</div>
 </div>
-
-
+<span class="corners-bottom"><span></span></span>
+</div>
 </div>
 <!-- END news_row -->
 

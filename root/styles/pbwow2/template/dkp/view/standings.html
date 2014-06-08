@@ -50,17 +50,17 @@
         <!-- IF .members_row -->
         <!-- INCLUDE dkp/view/leaderboard.html -->
 
+        <!-- IF DKPPAGINATION -->
+        <div class="pagination">
+            <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{S_ON_PAGE}</a>
+            <span>{DKPPAGINATION}<br /><br /></span>
+        </div>
+        <br />
+        <!-- ENDIF -->
         <div class="forumbg forumbg-table">
             <div class="inner">
                 <span class="corners-top"><span></span></span>
 
-                <!-- IF DKPPAGINATION -->
-                <div class="pagination">
-                    <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{S_ON_PAGE}</a>
-                    <span>{DKPPAGINATION}<br /><br /></span>
-                </div>
-                <br />
-                <!-- ENDIF -->
 
                 <table class="table1 bbdkp" width="100%" border="0" cellspacing="0" cellpadding="0">
                     <thead>
@@ -119,25 +119,16 @@
                     </tbody>
                 </table>
 
-                <!-- IF DKPPAGINATION -->
-                <div class="pagination">
-                    <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{S_ON_PAGE}</a>
-                    <span>{DKPPAGINATION}<br /><br /></span>
-                </div>
-                <!-- ENDIF -->
 
                 <span class="corners-bottom"><span></span></span>
             </div>
         </div>
-
-        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-            <tr>
-                <td style="text-align: center;">
-                    <input class="button2" type="submit" name="compare" id="compare" value="{L_COMPARE_MEMBERS}"  />
-                </td>
-            </tr>
-        </table>
-
+        <!-- IF DKPPAGINATION -->
+        <div class="pagination">
+            <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{S_ON_PAGE}</a>
+            <span>{DKPPAGINATION}<br /><br /></span>
+        </div>
+        <!-- ENDIF -->
 
         <!-- ENDIF -->
         </form>

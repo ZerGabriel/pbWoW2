@@ -1,21 +1,30 @@
 <div class="panel">
-    <div class="inner">
-        <span class="corners-top"><span></span></span>
+<div class="inner">
+<span class="corners-top"><span></span></span>
 
-        <h4><img width="16px" height="14px" alt="" src="{T_THEME_PATH}/images/icon_bump.gif" />&nbsp;{L_TOPSIGNUPS}</h4>
+<ul class="topiclist" style="padding: 4px">
+    <li class="header">
+        <dl>
+            <dt style="padding: 0px 0px 2px; white-space: nowrap; margin-bottom: 0px; margin-top: 0px;">
+            <h4><img width="16px" height="14px" alt="" src="{T_THEME_PATH}/images/icon_bump.gif" />&nbsp;{L_TOPSIGNUPS}</h4>
+            </dt>
+        </dl>
+    </li>
+</ul>
 
-        <br />
-        <!-- BEGIN topsignups -->
-        <div style="clear: left;">
+<!-- BEGIN topsignups -->
+<div style="clear: left;">
 
-            <div style="float: left; margin: 0 5px; 0 0;"><!-- IF topsignups.S_RACE_IMAGE_EXISTS --><img src="{topsignups.RACE_IMAGE}" alt="" />&nbsp;<!-- ELSE --><!-- ENDIF -->
-                <!-- IF topsignups.S_CLASS_IMAGE_EXISTS --><img src="{topsignups.CLASS_IMAGE}" alt="{topsignups.CLASS}" /><!-- ELSE -->&nbsp;<!-- ENDIF -->
-            </div>
-            <div style="float: left;">
-                <strong><span style="color:{topsignups.COLORCODE}">{topsignups.CHARNAME} : {topsignups.COUNTSIGNUPS} </span></strong>
-            </div>
-        </div>
-        <!-- END topsignups -->
-        <span class="corners-bottom"><span></span></span>
-    </div>
+<div style="float: left; margin: 0 5px; 0 0;"><!-- IF topsignups.S_RACE_IMAGE_EXISTS --><img src="{topsignups.RACE_IMAGE}" alt="" />&nbsp;<!-- ELSE --><!-- ENDIF -->
+	<!-- IF topsignups.S_CLASS_IMAGE_EXISTS --><img src="{topsignups.CLASS_IMAGE}" alt="{topsignups.CLASS}" /><!-- ELSE -->&nbsp;<!-- ENDIF -->
+</div>
+<div style="float: left;">
+<strong><span style="color:{topsignups.COLORCODE}">{topsignups.CHARNAME} : {topsignups.COUNTSIGNUPS} </span></strong>
+</div>
+</div>
+
+<!-- END topsignups -->
+
+<span class="corners-bottom"><span></span></span>
+</div>
 </div>

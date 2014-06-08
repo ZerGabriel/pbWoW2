@@ -1,6 +1,19 @@
 /*
  * raidplan js
  */
+
+var panels = new Array('locations-panel', 'resources-panel', 'watch-panel');
+var show_panel = 'locations-panel';
+
+
+if (window.location.hash.split('#')[1].length > 0)
+{
+    if (panels.indexOf(window.location.hash.split('#')[1].concat('-panel')) > -1)
+    {
+        subPanels(window.location.hash.split('#')[1].concat('-panel'));
+    };
+};
+
 function update_group_id_state()
   {
       if( document.getElementById('accesslevel').value == 1 )
@@ -104,7 +117,7 @@ function update_group_id_state()
   				var otitle = document.createElement('dt');
   				
   				var img1 = document.createElement('img');
-  				img1.setAttribute("src", "./images/raidrole_images/" + role_icon + ".png"); 
+  				img1.setAttribute("src", "./images/bbdkp/raidrole_images/" + role_icon + ".png");
   				img1.setAttribute("alt", "image");
   				otitle.appendChild(img1);
   				
@@ -148,3 +161,4 @@ function update_group_id_state()
   	 	}
   	}
   }
+

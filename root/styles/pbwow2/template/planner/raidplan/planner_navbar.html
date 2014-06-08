@@ -1,0 +1,33 @@
+<form id="caltypenav" method="post" action="{S_POST_ACTION}">
+    <div class="navbar">
+        <span class="corners-top"><span></span></span>
+        <div class="calendar-control">
+            <ul>
+                <li class="cday"><a href="{DAY_VIEW_URL}"  title="{L_DAY}" id="cday"><i>{L_DAY}<br/><br/></i></a></li>
+                <li class="cweek"><a href="{WEEK_VIEW_URL}"  title="{L_WEEK}" id="cweek"><i>{L_WEEK}<br/><br/></i></a></li>
+                <li class="cmonth"><a href="{MONTH_VIEW_URL}" title="{L_MONTH}" id="cmonth"><i>{L_MONTH}<br/><br/></i></a></li>
+            </ul>
+        </div>
+        <div class="calendar-control-right">
+            <ul>
+                <li class="prev-icon"><a title="{L_SHOW_PREV}" href="{CALENDAR_PREV}"><span></span></a></li>
+                <li class="datenavigation">
+                    <div style="float: left;">
+                        <select name='calD' id='calD'>
+                            <!-- BEGIN dayoptions --><option value="{dayoptions.KEY}" {dayoptions.SELECTED}>{dayoptions.VALUE}</option><!-- END dayoptions -->
+                        </select>
+                        <select name='calM' id='calM'>
+                            <!-- BEGIN monthoptions --><option value="{monthoptions.KEY}" {monthoptions.SELECTED}>{monthoptions.VALUE}</option><!-- END monthoptions -->
+                        </select>
+                        <select name='calY' id='calY'>
+                            <!-- BEGIN yearoptions --><option value="{yearoptions.KEY}" {yearoptions.SELECTED}>{yearoptions.VALUE}</option><!-- END yearoptions -->
+                        </select>
+                        <input type="submit" accesskey="s" tabindex="6" name="post" value="{L_GO}" class="button" />
+                    </div>
+                </li>
+                <li class="next-icon"><a title="{L_SHOW_NEXT}" type="button" href="{CALENDAR_NEXT}"><span></span></a></li>
+            </ul>
+        </div>
+        <span class="corners-bottom"><span></span></span>
+    </div>
+</form>
