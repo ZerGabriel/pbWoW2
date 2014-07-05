@@ -22,9 +22,10 @@ v2.1.0
 
 ## Installation
 
-* uninstall "pbWoW2_0_9" if installed
+* uninstall pbWoW2_0_9 if installed
 * unzip and upload PBWoW_bbdkp_2_1_0 into /store mods
 * go to the Autmod tab and install
+* browse to /install/index.php to update/install pbWoW2 to 2.1.0
 * For pbWoW daughter styles you need to open theme/stylesheet.css and add this below :
 	```
 	@import url("../../pbwow2/theme/bbdkp.css");
