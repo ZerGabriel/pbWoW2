@@ -12,13 +12,13 @@ v2.1.0
 ## Requires
 
 *	phpBB 3.0.12
-*	pbWoW daughter styles (optional)
-*	Prosilver style must be active but not default
+*	pbWoW2
 *	bbDKP 1.3.0.8
 *	Raidplanner 1.0.1
 *	bbTips 1.0.4
 *	Apply 1.5.5
 *	Gameworld 1.1.4
+*	Prosilver style must be active but not default
 
 ## Installation
 
