@@ -1,43 +1,5 @@
 <!-- INCLUDE overall_header.html -->
 
-<div class="index-right">
-
-    <!-- IF S_DISPLAY_RT -->
-    <!-- INCLUDE dkp/block/recent.html -->
-    <!-- ENDIF -->
-
-    <!-- IF S_DISPLAY_RECRUIT -->
-    <!-- INCLUDE dkp/block/recruitment.html -->
-    <!-- ENDIF -->
-
-    <!-- IF S_DISPLAY_LOOT -->
-    <!-- INCLUDE dkp/block/lastloot.html -->
-    <!-- ENDIF -->
-
-    <!-- IF S_BPSHOW -->
-    <!-- INCLUDE dkp/block/bossprogress.html -->
-    <!-- ENDIF -->
-    
-    <!-- IF S_PLANNER_UPCOMING -->
-        <!-- INCLUDE dkp/block/planner_upcoming.html -->
-    <!-- ENDIF -->
-    <!-- IF S_PLANNER_TOPSIGNUPS -->
-        <!-- INCLUDE dkp/block/planner_topsignups.html -->
-    <!-- ENDIF -->
-    <!-- IF S_PLANNER_UPCOMING -->
-        <!-- INCLUDE dkp/block/teamspeak_right.html -->
-    <!-- ENDIF -->
-
-    <!-- IF S_DISPLAY_MAINMENU -->
-    <!-- INCLUDE dkp/block/mainmenu.html -->
-    <!-- ENDIF -->
-
-    <!-- IF S_DISPLAY_LINKS -->
-    <!-- INCLUDE dkp/block/links.html -->
-    <!-- ENDIF -->
-
-</div>
-
 <div class="index-left">
 	 <div class="wow-index">
 	 	<div style="margin:0px 0px 2px;">
@@ -47,12 +9,43 @@
 
  		   <!-- INCLUDE dkp/block/news.html -->
 
-           <!-- IF S_PLANNER_UPCOMING -->
-            <!-- INCLUDE dkp/block/teamspeak.html -->
-           <!-- ENDIF -->
 
 		</div>
 	</div>
+</div>
+<div class="index-right">
+
+    <!-- IF S_DISPLAY_RT -->
+    <!-- INCLUDE dkp/block/recent.html -->
+    <!-- ENDIF -->
+
+	<!-- IF S_DISPLAY_RECRUIT -->
+	<!-- INCLUDE dkp/block/recruitment.html -->
+	<!-- ENDIF -->
+
+	<!-- IF S_PLANNER_UPCOMING -->
+	<!-- INCLUDE dkp/block/planner_upcoming.html -->
+	<!-- ENDIF -->
+
+	<!-- IF S_PLANNER_TOPSIGNUPS -->
+	<!-- INCLUDE dkp/block/planner_topsignups.html -->
+	<!-- ENDIF -->
+
+	<!-- IF S_DISPLAY_WHOISONLINE && S_DISPLAY_WHOISONLINE_SIDE -->
+	<!-- INCLUDE dkp/block/online.html -->
+	<!-- ENDIF -->
+
+	<!-- IF S_DISPLAY_NEWMEMBERS -->
+	<!-- INCLUDE dkp/block/newmembers.html -->
+	<!-- ENDIF -->
+
+	<!-- IF S_DISPLAY_LOOT -->
+	<!-- INCLUDE dkp/block/lastloot.html -->
+	<!-- ENDIF -->
+
+	<!-- IF S_BPSHOW -->
+	<!-- INCLUDE dkp/block/bossprogress.html -->
+	<!-- ENDIF -->
 </div>
 
 <div style="clear:both;"></div>

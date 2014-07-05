@@ -7,7 +7,8 @@
     }
     //]]>
 </script>
-<div class="forabg" style="padding-bottom:10px">
+
+<div class="panel">
     <div class="inner">
         <span class="corners-top"><span></span></span>
 
@@ -20,44 +21,37 @@
                 </dl>
             </li>
         </ul>
-        <ul class="topiclist forums portalmenu" style="padding: 5px">
-            <li>
-                <div>
-                    <img src="{EMBLEM}" alt="{GUILD_NAME}" />
-                    <ul>
-                        <li style="list-style:none"><a href="{U_NEWS}"><strong>{L_MENU_NEWS}</strong></a></li>
-                        <li style="list-style:none"><a href="{U_ROSTER}"><strong>{L_MENU_ROSTER}</strong></a></li>
-                        <li style="list-style:none"><a href="{U_LISTMEMBERS}"><strong>{L_MENU_STANDINGS}</strong></a></li>
-                        <li style="list-style:none"><a href="{U_STATS}"><strong>{L_MENU_STATS}</strong></a></li>
-                        <li style="list-style:none"><a href="{U_LISTEVENTS}"><strong>{L_MENU_EVENTS}</strong></a></li>
-                        <li style="list-style:none"><a href="{U_LISTRAIDS}"><strong>{L_MENU_RAIDS}</strong></a></li>
-                        <li style="list-style:none"><a href="{U_LOOTHIST}"><strong>{L_MENU_ITEMHIST}</strong></a></li>
-                        <li style="list-style:none"><a href="{U_LOOTDB}"><strong>{L_MENU_ITEMVAL}</strong></a></li>
-                        <li style="list-style:none"><a href="{U_PLANNER}"><strong>{L_PLANNER}</strong></a></li>
-                        <li style="list-style:none"><a href="{U_BP}"><strong>{L_MENU_BOSS}</strong></a></li>
-                    </ul>
-                    <form method="post" action="{F_NAVURL}" id="setguild">
-                        <select name="guild_id" id="guild_id" class="input" onchange="this.form.submit();">
-                            <!-- BEGIN guild_row -->
-                            <option value="{guild_row.VALUE}"{guild_row.SELECTED}>{guild_row.OPTION}</option>
-                            <!-- END guild_row -->
-                        </select>
-                        <input type="hidden" name="hidden_guild_id" value="{GUILD_ID}" />
-                        <input type="hidden" name="hidden_show" value="{SHOWALL}" />
-                    </form>
-                </div>
 
-            </li>
+        <img src="{EMBLEM}" alt="{GUILD_NAME}" />
+        <ul class="portalmenu" style="padding: 5px">
+            <ul>
+
+                <li style="list-style:none"><a href="{U_NEWS}"><strong>{L_MENU_NEWS}</strong></a></li>
+                <li style="list-style:none"><a href="{U_ROSTER}"><strong>{L_MENU_ROSTER}</strong></a></li>
+                <li style="list-style:none"><a href="{U_LISTMEMBERS}"><strong>{L_MENU_STANDINGS}</strong></a></li>
+                <li style="list-style:none"><a href="{U_STATS}"><strong>{L_MENU_STATS}</strong></a></li>
+                <li style="list-style:none"><a href="{U_LISTEVENTS}"><strong>{L_MENU_EVENTS}</strong></a></li>
+                <li style="list-style:none"><a href="{U_LISTRAIDS}"><strong>{L_MENU_RAIDS}</strong></a></li>
+                <li style="list-style:none"><a href="{U_LOOTHIST}"><strong>{L_MENU_ITEMHIST}</strong></a></li>
+                <li style="list-style:none"><a href="{U_LOOTDB}"><strong>{L_MENU_ITEMVAL}</strong></a></li>
+            </ul>
+            <form method="post" action="{F_NAVURL}" id="setguild">
+                <select name="guild_id" id="guild_id" class="input" onchange="this.form.submit();">
+                    <!-- BEGIN guild_row -->
+                    <option value="{guild_row.VALUE}"{guild_row.SELECTED}>{guild_row.OPTION}</option>
+                    <!-- END guild_row -->
+                </select>
+                <input type="hidden" name="hidden_guild_id" value="{GUILD_ID}" />
+                <input type="hidden" name="hidden_show" value="{SHOWALL}" />
+            </form>
         </ul>
-        <span class="corners-bottom"><span></span></span>
-<!-- IF S_PLANNER_UPCOMING -->
-<!-- INCLUDE planner/raidplan/planner_upcoming.html -->
-<!-- ENDIF -->
 
-<!-- IF S_PLANNER_TOPSIGNUPS -->
-<!-- INCLUDE planner/raidplan/planner_topsignups.html -->
-<!-- ENDIF -->        
+        <span class="corners-bottom"><span></span></span>
     </div>
 </div>
+<br />
 
+<!-- IF S_STATS -->
+<!-- INCLUDE dkp/view/stats_members_sidebar.html -->
+<!-- ENDIF -->
 

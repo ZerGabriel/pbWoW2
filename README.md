@@ -1,6 +1,6 @@
 pbWoW2-bbDKP130
 -----------------
-This mod adds bbdkp template files on top of the pbWoW2 style. 
+This mod sets up pbWoW2 with bbDKP. 
 
 by bbDKP.com  
 @authors Sajaki, Paybas
@@ -9,33 +9,32 @@ by bbDKP.com
 
 ## Version 
 
-v0.2
+v2.1.0
 
 style files included
-*	bbDKP 1.3.0.3
-*	Raidplanner 0.10.0
+*	bbDKP 1.3.0.8
+*	Raidplanner 1.0.1
 *	bbTips 1.0.4
-*	Apply 1.5.3
-*	Gameworld 1.1.1
+*	Apply 1.5.5
+*	Gameworld 1.1.4
 
 ## Requires
 
 *	phpBB 3.0.12
-*	pbWoW 2.0.9
 *	pbWoW daughter styles (optional)
 *	Prosilver style must be active but not default
-*	bbDKP 1.3.0.3 (requires >= php 5.3.3)
-*	Raidplanner 0.10.0 (plugin) (optional, recommended)
-*	Apply 1.5.2 (plugin) (optional, recommended)
-*	Gameworld 1.1.1 (plugin) (optional, recommended)
-*	bbTips 1.0.4 Wowhead Toolips Mod (optional, recommended)
+*	bbDKP 1.3.0.8
+*	Raidplanner 1.0.1
+*	bbTips 1.0.4
+*	Apply 1.5.5
+*	Gameworld 1.1.4
 
 ## Installation
 
-* unzip and upload pbwow2-bbdkp13 into /store mods
+* uninstall "pbWoW2_0_9" if installed
+* unzip and upload PBWoW_bbdkp_2_1_0 into /store mods
 * go to the Autmod tab and install
 * For pbWoW daughter styles you need to open theme/stylesheet.css and add this below :
- 
 	```
 	@import url("../../pbwow2/theme/bbdkp.css");
 	@import url("../../pbwow2/theme/raidplanner.css");
@@ -47,14 +46,8 @@ style files included
  
 ## Changelog
 
--	0.2 17-05-2014
-	-	Updated to Apply 1.5.3 / bbdkp 1.3.0.3
-	
--	0.1 01-05-2014
-	-	[beta] first usable version 
-
--	0.0.1 
-	-	[dev] development version
+2.1.0 
+[CHG] merged base pbWoW2 mod with bbDKP to achieve a better integration.
 
 ## License
 

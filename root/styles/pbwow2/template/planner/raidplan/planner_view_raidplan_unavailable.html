@@ -11,7 +11,7 @@
 	<strong>{unavailable.POSTER_URL}</strong><br />
 	<span><!-- IF unavailable.S_RACE_IMAGE_EXISTS --><img src="{unavailable.RACE_IMAGE}" alt="race_{unavailable.CHARNAME}"/>&nbsp;<!-- ELSE --><!-- ENDIF -->
 	<!-- IF unavailable.S_CLASS_IMAGE_EXISTS --><img src="{unavailable.CLASS_IMAGE}" alt="class_{unavailable.CHARNAME}" /><!-- ELSE -->&nbsp;<!-- ENDIF -->
-	<strong><span style="color:{unavailable.COLORCODE}"><a href="{unavailable.U_MEMBERDKP}">{unavailable.CHARNAME}</a></span></strong></span> <br />
+	<strong><span style="font-size:1.3em"><a style="color:{unavailable.COLORCODE}" href="{unavailable.U_MEMBERDKP}">{unavailable.CHARNAME}</a></span></strong></span> <br />
 	{L_DKP}: {unavailable.DKP_CURRENT}, {L_ATTENDANCE}: {unavailable.ATTENDANCEP1}<br />
 	{unavailable.POST_TIME}<br />
 	<span>{unavailable.DETAILS}</span>
@@ -77,9 +77,10 @@
 <!-- END unavailable -->
 
 <script type="text/javascript">
-jQuery(document).ready( function() 
+jQuery(document).ready( function()
+{
 <!-- BEGIN unavailable --><!-- IF unavailable.S_REQUEUE_SIGNUP -->
-	{
+
 	jQuery("#prompt_{unavailable.RAIDPLAN_ID}_{unavailable.SIGNUP_ID}").overlay({
 		 top: 260,
 
@@ -99,8 +100,9 @@ jQuery(document).ready( function()
 		triggers_{unavailable.RAIDPLAN_ID}_{unavailable.SIGNUP_ID}.eq(1).overlay().close();
 		return e.preventDefault();
 	});
+
 <!-- ENDIF --><!-- END unavailable -->
-});
+ });
 </script>
 
 

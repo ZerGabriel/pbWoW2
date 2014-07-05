@@ -1,147 +1,165 @@
 <!-- [+] raidplan view -->
 <br/>
 <div class="panel bg3">
-    <div class="inner">
+    <div class="inner" >
         <span class="corners-top"><span></span></span>
-        <div style="width:10%; float: left;">
-            <img src="{EVENT_IMAGE}" alt="{ETYPE_DISPLAY_NAME}" width="48" height="48" />
-        </div>
-        <div class="blockhead" style="width:50%; float: left;">
-            <h1 style="color:<!-- IF EVENT_COLOR -->{EVENT_COLOR}<!-- ELSE -->#dfc065<!-- ENDIF -->"><!-- IF ETYPE_DISPLAY_NAME -->{ETYPE_DISPLAY_NAME}<!-- ENDIF --></h1>
-        </div>
-        <form id="raidplanactions" method="post" action="{S_POST_ACTION}">
-            <div style="width:40%; float: right;">
-                <ul class="raidplanner-icons" style="float: right;">
-                    <!-- IF U_ADDRAID -->
-                    <li>
-                        <button type="submit" style="border:none; background-color: transparent; cursor:pointer; padding:0px 6px;"
-                                name="addraidplan" id="addraidplan"  alt="{L_ADD_RAID}" ><img src="{T_IMAGESET_PATH}/planner/button_add.png" width="24" height="24" ></button>
-                    </li>
-                    <!-- ENDIF -->
-                    <!-- IF U_EDITRAID -->
-                    <li>
-                        <button type="submit" style="border:none; background-color: transparent; cursor:pointer; padding:0px 6px;"
-                                name="editraidplan" id="editraidplan" alt="{L_EDIT_RAID}" ><img src="{T_IMAGESET_PATH}/planner/button_edit.png" width="24" height="24" ></button>
-                    </li>
-                    <!-- ENDIF -->
-                    <!-- IF U_PUSHRAID -->
-                    <li>
-                        <button type="submit" style="border:none; background-color: transparent; cursor:pointer; padding:0px 6px;"
-                                name="pushraidplan" id="pushraidplan" alt="{L_PUSH_RAID}" ><img src="{T_IMAGESET_PATH}/planner/button_push.png"  width="24" height="24" ></button>
-                    </li>
-                    <!-- ENDIF -->
-                    <!-- IF U_DELETERAID -->
-                    <li>
-                        <button type="submit" style="border:none; background-color: transparent; cursor:not-allowed; padding:0px 6px;"
-                                name="deleteraidplan" id="deleteraidplan" alt="{L_DELETE_RAID}" ><img src="{T_IMAGESET_PATH}/planner/button_delete.png" width="24" height="24" ></button>
-                    </li>
-                    <!-- ENDIF -->
-                </ul>
+        <div style="width:90%; float: left; display: table-cell; vertical-align: middle;">
 
+            <div class="blockhead"  style="width:10%; float: left; ">
+                <img src="{EVENT_IMAGE}" alt="{ETYPE_DISPLAY_NAME}" width="48px" height="48px" />
             </div>
-        </form>
+            <div class="blockhead" style="width:50%; float: left;line-height: 39px; ">
+                <div>
+                    <h1 style="color:<!-- IF EVENT_COLOR -->{EVENT_COLOR}<!-- ELSE -->#dfc065<!-- ENDIF -->"><!-- IF ETYPE_DISPLAY_NAME -->{ETYPE_DISPLAY_NAME}<!-- ENDIF --></h1>
+                </div>
+            </div>
+
+            <div style="width:200px; float: right;">
+                <form id="raidplanactions" method="post" action="{S_POST_ACTION}">
+                    <ul class="raidplanner-icons" style="float: right;">
+                        <!-- IF S_ADDRAID -->
+                        <li>
+                            <button type="submit" style="border:none; background-color: transparent; cursor:pointer; padding:0px 6px;"
+                                    name="addraidplan" id="addraidplan"  alt="{L_ADD_RAID}" ><img src="{T_IMAGESET_PATH}/planner/button_add.png" width="24" height="24" ></button>
+                        </li>
+                        <!-- ENDIF -->
+                        <!-- IF S_EDITRAID -->
+                        <li>
+                            <button type="submit" style="border:none; background-color: transparent; cursor:pointer; padding:0px 6px;"
+                                    name="editraidplan" id="editraidplan" alt="{L_EDIT_RAID}" ><img src="{T_IMAGESET_PATH}/planner/button_edit.png" width="24" height="24" ></button>
+                        </li>
+                        <!-- ENDIF -->
+                        <!-- IF S_PUSHRAID -->
+                        <li>
+                            <button type="submit" style="border:none; background-color: transparent; cursor:pointer; padding:0px 6px;"
+                                    name="pushraidplan" id="pushraidplan" alt="{L_PUSH_RAID}" ><img src="{T_IMAGESET_PATH}/planner/button_push.png"  width="24" height="24" ></button>
+                        </li>
+                        <!-- ENDIF -->
+                        <!-- IF S_DELETERAID -->
+                        <li>
+                            <button type="submit" style="border:none; background-color: transparent; cursor:not-allowed; padding:0px 6px;"
+                                    name="deleteraidplan" id="deleteraidplan" alt="{L_DELETE_RAID}" ><img src="{T_IMAGESET_PATH}/planner/button_delete.png" width="24" height="24" ></button>
+                        </li>
+                        <!-- ENDIF -->
+                    </ul>
+
+                </form>
+            </div>
+
+        </div>
         <span class="corners-bottom"><span></span></span>
     </div>
 </div>
+<div>
+    <div style="float:left; width:30%; min-width: 250px;">
+        <div class="panel bg2">
+            <div class="inner">
+                <span class="corners-top"><span></span></span>
 
-<div class="panel bg2">
-    <div class="inner">
-        <span class="corners-top"><span></span></span>
+                <div class="raidplanbody">
+                    <fieldset class="rpfields">
+                        <dl>
+                            <dt><strong>{L_EVENT_CREATED_BY}</strong></dt>
+                            <dd>{POSTER}</dd>
+                        </dl>
+                        <!-- IF S_CANSIGNUP -->
+                        <dl>
+                            <dt><strong>{L_INVITE_TIME}</strong></dt>
+                            <dd>{INVITE_TIME}</dd>
+                        </dl>
+                        <!-- ENDIF -->
+                        <dl>
+                            <dt><strong>{L_START_TIME}</strong></dt>
+                            <dd>{START_TIME}</dd>
+                        </dl>
+                        <dl>
+                            <dt><strong>{L_END_TIME}</strong></dt>
+                            <dd>{END_TIME}</dd>
+                        </dl>
+                        <em>{L_TIME_ZONE} {TZ}</em>
+                        <!-- IF IS_RECURRING -->
+                        <dl>
+                            <dt><strong>{L_OCCURS_EVERY}:</strong></dt>
+                            <dd>{RECURRING_TXT}</dd>
+                        </dl>
+                        <!-- ENDIF -->
+                    </fieldset>
 
-        <!-- raid message -->
-        <div class="raidplanbody">
-            <div class="content">
-                <p>{SUBJECT}</p>
+                    <!-- IF S_CANSIGNUP -->
 
-                {MESSAGE}
+                    <fieldset class="rpfields">
+
+                        <dl>
+                            <dt><strong>{L_INVITE_INFO}</strong></dt>
+                            <dd><strong>{INVITED}</strong></dd>
+                        </dl>
+
+                        <dl>
+                            <dt><strong>{L_RAIDSIZE}</strong></dt>
+                            <dd><strong>{TEAM_NAME}</strong></dd>
+                        </dl>
+
+                        <dl>
+                            <dt><strong>{L_CONFIRMED}</strong></dt>
+                            <dd>{CURR_CONFIRMED_COUNT}/{RAID_TOTAL} ({CURR_CONFIRMEDPCT})</dd>
+                        </dl>
+
+                        <dl>
+                            <dt><strong>{L_AVAILABLE}</strong></dt>
+                            <dd>{CURR_YES_COUNT}/{RAID_TOTAL} ({CURR_YESPCT})</dd>
+                        </dl>
+                        <dl>
+                            <dt><strong>{L_MAYBE}</strong></dt>
+                            <dd>{CURR_MAYBE_COUNT}/{RAID_TOTAL} ({CURR_MAYBEPCT})</dd>
+                        </dl>
+                        <dl>
+                            <dt><strong>{L_NOTAVAILABLE}</strong></dt>
+                            <dd>{CURR_NO_COUNT}/{RAID_TOTAL} ({CURR_NOPCT})</dd>
+                        </dl>
+
+                        <!-- IF IS_RECURRING -->
+                        <dl>
+                            <dt><strong>{L_OCCURS_EVERY}:</strong></dt>
+                            <dd>{RECURRING_TXT}</dd>
+                        </dl>
+                        <!-- ENDIF -->
+                    </fieldset>
+
+                    <!-- ENDIF -->
+                </div>
+                <span class="corners-bottom"><span></span></span>
             </div>
         </div>
+    </div>
 
-        <div class="raidplanbody">
-            <fieldset class="rpfields">
-                <dl>
-                    <dt><strong>{L_EVENT_CREATED_BY}</strong></dt>
-                    <dd>{POSTER}</dd>
-                </dl>
-                <!-- IF S_CANSIGNUP -->
-                <dl>
-                    <dt><strong>{L_INVITE_TIME}</strong></dt>
-                    <dd>{INVITE_TIME}</dd>
-                </dl>
-                <!-- ENDIF -->
-                <dl>
-                    <dt><strong>{L_START_TIME}</strong></dt>
-                    <dd>{START_TIME}</dd>
-                </dl>
-                <dl>
-                    <dt><strong>{L_END_TIME}</strong></dt>
-                    <dd>{END_TIME}</dd>
-                </dl>
-                <em>{L_TIME_ZONE} {TZ}</em>
-                <!-- IF IS_RECURRING -->
-                <dl>
-                    <dt><strong>{L_OCCURS_EVERY}:</strong></dt>
-                    <dd>{RECURRING_TXT}</dd>
-                </dl>
-                <!-- ENDIF -->
-            </fieldset>
+    <div style="float:left; width:1%; min-width: 5px;">&nbsp;</div>
+    <div style="float:left;  width:60%; min-width: 250px;">
+        <div class="panel bg2">
+            <div class="inner">
+                <span class="corners-top"><span></span></span>
+                <div class="raidplanbody">
+                    <p>{SUBJECT}</p>
+                    <div class="content">{RAIDPLANNERMESSAGE}</div>
+                    <!-- IF S_BBDKP --><a href="{BBDKPLINK}"> {L_DKPLINK} {L_RAID_ON} </a><!-- ENDIF -->
+                </div>
+                <span class="corners-bottom"><span></span></span>
+            </div>
         </div>
-
-        <!-- IF S_CANSIGNUP -->
-        <div class="raidplanbody">
-
-            <fieldset class="rpfields">
-
-                <dl>
-                    <dt><strong>{L_INVITE_INFO}</strong></dt>
-                    <dd><strong>{INVITED}</strong></dd>
-                </dl>
-
-                <dl>
-                    <dt><strong>{L_RAIDSIZE}</strong></dt>
-                    <dd><strong>{TEAM_NAME}</strong></dd>
-                </dl>
-
-                <dl>
-                    <dt><strong>{L_CONFIRMED}</strong></dt>
-                    <dd>{CURR_CONFIRMED_COUNT}/{RAID_TOTAL} ({CURR_CONFIRMEDPCT})</dd>
-                </dl>
-
-                <dl>
-                    <dt><strong>{L_AVAILABLE}</strong></dt>
-                    <dd>{CURR_YES_COUNT}/{RAID_TOTAL} ({CURR_YESPCT})</dd>
-                </dl>
-                <dl>
-                    <dt><strong>{L_MAYBE}</strong></dt>
-                    <dd>{CURR_MAYBE_COUNT}/{RAID_TOTAL} ({CURR_MAYBEPCT})</dd>
-                </dl>
-                <dl>
-                    <dt><strong>{L_NOTAVAILABLE}</strong></dt>
-                    <dd>{CURR_NO_COUNT}/{RAID_TOTAL} ({CURR_NOPCT})</dd>
-                </dl>
-
-                <!-- IF IS_RECURRING -->
-                <dl>
-                    <dt><strong>{L_OCCURS_EVERY}:</strong></dt>
-                    <dd>{RECURRING_TXT}</dd>
-                </dl>
-                <!-- ENDIF -->
-            </fieldset>
-        </div>
-        <!-- ENDIF -->
-
-        <span class="corners-bottom"><span></span></span></div>
+    </div>
 </div>
-<!-- IF S_CANSIGNUP -->
 
-<br/>
-<!-- INCLUDE planner/raidplan/planner_view_raidplan_confirmed.html -->
-<br/>
-<!-- INCLUDE planner/raidplan/planner_view_raidplan_available.html -->
-<br/>
-<!-- INCLUDE planner/raidplan/planner_view_raidplan_unavailable.html -->
-<br/>
+<hr style="border: 0;"/>
 
+<div>
+    <!-- IF S_CANSIGNUP -->
+    <br/>
+    <!-- INCLUDE planner/raidplan/planner_view_raidplan_confirmed.html -->
+    <br/>
+    <!-- INCLUDE planner/raidplan/planner_view_raidplan_available.html -->
+    <br/>
+    <!-- INCLUDE planner/raidplan/planner_view_raidplan_unavailable.html -->
+    <br/>
+</div>
 <!-- INCLUDE planner/raidplan/planner_view_raidplan_signup.html -->
 <br/>
 <!-- ENDIF -->

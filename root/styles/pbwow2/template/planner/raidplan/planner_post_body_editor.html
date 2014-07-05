@@ -1,5 +1,5 @@
 <!-- post editor start -->
-<script type="text/javascript" src="{T_TEMPLATE_PATH}/planner/raidplan/planner_post_body_editor.js"></script>
+<script type="text/javascript" src="{T_SUPER_TEMPLATE_PATH}/planner/raidplan/planner_post_body_editor.js"></script>
 
 <script type="text/javascript">
     // <![CDATA[
@@ -7,27 +7,31 @@
     var ajaxalert = '{LA_ALERT_AJAX}';
     //]]>
 </script>
-
 <!-- IF ERROR --><p class="error">{ERROR}</p><!-- ENDIF -->
 <!-- IF S_POST_ACTION -->
 
 <div class="panel bg2">
     <div class="inner">
         <span class="corners-top"><span></span></span>
-
         <div style="width:100%; clear:both;">
-            <h2>{L_SUBJECT}</h2>
             <fieldset class="fields1">
-                <p>
-                    <input type="text" name="subject" id="subject" size="100" maxlength="100" tabindex="2" value="{SUBJECT}" class="inputbox autowidth" />
-                </p>
+                <div style="width:90%; float: left;">
+                    <div style="width:10%; float: left; height: 60px; vertical-align: middle  ">
+                        <span style="display: inline-block; height: 100%;vertical-align: middle;"></span>
+                        <img src="{EVENT_IMAGE}" alt="{ETYPE_DISPLAY_NAME}" width="48" height="48"  style="vertical-align: middle;" />
+                    </div>
+                    <div style="width:80%; float: left; height: 60px; line-height: 45px;  ">
+                        <input type="text" name="subject" id="subject" size="100%" maxlength="100" tabindex="2" value="{SUBJECT}" class="inputbox autowidth" />
+                    </div>
+                </div>
+                <div style="width:100%; clear:both;"></div>
+
                 <!-- INCLUDE planner/raidplan/planner_post_body_editor_buttons.html -->
                 <div id="smiley-box">
                     <!-- IF S_SMILIES_ALLOWED and .smiley -->
                     <strong>{L_SMILIES}</strong><br />
                     <!-- BEGIN smiley -->
-                    <a href="#" onclick="insert_text('{smiley.A_SMILEY_CODE}', true); return false;"><img src="{smiley.SMILEY_IMG}" width="{smiley.SMILEY_WIDTH}"
-                                                                                                          height="{smiley.SMILEY_HEIGHT}" alt="{smiley.SMILEY_CODE}" title="{smiley.SMILEY_DESC}" /></a>
+                    <a href="#" onclick="insert_text('{smiley.A_SMILEY_CODE}', true); return false;"><img src="{smiley.SMILEY_IMG}" width="{smiley.SMILEY_WIDTH}"                                                                                                          height="{smiley.SMILEY_HEIGHT}" alt="{smiley.SMILEY_CODE}" title="{smiley.SMILEY_DESC}" /></a>
                     <!-- END smiley -->
                     <!-- ENDIF -->
                     <!-- IF S_SHOW_SMILEY_LINK and S_SMILIES_ALLOWED-->

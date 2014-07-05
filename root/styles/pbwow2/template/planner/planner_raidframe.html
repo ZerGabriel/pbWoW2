@@ -14,15 +14,13 @@
         </ul>
         <!-- middle section -->
         <div style="float: left; width: 100%; margin-left:0.5%; margin-right:0.5%">
-            <!-- INCLUDE planner/RaidCalendar/welcome.html -->
-            <br />
             <!-- IF ! S_PLANNER_ADD -->
             <!-- INCLUDE planner/raidplan/planner_navbar.html -->
             <!-- ENDIF -->
             <!-- IF S_PLANNER_RAIDPLAN -->
             <!-- INCLUDE planner/raidplan/planner_view_raidplan.html -->
             <!-- ENDIF -->
-            <!-- IF S_PLANNER_ADD -->
+            <!-- IF S_PLANNER_ADD || S_PLANNER_EDIT -->
             <!-- INCLUDE planner/raidplan/planner_post_body.html -->
             <!-- ENDIF -->
             <!-- IF S_PLANNER_DAY -->

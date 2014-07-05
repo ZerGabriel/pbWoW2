@@ -1,5 +1,6 @@
 /* -------------------------
    raidplanner css
+   version 1.0.1
   ------------------------- */
 
 .leather {
@@ -214,14 +215,14 @@ ul.raidplanner-icons li a:hover {
 }
 	
 ul.raidplanner-icons li.planner-new-icon {
-	background: url("{T_IMAGESET_PATH}/planner/date_add.png") no-repeat;
+	background: url("{T_IMAGESET_PATH}/planner/button_add16.png") no-repeat;
 	width: 16px;
 	height: 16px;
 	text-align: left;
 }
 
 ul.raidplanner-icons li.planner-new-button {
-	background: url("{T_IMAGESET_PATH}/planner/button_new.png") no-repeat;
+	background: url("{T_IMAGESET_PATH}/planner/button_add.png") no-repeat;
 	width: 60px;
 	height: 35px;
 	text-align: left;
@@ -347,11 +348,13 @@ hr.hrCal {
 }
 
 /* Raidplan */
-.raidplanbody {
-    clear: both;
-    color: #333333;
+.raidplanbody
+{
     line-height: 1.48em;
-    padding: 0;
+    padding: 10px;
+    width: 115%;
+    float:left;
+
 }
 
 .raidplanbody .content {

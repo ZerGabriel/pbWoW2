@@ -9,7 +9,6 @@
 
   integrated in bbdkp
   @package bbDkp
-  @version $Id: progressbar.js 1021 2010-03-13 01:11:11Z sajaki $
 
 USAGE:
 	$(".someclass").progressBar();
@@ -19,6 +18,7 @@ USAGE:
 	$("#progressbar").progressBar(45, {showText: false });		// percentage with config
 
 */
+jQuery.noConflict();
 (function($) {
 	$.extend({
 		progressBar: new function() {
@@ -32,15 +32,15 @@ USAGE:
 				width			: 100,			// Width of the progressbar - don't forget to resize your image too!!!												
 				height			: 12,			// Height of the progressbar - don't forget to resize your image too!!!
 				callback		: null,			// Calls back with the config object that has the current percentage, target percentage, current image, etc
-				boxImage		: '{T_IMAGES_PATH}progressbar/progressbar.gif',	// boxImage : image around the progress bar
+				boxImage		: '{T_IMAGES_PATH}bbdkp/progressbar/progressbar.gif',	// boxImage : image around the progress bar
 				// Image to use in the progressbar. Can be a single image too: 'images/progressbg_green.gif'
 				//overridden
 				barImage		: {
-									5:   '{T_IMAGES_PATH}progressbar/progressbg_black.gif',
-									20:  '{T_IMAGES_PATH}progressbar/progressbg_red.gif',
-									40:  '{T_IMAGES_PATH}progressbar/progressbg_orange.gif',
-									60:  '{T_IMAGES_PATH}progressbar/progressbg_yellow.gif',
-									100: '{T_IMAGES_PATH}progressbar/progressbg_green.gif'										
+									5:   '{T_IMAGES_PATH}bbdkp/progressbar/progressbg_black.gif',
+									20:  '{T_IMAGES_PATH}bbdkp/progressbar/progressbg_red.gif',
+									40:  '{T_IMAGES_PATH}bbdkp/progressbar/progressbg_orange.gif',
+									60:  '{T_IMAGES_PATH}bbdkp/progressbar/progressbg_yellow.gif',
+									100: '{T_IMAGES_PATH}bbdkp/progressbar/progressbg_green.gif'										
 								},
 				
 				
@@ -189,4 +189,4 @@ USAGE:
         progressBar: $.progressBar.construct
 	});
 	
-})($);
+})(jQuery);

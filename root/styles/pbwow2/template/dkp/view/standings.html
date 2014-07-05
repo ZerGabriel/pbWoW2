@@ -80,7 +80,8 @@
                         <th style="text-align: right; width:10%;"><a href="{O_CURRENT}">{L_CURRENT}</a></th>
                         <!-- ENDIF -->
                         <th style="text-align: right; width:10%;"><a href="{O_LASTRAID}">{L_LASTRAID}</a></th>
-                        <th style="text-align: right; width:10%;"><a href="{O_RAIDS_P1_DAYS}">{RAIDS_P1_DAYS}</a></th>
+                        <th style="text-align: right; width:5%;"><a href="{O_RAIDCOUNT}" title="{L_RAIDCOUNT}" >&nbsp; # &nbsp;</a></th>
+                        <th style="text-align: right; width:5%;"><a href="{O_ATTENDANCE}" title="{L_ATTENDANCE}">{L_ATT}&nbsp;</a></th>
                     </tr>
                     </thead>
 
@@ -112,7 +113,8 @@
                         <td style="text-align: right;"><span class="{members_row.DKPCOLOUR2}"><strong>{members_row.CURRENT}</strong></span></td>
                         <!-- ENDIF -->
                         <td style="text-align: right;">{members_row.LASTRAID}</td>
-                        <td style="text-align: right;">{members_row.RAIDS_P1_DAYS}%&nbsp;</td>
+                        <td style="text-align: right;">{members_row.RAIDCOUNT}&nbsp;</td>
+                        <td style="text-align: right;">{members_row.ATTENDANCE}%</td>
 
                     </tr>
                     <!-- END members_row -->
