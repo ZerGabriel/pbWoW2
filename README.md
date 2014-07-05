@@ -1,22 +1,13 @@
 pbWoW2-bbDKP130
 -----------------
-This mod sets up pbWoW2 with bbDKP. 
+This MOD includes all the functionality needed to set the PBWoW 2 style running with bbDKP 1.3.0.8, raidplanner 1.0.1, apply 1.5.5, bbtips 1.0.4, Gameworld 1.1.4. It is AutoMOD compatible and requires UMIL.
 
-by bbDKP.com  
+
 @authors Sajaki, Paybas
-
-*adds bbDKP, raidplanner, apply, bbtips, bossprogress to pbWoW2 style*
 
 ## Version 
 
 v2.1.0
-
-style files included
-*	bbDKP 1.3.0.8
-*	Raidplanner 1.0.1
-*	bbTips 1.0.4
-*	Apply 1.5.5
-*	Gameworld 1.1.4
 
 ## Requires
 
