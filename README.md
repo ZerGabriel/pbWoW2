@@ -6,7 +6,7 @@ This MOD includes all the functionality needed to set the PBWoW 2 style running 
 
 ## Version 
 
-v2.1.0
+v2.1.0 dev
 
 ## Requires
 
