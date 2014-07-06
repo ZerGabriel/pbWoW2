@@ -1,17 +1,51 @@
-/*  Apply css prosilver
+/*  Apply css
  @package bbDkp
  @copyright 2012 bbdkp <https://github.com/bbDKP/Apply>
  @license http://opensource.org/licenses/gpl-license.php GNU Public License
+ @version 1.5.6
  */
 
-textarea {
+textarea.apply {
+    background-color: #040D1A !important;
+    color: #ccc;
 	width: 600px;
 	height: 60px;
-	border: 3px solid #cccccc;
-	padding: 5px;
-	font-family: Tahoma, sans-serif;
-	background-position: bottom right;
-	background-repeat: no-repeat;
+    padding: 5px;
+	font-family: "Trebuchet MS",Verdana,Helvetica,Arial,sans-serif;
+    background: no-repeat bottom right;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    cursor: text;
+    border: 1px solid #7f7f7f;
+}
+
+textarea.apply:hover
+{
+    border: 1px solid #11a3ea;
+}
+
+dd input.apply
+{
+    background-color: #040D1A !important;
+    color: #ccc;
+    left: cursor: pointer;
+    font-family: Verdana,Helvetica,Arial,sans-serif;
+    font-size: 1em;
+    font-weight: normal;
+    padding-bottom: 0;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-top: 0;
+    vertical-align: middle;
+    border: 1px solid #7f7f7f;
+    height: 20px;
+    border-radius: 2px;
+}
+
+dd input.apply:hover
+{
+    border: 1px solid #11a3ea;
 }
 
 fieldset.fields2 dl dt
@@ -20,7 +54,3 @@ fieldset.fields2 dl dt
     font-size: 1.1em;
 }
 
-dd input
-{
-	background-color: #F1EBD7 !important;
-}

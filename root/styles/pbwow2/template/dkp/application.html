@@ -2,7 +2,7 @@
 
 <!--
 apply plugin for bbDKP
- @version 1.5.2
+ @version 1.5.6
 -->
 
 <!-- DEFINE $TYPE_INPUTBOX = 'Inputbox' -->
@@ -315,7 +315,7 @@ apply plugin for bbDKP
 		<input class="text" style="width:300px;" type="text" name="{apptemplate.DOMNAME}" size="40" maxlength="60" tabindex="{apptemplate.TABINDEX}" />
 	<!-- ELSEIF apptemplate.TYPE == $TYPE_TEXTBOX -->
 		<br/ >
-		<textarea class="text" name="{apptemplate.DOMNAME}" rows="2" cols="76" tabindex="{apptemplate.TABINDEX}" onselect="storeCaret(this);" onclick="storeCaret(this);" onkeyup="storeCaret(this);" ></textarea>
+		<textarea class="apply" name="{apptemplate.DOMNAME}" rows="2" cols="76" tabindex="{apptemplate.TABINDEX}" onselect="storeCaret(this);" onclick="storeCaret(this);" onkeyup="storeCaret(this);" ></textarea>
 	<!-- ELSEIF apptemplate.TYPE == $TYPE_TEXTBOXBBCODE -->
 		<div id="colour_palette{apptemplate.TABINDEX}" style="display: none;">
 			<dl style="clear: left;">
@@ -374,7 +374,7 @@ apply plugin for bbDKP
 			<!-- BEGIN custom_tags -->
 				<input type="button" class="button2" name="addbbcode{custom_tags.BBCODE_ID}" value="{custom_tags.BBCODE_TAG}" onclick="bbstyle2({custom_tags.BBCODE_ID}, '{apptemplate.DOMNAME}')" title="{custom_tags.BBCODE_HELPLINE}" /><!-- END custom_tags -->
 		</div>
-		<textarea class="text" name="{apptemplate.DOMNAME}" rows="3" cols="76" tabindex="{apptemplate.TABINDEX}" onselect="storeCaret(this);" onclick="storeCaret(this);" onkeyup="storeCaret(this);" ></textarea>
+		<textarea class="apply" name="{apptemplate.DOMNAME}" rows="3" cols="76" tabindex="{apptemplate.TABINDEX}" onselect="storeCaret(this);" onclick="storeCaret(this);" onkeyup="storeCaret(this);" ></textarea>
 	<!-- ELSEIF apptemplate.TYPE == $TYPE_SELECTBOX -->
 		<br/ >
 		<select class="inputbox" name="{apptemplate.DOMNAME}" tabindex="{apptemplate.TABINDEX}">
@@ -393,14 +393,14 @@ apply plugin for bbDKP
 	<!-- ELSEIF apptemplate.TYPE == $TYPE_GAMERACECLASS -->
 
 	      <label for="candidate_race_id">{L_RACE}:</label>
-			<select id="candidate_race_id" name="candidate_race_id" class="input">
+			<select id="candidate_race_id" name="candidate_race_id" class="apply">
 			<!-- BEGIN race_row -->
 			<option value="{apptemplate.race_row.VALUE}"{apptemplate.race_row.SELECTED}>{apptemplate.race_row.OPTION}</option>
 	        <!-- END race_row -->
 	        </select>
 	   		<!-- IF S_RACE_IMAGE_EXISTS --> <br/><img src="{RACE_IMAGE}" alt="" />&nbsp;<!-- ELSE -->&nbsp;<!-- ENDIF -->
 		  <label for="candidate_class_id">{L_CLASS}:</label>
-		  <select id="candidate_class_id" name="candidate_class_id" class="input">
+		  <select id="candidate_class_id" name="candidate_class_id" class="apply">
 	       <!-- BEGIN class_row -->
 	        <option value="{apptemplate.class_row.VALUE}"{apptemplate.class_row.SELECTED}>{apptemplate.class_row.OPTION}</option>
 	        <!-- END class_row -->
@@ -408,13 +408,13 @@ apply plugin for bbDKP
 		    <!-- IF S_CLASS_IMAGE_EXISTS --><br/><img src="{CLASS_IMAGE}" alt="" /><!-- ELSE -->&nbsp;<!-- ENDIF -->
 
 	<!-- ELSEIF apptemplate.TYPE == $TYPE_CHARNAME -->
-		<input type="text" name="candidate_name" size="25" maxlength="25" class="input" />
+		<input type="text" name="candidate_name" size="25" maxlength="25" class="apply" />
 
 	<!-- ELSEIF apptemplate.TYPE == $TYPE_REGIONREALM -->
-		<input type="text" name="candidate_realm" size="25" maxlength="25" class="input" />
+		<input type="text" name="candidate_realm" size="25" maxlength="25" class="apply" />
 
 	<!-- ELSEIF apptemplate.TYPE == $TYPE_LEVEL -->
-		<input type="text" name="candidate_level" size="3" maxlength="3" value="{MEMBER_LEVEL}" class="input" />
+		<input type="text" name="candidate_level" size="3" maxlength="3" value="{MEMBER_LEVEL}" class="apply" />
 
 	<!-- ELSEIF apptemplate.TYPE == $TYPE_GENDER -->
 	    <input type="radio" name="candidate_gender"  value="0"{MALE_CHECKED} /> {L_MALE}&nbsp;&nbsp;
