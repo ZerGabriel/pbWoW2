@@ -1,9 +1,13 @@
-/*  bbdkp css prosilver
+/*  bbdkp css PbWoW
  @copyright 2014 bbdkp <https://github.com/bbDKP/bbDKP>
  @license http://opensource.org/licenses/gpl-license.php GNU Public License
  @author Sajaki
- @version 1.3.0.7
+ @version 1.3.0.8
 */
+
+.bbdkpcredits {
+	color:#105289;
+}
 
 #bbdkpwrap
 {
@@ -15,7 +19,7 @@
 {
     display: table-cell;
     vertical-align: top;
-    width: 180px;
+    width: 200px;
 }
 
 #bbdkpmiddle
@@ -23,6 +27,7 @@
     display: table-cell;
     vertical-align: top;
     padding-left: 3px;
+    width: 100%;
 }
 
 #bbdkprightside
@@ -34,86 +39,42 @@
     float: left;
 }
 
+#bbdkprightsideportal
+{
+    display: table-cell;
+    vertical-align: top;
+    max-width: 302px;
+    padding-left: 3px;
+    float: right;
+}
+
 .bbdkpcredits {
     color:#105289;
 }
 
-/* mainmenu.html  */
-.portalmenu ul
+.bbdkpblock
 {
-    list-style-type: none;
-    margin: 0 0 8px;
-    padding: 0;
-}
-
-.portalmenu a:hover {
-    /*background-color: #F9F9F9;*/
-    color: #D31141;
-}
-
-.portalmenu li {
-    text-decoration: none;
-}
-
-.portalblock h3
-{
-    text-align : left;
-    height : 30px;
-    line-height : 30px;
-    padding:0;
     margin :0;
-    padding-left: 18px;
-    overflow : hidden;
-    font-weight:normal;
+    text-align : left;
+    line-height : 17px;
     border:none;
-    font-size : 14px;
-    text-decoration: none;
+    margin:0;
+    padding: 10px;
+    moz-box-shadow: 1px 1px 20px #2f2f2f inset;
+    -webkit-box-shadow: 1px 1px 20px #2f2f2f inset;
+    box-shadow: 1px 1px 20px #2f2f2f inset;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.bbdkpblock h3
+{
+	font-weight:normal;
+	font-size : 14px;
+	text-decoration: none;
     font-family: Arial,Helvetica,Verdana,sans-serif;
     font-variant:small-caps;
     text-transform: none;
-}
-
-ul.portalmenu {
-    background-attachment: scroll;
-    background-clip: border-box;
-    background-color: transparent;
-    background-image: none;
-    background-image: url("{T_THEME_PATH}/images/gradient.gif");
-    background-origin: padding-box;
-    background-position: 0 0;
-    background-repeat: repeat-x;
-    background-size: auto auto;
-    list-style-image: none;
-    list-style-position: outside;
-    list-style-type: none;
-    margin-bottom: 1px;
-    margin-left: 1px;
-    margin-right: 1px;
-    margin-top: 1px;
-    padding-bottom: 2px;
-    padding-left: 2px;
-    padding-right: 2px;
-    padding-top: 2px;
-    text-align: center;
-}
-
-ul.portalmenu li {
-    background-position: 0 2px;
-    background-repeat: no-repeat;
-    line-height: 14px;
-    list-style-type: none;
-    padding-left: 20px;
-    text-align: left;
-    background-image: url("{T_THEME_PATH}/images/dkp/menu.png");
-}
-
-.portalmenu a {
-    font-size: 105%;
-    font-weight: bold;
-    display: block;
-    margin-bottom: 0px;
-    padding: 4px 0px 0px 1px;
-    text-decoration: none;
 }
 
 .bbdkpheader {
@@ -130,11 +91,62 @@ ul.portalmenu li {
 }
 
 
-.bbdkpblock
+.bbdkpblock .postbody .bg1
 {
-    moz-box-shadow: inset 0 2px 10px #666;
-    -webkit-box-shadow: inset 0 2px 10px #666;
-    box-shadow: inset 5px 2px 10px #666;
+    background-color: transparent;
+}
+
+
+.portalmenu ul
+{
+    list-style-type: none;
+    margin: 0 0 8px;
+    padding: 0;
+}
+
+.portalmenu a:hover {
+    color: #D31141;
+}
+
+.portalmenu li {
+    text-decoration: none;
+}
+
+ul.portalmenu {
+    background-clip: border-box;
+    background-origin: padding-box;
+    background: transparent none repeat-x scroll 0 0;
+    background-size: auto auto;
+    list-style: none outside none;
+    margin: 1px 1px 1px 0px;
+    padding: 2px 2px 1px !important;
+    text-align: center;
+}
+
+ul.portalmenu li {
+    background-position: 0 2px;
+    background-repeat: no-repeat;
+    line-height: 14px;
+    list-style-type: none;
+    padding-left: -1px;
+    text-align: left;
+}
+
+ul.portalmenu li.portalblock {
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+.portalmenu a {
+    -moz-text-decoration-color: -moz-use-text-color;
+    -moz-text-decoration-line: none;
+    -moz-text-decoration-style: solid;
+    background: url("{T_IMAGESET_PATH}/dkp/list.png") no-repeat 2% center;
+    font-size: 105%;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0px;
+    padding: 4px 1px 0 20px;
+    text-decoration: none;
 }
 
 /**** portal tooltip css ****/
@@ -142,31 +154,27 @@ ul.portalmenu li {
 .bbtooltip {
     display: none;
     position:relative;
-    margin:0px auto;
     font-size: 10px;
     min-width:100px;
     max-width:230px;
     color:#FFFFDD;
-    z-index:1;
-    margin-left:12px; /* default, width of left corner */
-    margin-bottom:0.5em; /* spacing under dialog */
+    z-index:15;
+    /* default, width of left corner */
+    /* spacing under dialog */
+    margin: 0px auto 0.5em 12px;
 }
 
 .bbtooltip .bbinner,
 .bbtooltip .t,
 .bbtooltip .b,
 .bbtooltip .b div {
-    background-image: url("images/bbdkp/tooltip/tooltip.png");
-    background-color: transparent;
-    background-repeat: no-repeat;
-    background-position: right top;
+    background: transparent url("images/bbdkp/tooltip/tooltip.png") no-repeat right top;
 
 }
 
 .bbtooltip .bbinner {
     position:relative;
     zoom:1;
-    _overflow-y:hidden;
     padding:0px 12px 0px 0px;
 }
 
@@ -322,22 +330,13 @@ span.corners-inner-top span {
 }
 
 span.corners-inner-bottom {
-    background-image: url('none');
-    background-position: 0 100%;
+    background: url('none') 0 100%;
     margin: 0 -5px;
     clear: both;
 }
 
 span.corners-inner-bottom span {
-    background-image: url('none');
-    background-position: 100% 100%;
-}
-
-span.corners-inner-top, span.corners-inner-bottom {
-    background-image: url('{T_THEME_PATH}/images/corners_left.png');
-}
-span.corners-inner-top span, span.corners-inner-bottom span {
-    background-image: url('{T_THEME_PATH}/images/corners_right.png');
+    background: url('none') 100% 100%;
 }
 
 /** flot statistics **/

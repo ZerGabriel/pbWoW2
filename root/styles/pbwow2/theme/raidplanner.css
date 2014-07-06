@@ -1,6 +1,6 @@
 /* -------------------------
    raidplanner css
-   version 0.12
+   version 1.0.1
   ------------------------- */
 
 .leather {
@@ -17,15 +17,9 @@ div.calendar-control {
 	display:block;
 	width: 141px; /* breedte */
 	height: 52px;
-	padding-top:0px;
-	padding-bottom:0px;
-	padding-right:5px;
-	padding-left:0px;
-	background: url("{T_IMAGESET_PATH}/planner/calendar_control_empty.png");
-	background-position : top;
-	background-position: 0 -2px;
-	background-repeat : no-repeat;
-	margin-bottom: 0em;
+    padding: 0px 5px 0 0;
+    background: url("{T_IMAGESET_PATH}/planner/calendar_control_empty.png") no-repeat 0 -2px;
+    margin-bottom: 0em;
 	margin-right: 2em;
 	float: left;
 }
@@ -42,53 +36,44 @@ div.calendar-control {
 		padding-left : 10px;
 		padding-top : 5px;
 		float: left;
-		list-style-image: none;
-		list-style-position: outside;
-    	list-style-type: none;
-	}
+        list-style: none outside none;
+    }
 	
-	div.calendar-control ul li { 
-	    margin-bottom: 0;
-	    margin-left: 4px;
-	    margin-right: 2px;
-	    margin-top: 0;
-		float: left;
+	div.calendar-control ul li {
+        margin: 0 2px 0 4px;
+        float: left;
 		width: 100%;
 		height: 100%;
 	}
 
-	div.calendar-control ul li.cday { 
-		background: url("{T_IMAGESET_PATH}/planner/calendar_view_day-icon.png");
-		text-align: left;
+	div.calendar-control ul li.cday {
+        text-align: left;
 		background-size: auto auto;
-		background-repeat: no-repeat;
-		width: 32px;
+        background: url("{T_IMAGESET_PATH}/planner/calendar_view_day-icon.png") no-repeat;
+        width: 32px;
 	  	height: 32px;
 	}
 
-	div.calendar-control ul li.cweek {  
-		background: url("{T_IMAGESET_PATH}/planner/calendar_view_week-icon.png");
-		text-align: left;
+	div.calendar-control ul li.cweek {
+        text-align: left;
 		background-size: auto auto;
-		background-repeat: no-repeat;
-		width: 32px;
+        background: url("{T_IMAGESET_PATH}/planner/calendar_view_week-icon.png") no-repeat;
+        width: 32px;
 	  	height: 32px;
 }
 
-	div.calendar-control ul li.cmonth {  
-		background: url("{T_IMAGESET_PATH}/planner/calendar_view_month-icon.png");
-		text-align: left;
+	div.calendar-control ul li.cmonth {
+        text-align: left;
 		background-size: auto auto;
-		background-repeat: no-repeat;
-		width: 32px;
+        background: url("{T_IMAGESET_PATH}/planner/calendar_view_month-icon.png") no-repeat;
+        width: 32px;
 	  	height: 32px;
 }
 
 	div.calendar-control a {
-	    background-repeat: no-repeat;
-	    background-size: auto auto;
- 		background-position:0 0;
-  		display:block;		
+        background-size: auto auto;
+        background: no-repeat 0 0;
+        display:block;
 	    height: 100%;
 	    width: 100%;
 	}
@@ -101,11 +86,8 @@ div.calendar-control-right {
 	display:block;
 	width: 305px; /* breedte */
 	height: 50px;
-	padding-top:5px;
-	padding-bottom:0px;
-	padding-right:5px;
-	padding-left:0px;
-	background: url("{T_IMAGESET_PATH}/planner/calendar_control_empty_right.png");
+    padding: 5px 5px 0px 0;
+    background: url("{T_IMAGESET_PATH}/planner/calendar_control_empty_right.png");
 	background-position : top;
 	background-position: 0 -3px;
 	background-repeat : no-repeat;
@@ -125,17 +107,12 @@ div.calendar-control-right {
 		padding-left : 10px;
 		padding-top : 5px;
 		float: left;
-		list-style-image: none;
-		list-style-position: outside;
-    	list-style-type: none;
-	}
+        list-style: none outside none;
+    }
 	
 	div.calendar-control-right ul li {
-	    margin-bottom: 0;
-	    margin-left: 4px;
-	    margin-right: 2px;
-	    margin-top: 0;
-		text-align: left;
+        margin: 0 2px 0 4px;
+        text-align: left;
 		float: left;
 		width: 100%;
 		height: 100%;
@@ -144,20 +121,18 @@ div.calendar-control-right {
 	div.calendar-control-right ul li a {
 		width: 100%;
 		height: 100%;
-	    background-repeat: no-repeat;
-	    background-size: auto auto;
- 		background-position:0 0;
-  		display:block;		
+        background-size: auto auto;
+        background: no-repeat 0 0;
+        display:block;
 	}
 	
 	div.calendar-control-right ul li.next-icon {
-		background: url("{T_IMAGESET_PATH}/planner/ArrowRight.png");
-		width: 16px;
+        width: 16px;
 		height: 16px;
 		text-align: left;
 		background-size: auto auto;
-		background-repeat: no-repeat;
-}
+        background: url("{T_IMAGESET_PATH}/planner/ArrowRight.png") no-repeat;
+    }
 	
 	div.calendar-control-right ul li.datenavigation {
 		width: 230px;
@@ -168,13 +143,12 @@ div.calendar-control-right {
 }
 
 	div.calendar-control-right ul li.prev-icon {
-		background: url("{T_IMAGESET_PATH}/planner/ArrowLeft.png");
-		width: 16px;
+        width: 16px;
 		height: 16px;
 		text-align: left;
 		background-size: auto auto;
-		background-repeat: no-repeat;
-		margin-left: 0px;
+        background: url("{T_IMAGESET_PATH}/planner/ArrowLeft.png") no-repeat;
+        margin-left: 0px;
 		
 	}
 
@@ -277,17 +251,13 @@ ul.raidplanner-icons li.planner-month-icon {
 ul.raidplanner-icons li.planner-delete-icon {
 	width: 20px;
 	height: 20px;
-    margin-bottom: 0;
-    margin-left: 1px;
-    margin-right: 1px;
-    margin-top: 0;
+    margin: 0 1px;
     float: left;
     background-position: 0 0;
 }
 
 ul.raidplanner-icons li.planner-delete-icon a:hover {
-    background-repeat: repeat;
-    background-position: 0 100%;
+    background: repeat 0 100%;
     background-size: auto auto;
 	
 }
@@ -350,7 +320,6 @@ hr.hrCal {
 /* Raidplan */
 .raidplanbody
 {
-    color: #333333;
     line-height: 1.48em;
     padding: 10px;
     width: 115%;
@@ -363,27 +332,22 @@ hr.hrCal {
 }
 
 .blockhead h1 {
-	margin-right: 0px;
+	margin-right: 0;
 	margin-top: 0px;
 }
 
 
 .rolesignupheader {
-	border:1px solid #666;
-    border:1px solid rgba(82, 82, 82, 0.698);
     -moz-border-radius:5px;
     -webkit-border-radius:5px;
     border-radius: 5px;
-	padding-top: 2px;
-    padding-right: 2px;
-    padding-bottom: 2px;
-    padding-left: 2px;
+    padding: 2px;
     margin: 1%;
-    
-	border-top: medium;
-	border-top-color: #12A3EB;
-	border-bottom:0px solid;
-	font-weight: bold;
+
+    border: 1px solid rgba(82, 82, 82, 0.698);
+    border-top: medium #12A3EB;
+    border-bottom-width: 0;
+    font-weight: bold;
 	text-transform:uppercase;
 }
 
@@ -393,7 +357,7 @@ hr.hrCal {
 
     
 .rolesignupbody {
-    border:1px solid #666;
+
     border:1px solid rgba(82, 82, 82, 0.698);
     -moz-border-radius:4px;
     -webkit-border-radius:4px;
@@ -403,10 +367,7 @@ hr.hrCal {
 	box-shadow: 5px 5px 5px #303030;
 
 	margin: 1%;
-    padding-top: 2px;
-    padding-right: 2px;
-    padding-bottom: 2px;
-    padding-left: 2px;
+    padding: 2px;
 }
 
 
@@ -429,10 +390,7 @@ hr.hrCal {
 	width:160px; 
 	float:left; 
 	margin: 1%;
-    padding-top: 2px;
-    padding-right: 2px;
-    padding-bottom: 2px;
-    padding-left: 2px;
+    padding: 2px;
 }
 
 .roleunavailable:hover {
@@ -468,10 +426,7 @@ table.table1 tbody tr.daynames {
 }
 
 table.table1 tbody td.bg1.calMon {
-	padding-top: 2px;
-	padding-bottom: 5px;
-	padding-left: 4px;
-	padding-right: 4px;
+    padding: 2px 4px 5px;
 }
 .calMonH ul li {
 	font-family :sans-serif;
@@ -481,10 +436,7 @@ table.table1 tbody td.bg1.calMon {
 
 /* today and highlighted day */
 table.table1 tbody td.bg2.calMon {
-	padding-top: 2px;
-	padding-bottom: 5px;
-	padding-left: 4px;
-	padding-right: 4px;
+    padding: 2px 4px 5px;
 }
 
 /* hover over highlighted day */
@@ -507,10 +459,7 @@ td.bg3.calMonH a:hover {
 
 /* filler day */
 table.table1 tbody td.bg3.calMon {
-	padding-top: 2px;
-	padding-bottom: 5px;
-	padding-left: 4px;
-	padding-right: 4px;
+    padding: 2px 4px 5px;
 }
 
 td.bg3.calMon a:hover {
@@ -541,10 +490,7 @@ h1.daynum  {
 table.table1 tbody td.bg1_calDay {
 	background-color: #ECF3F7;
 	border-top-color: #12A3EB;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	padding-left: 3px;
-	padding-right: 3px;
+    padding: 10px 3px;
 }
 
 
@@ -570,5 +516,5 @@ td.bg3_calDay a:hover {
 
 /* raid view pane: less space in datalist */
 fieldset.rpfields dl {
-	padding: 0.5px 0;
+	padding: 1px 0;
 }
