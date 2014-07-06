@@ -11,18 +11,18 @@ v2.1.0 dev
 ## Requires
 
 *	phpBB 3.0.12
-*	pbWoW2
+*	pbWoW2 Style 2.0.9 (get it on pbWoW.com)
 *	bbDKP 1.3.0.8
 *	Raidplanner 1.0.1
 *	bbTips 1.0.4
-*	Apply 1.5.5
+*	Apply 1.5.6
 *	Gameworld 1.1.4
 *	Prosilver style must be active but not default
 
 ## Installation
 
-* uninstall pbWoW2_0_9 if installed
-* unzip and upload PBWoW_bbdkp_2_1_0 into /store mods
+* uninstall pbWoW2_0_9 Mod in Automod if installed
+* unzip and upload PBWoW_bbdkp_2_1_0 Mod into /store/mods
 * go to the Autmod tab and install
 * browse to /install/index.php to update/install pbWoW2 to 2.1.0
 * For pbWoW daughter styles you need to open theme/stylesheet.css and add this below :
