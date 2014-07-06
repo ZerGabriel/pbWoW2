@@ -392,6 +392,8 @@
 			</edit>
 		</open>
 
+		<!-- bbdkp - phpbb integreation --> 
+		
 		<open src="styles/pbwow2/template/overall_header.html">
 			<edit>
 				<find><![CDATA[</head>]]></find>
@@ -436,6 +438,20 @@
 				]]></action>
 		</edit>
 		</open>
+		
+		<!-- Raidplanner html - phpbb integration --> 
+			<open src="styles/pbwow2/template/index_body.html">
+			<edit>
+				<comment lang="en"><![CDATA[Add calendar under forum index page]]></comment>
+				<find><![CDATA[<!-- INCLUDE forumlist_body.html -->]]></find>
+				<action type="after-add"><![CDATA[<!-- IF S_PLANNER_WEEK -->
+	<!-- INCLUDE planner/RaidCalendar/planner_view_month.html -->
+<!-- ENDIF -->
+]]></action>
+			</edit>
+		</open>
+
+		<!-- bbdkp css integration --> 
 		
 		<open src="styles/pbwow2/theme/stylesheet.css">
 			<edit>
