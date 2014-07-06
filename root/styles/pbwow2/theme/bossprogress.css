@@ -1,7 +1,7 @@
-/*  bbdkp css bossprogress for pbWoW
- @package bbDKP
- @copyright 2014 bbdkp https://github.com/bbDKP
- @license http://opensource.org/licenses/gpl-license.php GNU Public License
+/*  bbdkp css bossprogress
+     @package bbDKP
+     @copyright 2011 bbdkp <https://github.com/bbDKP/Bossprogress>
+     @license http://opensource.org/licenses/gpl-license.php GNU Public License
 */
 
 /* Bossprogress block Colors 
@@ -113,3 +113,10 @@
 	color: #00EE00;
     cursor: pointer;
 }
+
+a.bossprogress,a.bossprogress:link,a.bossprogress:visited,a.bossprogress:active {
+	text-decoration: none;
+	 color: #FFD100; /* tooltip boss link color */
+	white-space: nowrap;
+}
+

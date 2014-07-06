@@ -1,6 +1,6 @@
 /* -------------------------
    raidplanner css
-   version 1.0.1
+   version 0.12
   ------------------------- */
 
 .leather {
@@ -350,6 +350,7 @@ hr.hrCal {
 /* Raidplan */
 .raidplanbody
 {
+    color: #333333;
     line-height: 1.48em;
     padding: 10px;
     width: 115%;
